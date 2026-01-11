@@ -1,0 +1,333 @@
+
+@media screen and (max-width: 1500px){
+    body > img {
+        filter: grayscale(60%) opacity(8%);
+    }
+    .hearts {
+        width: 370px;
+        gap: 0;
+    }
+    .hearts > svg {
+        margin: 2px;
+        height: 20px;
+        width: 20px;
+    }
+    .content_pri {
+        flex-direction: column;
+    }
+    .mission {
+        height: 50%;
+        width: 100%;
+        margin-top: 30px;
+    }
+    .mission_details {
+        background-color:#00000060;
+        background-image: none;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+    .mission_details::before {
+        border: 2px solid #ffffff40;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    * {
+        overflow: visible;
+        overflow-x: hidden;
+    }
+    body {
+        height: 1400px;
+        overflow-y: scroll;
+    }
+    .triforce_top {
+        top: 260px;
+    }
+    .triforce_botton {
+        top: 1145px;
+    }
+    .contain_pri {
+        transform: translateY(260px);
+        overflow: hidden;
+    }
+    .header_info_pc {
+        display: none;
+    }
+    .header_info_title {
+        overflow: hidden;
+    }
+    .header_mobile {
+        display: flex;
+        justify-content: center;
+        margin-top: 90px;
+        transform: translateX(30px);
+    }
+    .rupees > img {
+        width: 40px;
+    }
+    .rupees > h1 {
+        font-size: 1.4em;
+    }
+    .mission_details {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+    .header_pc {
+        width: calc(100% - 20px);
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .header_mobile {
+        margin: 90px 0 0 0;
+        width: 100%;
+    }
+    .header_info_title > h1 {
+        font-size: 2.2em;
+    }
+    .rupees {
+          
+    }
+    .triforce_top {
+        left: 14px;
+    }
+    .triforce_botton {
+        left: 14px;
+    }
+    .contain_pri {
+        width: calc(100% - 15px);
+    }
+    .mission_area {
+        width: 500px;
+    }
+}
+
+/* @media screen and (max-width: 550px) {
+    .mission_contain {
+        width: 100%;
+    }
+    .mission_content {
+        gap: 1.3vw;
+        margin: 3vw;
+    }
+    .mission_icon > svg {
+        width: 12vw;
+    }
+    .mission_text > h1 {
+        font-size: 5.2vw;
+        height: 5.2vw;
+    }
+    .mission_text > p {
+        font-size: 3vw;
+    }
+    .mission_select {
+        margin-right: 1.2vw;
+        height: 14vw;
+        width: 6.3vw;
+    }
+    .selected {
+        height: 2vw;
+        width: 2vw;
+    }
+    .selected > div{
+        width: 1.4vw;
+        height: 1.4vw;
+    }
+} */
+
+/* 
+
+    body {
+        line-height: 1.6em;
+    }
+
+    header {
+        height: 160px;
+        width: calc(100% - 180px);
+        margin: 0 60px 0 60px;
+    }
+    .hearts {
+        width: 480px;
+        gap: 0;
+    }
+    .hearts > svg {
+        margin: 3px;
+        height: 25px;
+        width: 25px;
+    }
+    .header_info {
+        gap: 5px;
+        margin-top: 15px;
+    }
+    .header_info_title > h1{
+        font-size: 2.8em;
+        font-weight: 700;
+        height: 50px;
+    }
+    .circle {
+        gap: 6px;
+        margin-top: -20px;
+        height: 15px;
+    }
+    .header_info_icon {
+        gap: 5px;
+        margin-top: 10px;
+    }
+    .header_info_icon > svg {
+        width: 32px;
+    }
+    .header_info_icon > h2 {
+        font-size: 1.4em;
+        height: 30px;
+        width: 110px;
+        letter-spacing: 1px;
+        transform: scaleY(.92);
+    }
+    .rupees > img {
+        width: 60px;
+    }
+    .rupees > h1 {
+        letter-spacing: 3px;
+        height: 40px;
+    }
+
+    .triforce_top {
+        width: 17px;
+        top: 160px;
+        left: 59px;
+    }
+    .triforce_botton {
+        width: 17px;
+        top: 1045px;
+        left: 59px;
+    }
+
+    .contain_pri {
+        width: calc(100% - 60px);
+        height: 900px;
+        transform: translateY(160px);
+    }
+
+    .content_pri {
+        height: 100%;
+    }
+
+    .mission {
+        height: 95%;
+        width: 70%;
+    }
+    .icon_area {
+        width: 500px;
+        gap: 30px;
+        margin-top: 10px;
+        height: 140px;
+    }
+    .icon_area::before {
+        bottom: 20px;
+        left: 60px;
+        z-index: 20;
+        height: 2px;
+        width: 50px;
+    }
+    .icon_area::after {
+        bottom: 20px;
+        right: 50px;
+        height: 2px;
+        width: 290px;
+    }
+    .name_area {
+        transform: translateX(calc(((-200px - 101.22px) / 2) + 15px));
+        font-size: 1.1em;
+    }
+    .name_area > h3 {
+        width: 200px;
+        letter-spacing: .03em;
+    }
+    .icon_area > svg {
+        height: 60px;
+        margin-top: 35px;
+    }
+    .mission_area {
+        padding: 10px;
+        width: 650px;
+    }
+    .mission_contain {
+        width: 100%;
+        border-radius: 3px;
+    }
+    .mission_contain::after {
+        width: calc(100% - 7px);
+        height: calc(100% - 7px);
+    }
+    .mission_content {
+        gap: 10px;
+        margin: 15px;
+    }
+    .mission_icon > svg {
+        width: 60px;
+    }
+    .mission_text > h1 {
+        font-size: 1.8em;
+        height: 30px;
+    }
+    .mission_text > p {
+        letter-spacing: .04em;
+    }
+    .mission_select {
+        margin-right: 7px;
+        border-radius: 2px;
+        height: 74px;
+        width: 33px;
+    }
+    .selected {
+        height: 11px;
+        width: 11px;
+    }
+    .selected > div{
+        width: 7px;
+        height: 7px;
+    }
+
+    .mission_details {
+        height: 90%;
+        width: 70%;
+    }
+    .mission_details::before {
+        width: calc(100% - 8px);
+        height: calc(100% - 8px);
+        margin: 2px;
+    }
+    .details {
+        padding: 30px;
+        width: 600px;
+    }
+    .details > h1 {
+        height: 35px;
+        margin-top: 10px;
+    }
+    .delegator_local {
+        margin-top: 10px;
+    }
+    .delegator {
+        gap: 5px;
+        letter-spacing: .06em;
+    }
+    .local {
+        letter-spacing: .04em;
+    }
+    .text_details {
+        font-size: 1.3em;
+        margin-top: 10px;
+    }
+    .text_details > p {
+        margin-top: 25px;
+    }
+        
+*/

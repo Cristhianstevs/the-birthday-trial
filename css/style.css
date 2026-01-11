@@ -1,0 +1,390 @@
+@font-face {
+    font-family: 'Rodin';
+    src: url('../fonts/FOT-Rodin\ Pro\ B.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Hylia';
+    src: url('../fonts/HyliaSerifBeta-Regular.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Calamity-Bold';
+    src: url('../fonts/Calamity-Bold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Calamity-Regular';
+    src: url('../fonts/Calamity-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* =================================== */
+/* ===            GERAL            === */
+/* =================================== */
+
+* {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+body {
+    font-family: 'Calamity-Regular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("https://wallpapers.com/images/hd/hd-breath-of-the-wild-landscape-fun64agsp3uv9feh.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(3px) brightness(35%);
+    line-height: 1.6em;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+body::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #1d100050;
+}
+body > img {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    filter: grayscale(60%) opacity(15%);
+}
+span {
+    color: #f0384e;
+}
+
+/* =================================== */
+/* ===           HEADER            === */
+/* =================================== */
+
+header {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 160px;
+    width: calc(100% - 180px);
+    margin: 0 60px 0 60px;
+    z-index: 10;
+    color: #e4e7cd;
+}
+.header_mobile {
+    display: none;
+}
+.hearts {
+    display: flex;
+    flex-wrap: wrap;
+    width: 480px;
+    gap: 0;
+}
+.hearts > svg {
+    margin: 3px;
+    height: 25px;
+    width: 25px;
+}
+.header_info {
+    display: flex;
+    gap: 5px;
+    margin-top: 15px;
+}
+.header_info_title > h1{
+    font-family: 'Calamity-Bold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.8em;
+    font-weight: 700;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: -20px;
+    height: 15px;
+}
+.header_info_icon {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+.header_info_icon > svg {
+    width: 32px;
+}
+.header_info_icon > h2 {
+    font-size: 1.4em;
+    text-align: center;
+    height: 30px;
+    width: 110px;
+    letter-spacing: 1px;
+    transform: scaleY(.92);
+}
+.rupees {
+    display: flex;
+    align-items: center;
+}
+.rupees > img {
+    width: 60px;
+}
+.rupees > h1 {
+    letter-spacing: 3px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* =================================== */
+/* ===         CONTAIN_PRI         === */
+/* =================================== */
+
+.triforce_top {
+    width: 17px;
+    position: absolute;
+    z-index: 10;
+    top: 160px;
+    left: 59px;
+}
+.triforce_botton {
+    width: 17px;
+    position: absolute;
+    z-index: 10;
+    top: 1045px;
+    left: 59px;
+    transform: rotate(270deg);
+}
+
+.contain_pri {
+    width: calc(100% - 60px);
+    height: 900px;
+    transform: translateY(160px);
+    right: 0;
+    position: absolute;
+    background-color: #ffffff12;
+    border: 2px solid #ffffff10;
+    clip-path: polygon(
+        20px 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 20px 100%, 0 calc(100% - 20px), 0 20px
+    );
+    border-right: 0;
+    color: #fcfee5;
+}
+
+.content_pri {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =============== */
+/* === MISSION === */
+/* =============== */
+
+.mission {
+    height: 95%;
+    width: 70%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.icon_area {
+    position: relative;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10px;
+    height: 140px;
+}
+.icon_area::before {
+    content: "";
+    position: absolute;
+    background-color: #fcfee4;
+    bottom: 20px;
+    left: 60px;
+    z-index: 20;
+    height: 2px;
+    width: 50px;
+}
+.icon_area::after {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(to right, #ffffff00, #ffffff20 5%);
+    bottom: 20px;
+    right: 50px;
+    z-index: 20;
+    height: 2px;
+    width: 290px;
+}
+.name_area {
+    position: absolute;
+    transform: translateX(calc(((-200px - 101.22px) / 2) + 15px));
+    z-index: 30;
+    font-size: 1.1em;
+}
+.name_area > h3 {
+    width: 200px;
+    text-align: center;
+    letter-spacing: .03em;
+}
+.icon_area > svg {
+    height: 60px;
+    margin-top: 35px;
+}
+.mission_area {
+    padding: 10px;
+    width: 650px;
+    position: relative;
+}
+.mission_contain {
+    background-color: #00000050;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 3px;
+    position: relative;
+}
+.mission_contain::after {
+    content: "";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: calc(100% - 7px);
+    height: calc(100% - 7px);
+    right: 50%;
+    transform: translateX(50%);
+    border: 2px solid #fcfee490;
+    box-shadow: 0 0 4px 0 #fcfee460;
+    border-radius: 3px;
+}
+.mission_content {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+.mission_icon {
+
+}
+.mission_icon > svg {
+    width: 65px;
+}
+.mission_text {
+
+}
+.mission_text > h1 {
+    font-family: 'Calamity-Bold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.8em;
+    height: 30px;
+}
+.mission_text > p {
+    font-weight: 600;
+    color: #f9d008;
+    letter-spacing: .04em;
+}
+.mission_select {
+    background-color: #ffffff15;
+    margin-right: 7px;
+    border-radius: 2px;
+    height: 74px;
+    width: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.selected {
+    height: 11px;
+    width: 11px;
+    border-radius: 50%;
+    border: 5px solid #f9d008;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 10px 0 #f9d008;
+    filter: blur(.2px);
+}
+.selected > div{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    z-index: 50;
+    background-color: #f9d008;
+    box-shadow: 0 0 10px 4px #f9d008;
+}
+
+/* ======================= */
+/* === MISSION_DETAILS === */
+/* ======================= */
+
+.mission_details {
+    height: 90%;
+    width: 70%;
+    z-index: 0;
+    position: relative;
+    background-image: linear-gradient(to right, #00000040 60%, #00000000);
+    border-radius: 3px;
+}
+.mission_details::before {
+    content: "";
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    margin: 2px;
+    border-radius: 3px;
+    position: absolute;
+    border: 2px solid #ffffff40;
+    border-right: none;
+}
+.details {
+    z-index: 20;
+    padding: 30px;
+    width: 600px;
+}
+.details > h1 {
+    font-family: 'Calamity-Bold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 35px;
+    margin-top: 10px;
+}
+.delegator_local {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.delegator {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    color: rgb(159, 159, 159);
+}
+.local {
+    font-weight: 600;
+    color: #f9d008;
+    letter-spacing: .04em;
+}
+.text_details {
+    font-size: 1.3em;
+    margin-top: 10px;
+}
+.text_details > p {
+    margin-top: 25px;
+}

@@ -32,6 +32,8 @@
     }
 }
 
+
+
 @media screen and (max-width: 1200px) {
     * {
         overflow: visible;
@@ -74,6 +76,8 @@
     }
 }
 
+
+
 @media screen and (max-width: 750px) {
     body {
         display: flex;
@@ -92,9 +96,6 @@
     .header_info_title > h1 {
         font-size: 2.2em;
     }
-    .rupees {
-          
-    }
     .triforce_top {
         left: 14px;
     }
@@ -105,229 +106,202 @@
         width: calc(100% - 15px);
     }
     .mission_area {
-        width: 500px;
+        width: 600px;
+    }
+    .divisor_botton01 {
+        display: block;
+    }
+    .divisor_botton02 {
+        display: none;
     }
 }
 
-/* @media screen and (max-width: 550px) {
-    .mission_contain {
-        width: 100%;
-    }
-    .mission_content {
-        gap: 1.3vw;
-        margin: 3vw;
-    }
-    .mission_icon > svg {
-        width: 12vw;
-    }
-    .mission_text > h1 {
-        font-size: 5.2vw;
-        height: 5.2vw;
-    }
-    .mission_text > p {
-        font-size: 3vw;
-    }
-    .mission_select {
-        margin-right: 1.2vw;
-        height: 14vw;
-        width: 6.3vw;
-    }
-    .selected {
-        height: 2vw;
-        width: 2vw;
-    }
-    .selected > div{
-        width: 1.4vw;
-        height: 1.4vw;
-    }
-} */
 
-/* 
 
+@media screen and (max-width: 650px) {
     body {
-        line-height: 1.6em;
+        height: 1000px;
     }
 
-    header {
-        height: 160px;
-        width: calc(100% - 180px);
-        margin: 0 60px 0 60px;
-    }
     .hearts {
-        width: 480px;
-        gap: 0;
+        width: 220px;
     }
     .hearts > svg {
-        margin: 3px;
-        height: 25px;
-        width: 25px;
+        margin: 1.2px;
+        height: 12px;
+        width: 12px;
     }
-    .header_info {
-        gap: 5px;
-        margin-top: 15px;
+
+
+    header {
+        height: 90px;
     }
-    .header_info_title > h1{
-        font-size: 2.8em;
-        font-weight: 700;
-        height: 50px;
+    .header_mobile {
+        margin: 70px 0 0 -40px;
+    }
+    .header_info_title > h1 {
+        font-size: 1.5em;
     }
     .circle {
-        gap: 6px;
-        margin-top: -20px;
+        gap: 4px;
+        margin-top: -35px;
         height: 15px;
     }
+    .circle_select {
+        width: 5px;
+        height: 5px;
+
+    }
+    .circle_not_select {
+        width: 4px;
+        height: 4px;
+    }
     .header_info_icon {
-        gap: 5px;
-        margin-top: 10px;
+        gap: 4px;
+        margin-top: 15px;
     }
     .header_info_icon > svg {
-        width: 32px;
+        width: 22px;
     }
     .header_info_icon > h2 {
-        font-size: 1.4em;
-        height: 30px;
-        width: 110px;
-        letter-spacing: 1px;
-        transform: scaleY(.92);
+        font-size: 1em;
+        width: 80px;
     }
+
     .rupees > img {
-        width: 60px;
+        width: 30px;
     }
     .rupees > h1 {
-        letter-spacing: 3px;
-        height: 40px;
+        font-size: 1em;
+        letter-spacing: 2px;
+        height: 30px;
     }
+
 
     .triforce_top {
-        width: 17px;
-        top: 160px;
-        left: 59px;
+        top: 190.5px;
     }
     .triforce_botton {
-        width: 17px;
-        top: 1045px;
-        left: 59px;
+        top: 895px;
     }
-
     .contain_pri {
-        width: calc(100% - 60px);
-        height: 900px;
-        transform: translateY(160px);
+        transform: translateY(190px);
+        height: 720px;
     }
-
     .content_pri {
-        height: 100%;
+        justify-content: start;
     }
-
     .mission {
-        height: 95%;
-        width: 70%;
+        margin-top: 15px;
     }
     .icon_area {
-        width: 500px;
-        gap: 30px;
-        margin-top: 10px;
-        height: 140px;
+        width: 300px;
+        gap: 15px;
+        height: 91px;
     }
     .icon_area::before {
-        bottom: 20px;
-        left: 60px;
-        z-index: 20;
-        height: 2px;
-        width: 50px;
+        left: 50px;
+        height: 1px;
+        width: 32px;
     }
     .icon_area::after {
-        bottom: 20px;
-        right: 50px;
-        height: 2px;
-        width: 290px;
+        right: 40px;
+        height: 1px;
+        width: 150px;
     }
     .name_area {
-        transform: translateX(calc(((-200px - 101.22px) / 2) + 15px));
-        font-size: 1.1em;
+        transform: translateX(calc(((-66px - 101.22px) / 2) + 15px));
+        font-size: .6em;
     }
     .name_area > h3 {
-        width: 200px;
-        letter-spacing: .03em;
+        width: 130px;
     }
     .icon_area > svg {
-        height: 60px;
-        margin-top: 35px;
+        height: 30px;
+        margin-top: 25px;
     }
+    #r_joystick {
+        bottom: 7px;
+        width: 20px;
+        height: 30px; 
+        left: 85px;
+    }
+    #meuSvg {
+        bottom: 17px;
+        width: 10px; 
+        height: 10px;
+        left: 109px;
+    }
+
     .mission_area {
-        padding: 10px;
-        width: 650px;
-    }
-    .mission_contain {
-        width: 100%;
-        border-radius: 3px;
+        width: 320px;
     }
     .mission_contain::after {
-        width: calc(100% - 7px);
-        height: calc(100% - 7px);
+        width: calc(100% - 8px);
+        height: calc(100% - 8px);
+        border: 1px solid #fcfee490;
     }
     .mission_content {
-        gap: 10px;
+        width: 100%;
+        justify-content: start;
+        align-items: center;
         margin: 15px;
     }
     .mission_icon > svg {
-        width: 60px;
+        height: 25px;
     }
     .mission_text > h1 {
-        font-size: 1.8em;
-        height: 30px;
+        font-size: 1em;
     }
     .mission_text > p {
+        font-size: .6em;
         letter-spacing: .04em;
+        margin-top: -14px;
     }
     .mission_select {
-        margin-right: 7px;
+        margin-right: 6px;
         border-radius: 2px;
-        height: 74px;
-        width: 33px;
+        height: 59px;
+        width: 35px;
     }
     .selected {
-        height: 11px;
-        width: 11px;
+        height: 9px;
+        width: 9px;
+        border-radius: 50%;
     }
     .selected > div{
-        width: 7px;
-        height: 7px;
+        width: 6px;
+        height: 6px;
     }
-
     .mission_details {
-        height: 90%;
-        width: 70%;
-    }
-    .mission_details::before {
-        width: calc(100% - 8px);
-        height: calc(100% - 8px);
-        margin: 2px;
-    }
-    .details {
-        padding: 30px;
-        width: 600px;
+        margin-top: -140px;
+        line-height: 1em;
+        height: fit-content;
     }
     .details > h1 {
-        height: 35px;
-        margin-top: 10px;
-    }
-    .delegator_local {
-        margin-top: 10px;
+        font-size: 1.1em;
+        height: 23px;
+        margin-top: 0;
     }
     .delegator {
         gap: 5px;
-        letter-spacing: .06em;
+        font-size: .6em;
+    }
+    .delegator > img {
+        width: 10px;
     }
     .local {
-        letter-spacing: .04em;
+        font-size: .6em;
     }
     .text_details {
-        font-size: 1.3em;
+        font-size: .8em;
         margin-top: 10px;
     }
     .text_details > p {
-        margin-top: 25px;
+        margin-top: 10px;
     }
-        
-*/
+    .divisor {
+        width: 300px;
+    }
+}
+

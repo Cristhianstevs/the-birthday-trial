@@ -114,6 +114,21 @@ header {
     margin-top: -20px;
     height: 15px;
 }
+.circle_select {
+    width: 7px;
+    height: 7px;
+    background-color: #e4e7cd;
+    border-radius: 36%;
+    transform: rotate(45deg);
+}
+.circle_not_select {
+    width: 6px;
+    height: 6px;
+    background-color: #e4e7cd50;
+    border-radius: 36%;
+    transform: rotate(45deg);
+
+}
 .header_info_icon {
     display: flex;
     align-items: center;
@@ -245,6 +260,20 @@ header {
     height: 60px;
     margin-top: 35px;
 }
+#r_joystick {
+    position: absolute;
+    bottom: 6px;
+    width: 35px;
+    height: 30px; 
+    left: 115px;
+}
+#meuSvg {
+    position: absolute;
+    bottom: 14px;
+    width: 18px; 
+    height: 18px;
+    left: 150px;
+}
 .mission_area {
     padding: 10px;
     width: 650px;
@@ -281,14 +310,8 @@ header {
     align-items: center;
     margin: 15px;
 }
-.mission_icon {
-
-}
 .mission_icon > svg {
-    width: 65px;
-}
-.mission_text {
-
+    height: 40px;
 }
 .mission_text > h1 {
     font-family: 'Calamity-Bold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -313,6 +336,7 @@ header {
 .selected {
     height: 11px;
     width: 11px;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     border: 5px solid #f9d008;
     display: flex;
@@ -323,8 +347,10 @@ header {
     filter: blur(.2px);
 }
 .selected > div{
+    position: absolute;
     width: 7px;
     height: 7px;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     z-index: 50;
     background-color: #f9d008;
@@ -347,7 +373,9 @@ header {
     content: "";
     width: calc(100% - 8px);
     height: calc(100% - 8px);
-    margin: 2px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 3px;
     position: absolute;
     border: 2px solid #ffffff40;
@@ -376,6 +404,9 @@ header {
     letter-spacing: .06em;
     color: rgb(159, 159, 159);
 }
+.delegator > img {
+    width: 18px;
+}
 .local {
     font-weight: 600;
     color: #f9d008;
@@ -387,4 +418,25 @@ header {
 }
 .text_details > p {
     margin-top: 25px;
+}
+.divisor_top {
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff30;
+    margin-top: 5px;
+}
+.divisor_botton01 {
+    display: none;
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff30;
+    margin-top: 60px;
+}
+.divisor_botton02 {
+    width: 600px;
+    height: 1px;
+    background-color: #ffffff30;
+    margin-bottom: 40px;
+    bottom: 0;
+    position: absolute;
 }

@@ -59,7 +59,6 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
                 <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
             </svg>
-            <br>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
                 <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
             </svg>
@@ -111,9 +110,9 @@
                 <h1>Diário de viagem</h1>
                 <br>
                 <div class="circle">
-                    <div style="width: 7px; height: 7px; background-color: #e4e7cd; border-radius: 36%; transform: rotate(45deg);"></div>
-                    <div style="width: 6px; height: 6px; background-color: #e4e7cd50; border-radius: 36%; transform: rotate(45deg);"></div>
-                    <div style="width: 6px; height: 6px; background-color: #e4e7cd50; border-radius: 36%; transform: rotate(45deg);"></div>
+                    <div class="circle_select"></div>
+                    <div class="circle_not_select"></div>
+                    <div class="circle_not_select"></div>
                 </div>
             </div>
             <div class="header_info_icon">
@@ -135,9 +134,9 @@
                 <h1>Diário de viagem</h1>
                 <br>
                 <div class="circle">
-                    <div style="width: 7px; height: 7px; background-color: #e4e7cd; border-radius: 36%; transform: rotate(45deg)"></div>
-                    <div style="width: 6px; height: 6px; background-color: #e4e7cd50; border-radius: 36%; transform: rotate(45deg);"></div>
-                    <div style="width: 6px; height: 6px; background-color: #e4e7cd50; border-radius: 36%; transform: rotate(45deg)"></div>
+                    <div class="circle_select"></div>
+                    <div class="circle_not_select"></div>
+                    <div class="circle_not_select"></div>
                 </div>
             </div>
             <div class="header_info_icon">
@@ -177,16 +176,16 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -15 30 30">
                         <path d="M 0 15 L -15 0 L 0 -15 L 15 0 L 0 15 M -10 0 L -7 3 L -4 0 L -3 -5 Q 0 -9 3 -5 L 4 0 L 7 3 L 10 0 L 0 -10 L -10 0 M -2 9 L 2 9 L 2 5 Q 0 1 -2 5 L -2 9" fill="#ffffff50"/>
                     </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-134.257 -81 269.6 197.1" width="60px">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-134.257 -141 269.6 257.1">
                         <path d="M -4 79 C -11 94 -28 118 -58 116 C -47 106 -40 86 -48 79 C -161 79 -165 -80 -48 -81 L 47 -81 C 164 -81 168 79 40 79 M -69 -1 C -69 21 -37 21 -37 -1 S -69 -23 -69 -1 M 37 -1 C 37 21 69 21 69 -1 S 37 -23 37 -1 M -16 -1 C -16 21 16 21 16 -1 S -16 -23 -16 -1" fill="#ffffff50"/>
                     </svg>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-52 -55 104 98">
                         <path d="M 52 43 L 20 43 L 20 37 L 0 37 L -20 37 L -20 43 L -52 43 L -52 -55 L -20 -55 L -20 -49 L 0 -49 L 20 -49 L 20 -55 L 52 -55 L 52 43 M 29 34 L 43 34 L 43 20 L 29 20 L 29 34 M 29 -46 L 29 -32 L 43 -32 L 43 -46 L 29 -46 M 29 12 L 43 12 L 43 -2 L 29 -2 L 29 12 M 29 -10 L 43 -10 L 43 -24 L 29 -24 L 29 -10 M -43 -46 L -43 -32 L -29 -32 L -29 -46 L -43 -46 M -43 -24 L -43 -10 L -29 -10 L -29 -24 L -43 -24 M -43 -2 L -43 12 L -29 12 L -29 -2 L -43 -2 M -43 20 L -43 34 L -29 34 L -29 20 L -43 20 M -20 -40 L -20 -11 L 20 -11 L 20 -40 L -20 -40 M -20 28 L 20 28 L 20 -1 L -20 -1 L -20 28" fill="#ffffff50"/>
                     </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-53 -57 106 95" style="position: absolute; bottom: 6px; width: 35px; height: 30px; left: 115px;">
+                    <svg id="r_joystick" xmlns="http://www.w3.org/2000/svg" viewBox="-53 -57 106 95">
                         <path d="M 0 29 C 35 29 53 6 53 -15 C 53 -28 39 -58 0 -58 C -39 -58 -53 -28 -53 -15 C -53 6 -35 29 0 29 M -17 29 C -5 31 5 31 17 29 L 17 37 Q 17 38 16 38 L -16 38 Q -17 38 -17 37 L -17 29 M 0 16 C -26 16 -44 -2 -44 -15 C -44 -36 -21 -52 0 -52 S 44 -36 44 -15 C 44 -2 26 16 0 16 L 0 14 C -23 14 -42 -2 -42 -15 C -43 -36 -20 -51 0 -51 S 43 -36 42 -15 C 42 -2 23 14 0 14 M -12 -2 L -5 -2 L -5 -16 L 2 -16 L 7 -2 L 15 -2 L 9 -16 C 19 -18 19 -39 4 -39 L -12 -39 L -12 -2 M -5 -21 L -5 -33 L 2 -33 C 10 -33 10 -21 2 -21 L -5 -21" fill="#fcfee4"/>
                     </svg>
-                    <svg id="meuSvg" xmlns="http://www.w3.org/2000/svg" viewBox="-16.375 -27.8934 32.38 55.79" style="position: absolute; bottom: 14px; width: 18px; height: 18px; left: 150px;">
+                    <svg class="seta_r_joystick" id="meuSvg" xmlns="http://www.w3.org/2000/svg" viewBox="-16.375 -27.8934 32.38 55.79">
                         <path d="M 13 4 L -13 26 C -16 29 -17 28 -16 26 C -3 -7 -3 7 -16 -26 C -17 -28 -16 -29 -13 -26 L 13 -4 C 17 -1 17 1 13 4" fill="#fcfee4"/>
                     </svg>
                 </div>
@@ -292,10 +291,10 @@
             <div class="mission_details">
                 <div class="details">
                     <h1>Um presente misterioso</h1>
-                    <div style="width: 100%; height: 1px; background-color: #ffffff30; margin-top: 5px;"></div>
+                    <div class="divisor_top"></div>
                     <div class="delegator_local">
                         <div class="delegator">
-                            <img src="https://cdn-icons-png.flaticon.com/512/5610/5610989.png" alt="Alerta" width="18px">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5610/5610989.png" alt="Alerta">
                             <p>Cristhian Esteves</p>
                         </div>
                         <div class="local">Caneca Fina</div>
@@ -305,7 +304,8 @@
                         <p>A princesa Zelda está lutando para impedir que <span>Ganon</span> saia do Castelo de Hyrule, mas ela não conseguirá contê-lo por muito tempo. A cada segundo que passa, ele está mais perto de recuperar sua força total e destruir o mundo.</p>
                         <p>Você deve ajudar a princesa Zelda a derrotar Ganon antes que o pior aconteça!</p>
                     </div>
-                    <div style="width: 600px; height: 1px; background-color: #ffffff30; margin-bottom: 40px; bottom: 0; position: absolute;"></div>
+                    <div class="divisor_botton01"></div>
+                    <div class="divisor_botton02"></div>
                 </div>
             </div>
         </div>

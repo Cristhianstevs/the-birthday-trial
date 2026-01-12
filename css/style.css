@@ -337,28 +337,17 @@ header {
     justify-content: center;
 }
 .selected {
-    height: 11px;
-    width: 11px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    border: 5px solid #f9d008;
+    height: 18px;
+    width: 18px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    position: relative;
-    box-shadow: 0 0 10px 0 #f9d008;
-    filter: blur(.2px);
+    justify-content: center;
+    filter: drop-shadow(0 0 5px #f9d008) drop-shadow(0 0 5px #f9d10880);
 }
-.selected > div{
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    z-index: 50;
-    background-color: #f9d008;
-    box-shadow: 0 0 10px 4px #f9d008;
+.selected > svg {
+
 }
+
 
 /* ======================= */
 /* === MISSION_DETAILS === */
@@ -463,8 +452,8 @@ header {
 }
 .action_buttons p {
     padding: 10px;
-    text-shadow: 0 0 5px #e4e7cd50;
-    letter-spacing: .04em;
+    text-shadow: 0 0 5px #e4e7cd20;
+    letter-spacing: .05em;
 }
 .b_button, .a_button {
     display: flex;

@@ -310,6 +310,47 @@
             </div>
         </div>
     </div>
+    
+    <div class="action_buttons">
+        <div class="b_button">
+            <p>Voltar</p>
+            <div class="b_button_icon">
+                <svg width="22" height="22" viewBox="0 0 22 22" style="display: flex; align-items: center; justify-content: center;">
+                    <defs>
+                        <mask id="cut_button_b">
+                        <rect width="100%" height="100%" fill="white"/>
+                        <text x="52%" y="72%" text-anchor="middle"
+                                font-size="12" font-weight="900"
+                                fill="black">B</text>
+                        </mask>
+                    </defs>
+
+                    <circle cx="11" cy="11" r="11"
+                            fill="#e4e7cd"
+                            mask="url(#cut_button_b)" />
+                </svg>
+            </div>
+        </div>
+        <div class="a_button">
+            <p>Definir destino</p>
+            <div class="a_button_icon">
+                <svg width="22" height="22" viewBox="0 0 22 22" style="display: flex; align-items: center; justify-content: center;">
+                    <defs>
+                        <mask id="cut_button_a">
+                        <rect width="100%" height="100%" fill="white"/>
+                        <text x="52%" y="72%" text-anchor="middle"
+                                font-size="12" font-weight="bold"
+                                fill="black">A</text>
+                        </mask>
+                    </defs>
+
+                    <circle cx="11" cy="11" r="11"
+                            fill="#e4e7cd"
+                            mask="url(#cut_button_a)" />
+                </svg>
+            </div>
+        </div>
+    </div>
 
     <script>
         const container = document.getElementById("meuTexto");

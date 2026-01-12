@@ -58,7 +58,7 @@ body > img {
     position: absolute;
     right: 0;
     height: 100%;
-    filter: grayscale(60%) opacity(15%);
+    filter: grayscale(60%) opacity(10%);
 }
 span {
     color: #f0384e;
@@ -259,6 +259,7 @@ header {
 .icon_area > svg {
     height: 60px;
     margin-top: 35px;
+    cursor: pointer;
 }
 #r_joystick {
     position: absolute;
@@ -278,6 +279,7 @@ header {
     padding: 10px;
     width: 650px;
     position: relative;
+    cursor: pointer;
 }
 .mission_contain {
     background-color: #00000050;
@@ -295,10 +297,11 @@ header {
     display: flex;
     justify-content: center;
     align-content: center;
-    width: calc(100% - 7px);
-    height: calc(100% - 7px);
+    width: calc(100% - 9px);
+    height: calc(100% - 8px);
     right: 50%;
-    transform: translateX(50%);
+    bottom: 50%;
+    transform: translate(50%, 50%);
     border: 2px solid #fcfee490;
     box-shadow: 0 0 4px 0 #fcfee460;
     border-radius: 3px;
@@ -439,4 +442,35 @@ header {
     margin-bottom: 40px;
     bottom: 0;
     position: absolute;
+}
+
+/* ====================================== */
+/* ===         ACTION_BUTTONS         === */
+/* ====================================== */
+
+.action_buttons {
+    width: 500px;
+    height: 50px;
+    top: 1065px;
+    right: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    color: #e4e7cd;
+    font-weight: 800;
+}
+.action_buttons p {
+    padding: 10px;
+    text-shadow: 0 0 5px #e4e7cd50;
+    letter-spacing: .04em;
+}
+.b_button, .a_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.b_button_icon, .a_button_icon {
+    font-family: 'Calamity-Bold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

@@ -34,7 +34,7 @@
 }
 body {
     font-family: 'Calamity-Regular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url("https://wallpapers.com/images/hd/hd-breath-of-the-wild-landscape-fun64agsp3uv9feh.jpg");
+    background-image: url("../public/background01_zelda.jpg");
     height: 100vh;
     width: 100vw;
     background-size: cover;

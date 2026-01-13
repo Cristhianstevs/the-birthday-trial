@@ -15,6 +15,23 @@
         box-shadow: 0 0 8px #fcfee490;
     }
 }
+/* @keyframes glow_bottom {
+    0% {
+        box-shadow: 0 6px 5px -5px #fcfee4;
+    }
+    25% {
+        box-shadow: 0 6px 4px -4px #fcfee440;
+    }
+    50% {
+        box-shadow: 0 6px 3px -3px #fcfee420;
+    }
+    75% {
+        box-shadow: 0 6px 4px -4px #fcfee440;
+    }
+    100% {
+        box-shadow: 0 6px 5px -5px #fcfee4;
+    }
+} */
 @keyframes glow02 {
     0% {
         filter: drop-shadow(0 0 2px #fcfee4) drop-shadow(0 0 1px #fcfee4);
@@ -92,11 +109,16 @@
 body {
     font-family: 'Calamity-Regular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #111213;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
 }
 #bg {
     position: relative;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-image: url("../public/background01_zelda.jpg");
     background-size: cover;
     background-position: center bottom;
@@ -104,7 +126,7 @@ body {
     line-height: 1.6em;
     display: flex;
     justify-content: space-between;
-    animation: blur 4s;
+    /* animation: blur 4s; */
 }
 #bg::before {
     content: "";
@@ -128,6 +150,111 @@ body {
 span {
     color: #f0384e;
 }
+
+/* =================================== */
+/* ===        MODAL_RESPONSE       === */
+/* =================================== */
+
+.modal_response_overlay {
+    position: absolute;
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000060;
+    backdrop-filter: blur(8px);
+    color: #e4e7cd;
+    cursor: pointer;
+}
+.modal_response {
+    position: absolute;
+    height: 290px;
+    width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    cursor: auto;
+}
+.modal_response_content {
+    width: 1100px;
+    height: 225px;
+    border-radius: 3000px;
+    position: absolute;
+    background-color: #000000c0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal_response_content > svg {
+    height: 100px;
+    filter: blur(.7px);
+    position: absolute;
+}
+#dialog_border_left {
+    left: 30px;
+}
+#dialog_border_right {
+    right: 30px;
+}
+.modal_response > h2 {
+    position: absolute;
+    top: 0;
+    left: 160px;
+    font-size: 2em;
+    z-index: 50;
+}
+.response {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    height: 100%;
+}
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  padding: 0 10px;
+}
+.input-wrapper::after {
+    content: '';
+    width: 253px;
+    height: 4px;
+    bottom: 9px;
+    animation: glow 1s infinite;
+    position: absolute;
+    z-index: 100;
+}
+.input-wrapper > input {
+    font-family: 'Calamity-Bold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: transparent;
+    color: #e4e7cd;
+    font-size: 2.2em;
+    border: none;
+    border-bottom: 5px solid #e4e7cd;
+    text-align: center;
+    width: 250px;
+    height: 70px;
+    transform: translateY(5px);
+    outline: none;
+    position: relative;
+}
+.input-wrapper > input::placeholder {
+    color: #e4e7cd1d;
+    transition: ease-in-out .2s;
+}
+.input-wrapper > input:focus::placeholder {
+    transform: translateY(-5px);
+}
+
+
+
 
 /* =================================== */
 /* ===           HEADER            === */
@@ -244,7 +371,7 @@ header {
     width: 17px;
     position: absolute;
     z-index: 10;
-    top: 1045px;
+    top: 1046px;
     left: 59px;
     transform: rotate(270deg);
 }
@@ -509,7 +636,7 @@ header {
     cursor: pointer;
     transform: translateX(-10px);
     margin-top: 20px;
-    animation: blur_button 5s;
+    /* animation: blur_button 5s; */
 }
 .button > .tri {
     display: none;
@@ -557,8 +684,9 @@ header {
 .button_content > p {
     font-family: 'Calamity-Bold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     letter-spacing: .03em;
-    font-size: 1.2em;
+    font-size: 1.3em;
     user-select: none;
+    transform: scaleY(1.10);
 }
 .divisor_top {
     width: 100%;

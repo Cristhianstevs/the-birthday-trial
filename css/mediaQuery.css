@@ -1,6 +1,6 @@
 
 @media screen and (max-width: 1500px){
-    body > img {
+    #bg > img {
         filter: grayscale(60%) opacity(4%);
     }
     .hearts {
@@ -27,7 +27,7 @@
         margin-top: 30px;
     }
     .mission_details {
-        background-color:#00000060;
+        background-color:#00000080;
         background-image: none;
         display: flex;
         justify-content: center;
@@ -48,7 +48,7 @@
         overflow: visible;
         overflow-x: hidden;
     }
-    body {
+    #bg {
         height: 1400px;
         overflow-y: scroll;
     }
@@ -91,7 +91,7 @@
 
 
 @media screen and (max-width: 750px) {
-    body {
+    #bg {
         display: flex;
         justify-content: center;
     }
@@ -132,7 +132,7 @@
 
 
 @media screen and (max-width: 650px) {
-    body {
+    #bg {
         height: 1000px;
     }
 

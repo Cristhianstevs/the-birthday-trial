@@ -408,14 +408,14 @@
 
         function verificar() {
             if (
-                item1.value.trim().toLowerCase() === "soldado" ||
-                item1.value.trim().toLowerCase() === "soldier" &&
-                item2.value.trim().toLowerCase() === "korok" &&
-                item3.value.trim().toLowerCase() === "fogo" ||
-                item3.value.trim().toLowerCase() === "fire"
+                item1.value.trim().toLowerCase() === "item1" ||
+                item1.value.trim().toLowerCase() === "item1(ingles)" &&
+                item2.value.trim().toLowerCase() === "item2" &&
+                item3.value.trim().toLowerCase() === "item3" ||
+                item3.value.trim().toLowerCase() === "item3(ingles)"
             ) {
                 setTimeout(() => {
-                    alert("Parabens")
+                    alert("Parabéns")
                 }, 500)
             }
         }

@@ -429,44 +429,19 @@
 
         let korokFound = false;
 
-        function showMessage(text) {
-            const msg = document.createElement('div');
-            msg.textContent = text;
-
-            msg.style.position = 'fixed';
-            msg.style.bottom = '20%';
-            msg.style.left = '50%';
-            msg.style.transform = 'translateX(-50%)';
-            msg.style.color = '#fcfee4';
-            msg.style.fontSize = '22px';
-            msg.style.fontFamily = 'sans-serif';
-            msg.style.textShadow = '0 0 8px #000';
-            msg.style.opacity = '0';
-            msg.style.transition = 'opacity 0.3s ease';
-
-            document.body.appendChild(msg);
-
-            requestAnimationFrame(() => {
-                msg.style.opacity = '1';
-            });
-
-            setTimeout(() => msg.style.opacity = '0', 1200);
-            setTimeout(() => msg.remove(), 1600);
-        }
-
         korok.addEventListener('click', () => {
 
             if (!korokFound) {
                 sound_yahaha.currentTime = 0;
                 sound_yahaha.play();
 
-                showMessage('🌱 Ya-ha-ha! Você me encontrou!');
+                alert('🌱 Ya-ha-ha! Você me encontrou!');
                 korokFound = true;
 
                 korok.style.animation = 'none';
 
             } else {
-                showMessage('Hihi! 😄');
+                alert('Hihi! 😄');
             }
 
         });

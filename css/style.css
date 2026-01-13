@@ -43,6 +43,17 @@
         filter: drop-shadow(0 0 2px #fcfee4) drop-shadow(0 0 1px #fcfee4);
     }
 }
+@keyframes glow03 {
+    0% {
+        filter: drop-shadow(0 0 2px #fcfee450) drop-shadow(0 0 1px #fcfee450);
+    }
+    50% {
+        filter: drop-shadow(0 0 0px #fcfee450);
+    }
+    100% {
+        filter: drop-shadow(0 0 2px #fcfee450) drop-shadow(0 0 1px #fcfee450);
+    }
+}
 @keyframes blur {
     0% {
         filter: blur(15px);
@@ -170,7 +181,7 @@ span {
 }
 .modal_response {
     position: absolute;
-    height: 290px;
+    height: 315px;
     width: 1200px;
     display: flex;
     align-items: center;
@@ -206,6 +217,7 @@ span {
     left: 160px;
     font-size: 2em;
     z-index: 50;
+    line-height: 50px;
 }
 .response {
     display: flex;
@@ -225,9 +237,9 @@ span {
 .input-wrapper::after {
     content: '';
     width: 253px;
-    height: 4px;
+    height: 2px;
     bottom: 9px;
-    animation: glow 1s infinite;
+    animation: glow 1.5s infinite;
     position: absolute;
     z-index: 100;
 }
@@ -237,10 +249,11 @@ span {
     color: #e4e7cd;
     font-size: 2.2em;
     border: none;
-    border-bottom: 5px solid #e4e7cd;
+    border-bottom: 3px solid #e4e7cd;
     text-align: center;
     width: 250px;
     height: 70px;
+    line-height: 100px;
     transform: translateY(5px);
     outline: none;
     position: relative;
@@ -252,7 +265,13 @@ span {
 .input-wrapper > input:focus::placeholder {
     transform: translateY(-5px);
 }
-
+#exit_dialog {
+    position: absolute;
+    height: 30px;
+    bottom: 15px;
+    z-index: 500;
+    cursor: pointer;
+}
 
 
 

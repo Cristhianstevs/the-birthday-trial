@@ -41,16 +41,19 @@
                 </svg>
                 <div class="response">
                     <div class="input-wrapper">
-                        <input type="text" placeholder="item 1">
+                        <input type="text" id="item1" placeholder="item 1" autocomplete="off">
                     </div>
                     <div class="input-wrapper">
-                        <input type="text" placeholder="item 2">
+                        <input type="text" id="item2" placeholder="item 2" autocomplete="off">
                     </div>
                     <div class="input-wrapper">
-                        <input type="text" placeholder="item 3">
+                        <input type="text" id="item3" placeholder="item 3" autocomplete="off">
                     </div>
                 </div>
             </div>
+            <svg id="exit_dialog" xmlns="http://www.w3.org/2000/svg" viewBox="-64 0 128 89">
+                <path d="M -64 0 L 64 0 L 0 89 L -64 0 M -40 14 L 0 68 L 40 14 L -40 14 M -24 21 L 0 55 L 24 21 L -24 21" fill="#e4e7cd"/>
+            </svg>
         </div>
     </div>
     
@@ -398,6 +401,28 @@
     <audio id="korokSound" src="./public/yahaha.mp3" preload="auto"></audio>
     
     <script>
+
+        const item1 = document.getElementById("item1");
+        const item2 = document.getElementById("item2");
+        const item3 = document.getElementById("item3");
+
+        function verificar() {
+            if (
+                item1.value.trim().toLowerCase() === "soldado" ||
+                item1.value.trim().toLowerCase() === "soldier" &&
+                item2.value.trim().toLowerCase() === "korok" &&
+                item3.value.trim().toLowerCase() === "fogo" ||
+                item3.value.trim().toLowerCase() === "fire"
+            ) {
+                setTimeout(() => {
+                    alert("Parabens")
+                }, 500)
+            }
+        }
+
+        item1.addEventListener("input", verificar);
+        item2.addEventListener("input", verificar);
+        item3.addEventListener("input", verificar);
         
         const korok = document.querySelector('.triforce_top');
         const sound_yahaha = document.getElementById('korokSound');
@@ -421,12 +446,10 @@
 
             document.body.appendChild(msg);
 
-            // fade in
             requestAnimationFrame(() => {
                 msg.style.opacity = '1';
             });
 
-            // fade out
             setTimeout(() => msg.style.opacity = '0', 1200);
             setTimeout(() => msg.remove(), 1600);
         }
@@ -434,18 +457,15 @@
         korok.addEventListener('click', () => {
 
             if (!korokFound) {
-                // 🔊 toca som só na primeira vez
                 sound_yahaha.currentTime = 0;
                 sound_yahaha.play();
 
                 showMessage('🌱 Ya-ha-ha! Você me encontrou!');
                 korokFound = true;
 
-                // para animação quando encontra
                 korok.style.animation = 'none';
 
             } else {
-                // ❌ sem som
                 showMessage('Hihi! 😄');
             }
 
@@ -521,6 +541,36 @@
         }
 
         animate();
+
+        const exitDialog = document.getElementById('exit_dialog');
+
+        let posYDialog = 0.5;
+        let directionDialog = 0.5;
+
+        const maxYDialog = 3;
+        const speedDownDialog = .4;
+        const speedUpDialog = .3;
+
+        function animateDialogVertical() {
+            if (directionDialog === 0.5) {
+                posYDialog += speedDownDialog;
+                if (posYDialog >= maxYDialog) {
+                    directionDialog = -1;
+                }
+            } else {
+                posYDialog -= speedUpDialog;
+                if (posYDialog <= -maxYDialog) {
+                    directionDialog = 0.5;
+                }
+            }
+
+            exitDialog.style.transform = `translateY(${posYDialog}px)`;
+            requestAnimationFrame(animateDialogVertical);
+        }
+
+        animateDialogVertical();
+
+
 
         const tris = document.querySelectorAll('.tri');
 

@@ -29,6 +29,23 @@
         </div>
     </div>
 
+    <div class="modal_korok_overlay">
+        <div class="modal_korok">
+            <div class="modal_korok_content">
+                <h2></h2>
+                <svg id="dialog_border02_left" xmlns="http://www.w3.org/2000/svg" viewBox="-10 -82 20 164">
+                    <path d="M -10 0 L 0 -10 L 10 0 L 0 10 L -10 0 M 0 -18 L -7 -28 L 0 -82 L 7 -28 L 0 -18 M 0 18 L -8 28 L 0 82 L 8 28 L 0 18" fill="#e4e7cd50"/>
+                </svg>
+                <svg id="dialog_border02_right" xmlns="http://www.w3.org/2000/svg" viewBox="-10 -82 20 164">
+                    <path d="M -10 0 L 0 -10 L 10 0 L 0 10 L -10 0 M 0 -18 L -7 -28 L 0 -82 L 7 -28 L 0 -18 M 0 18 L -8 28 L 0 82 L 8 28 L 0 18" fill="#e4e7cd50"/>
+                </svg>
+            </div>
+            <svg id="exit_dialog" xmlns="http://www.w3.org/2000/svg" viewBox="-64 0 128 89">
+                <path d="M -64 0 L 64 0 L 0 89 L -64 0 M -40 14 L 0 68 L 40 14 L -40 14 M -24 21 L 0 55 L 24 21 L -24 21" fill="#e4e7cd"/>
+            </svg>
+        </div>
+    </div>
+
     <div class="modal_response_overlay">
         <div class="modal_response">
             <h2>Responder</h2>
@@ -400,233 +417,7 @@
 
     <audio id="korokSound" src="./public/yahaha.mp3" preload="auto"></audio>
     
-    <script>
-
-        const modalResponse = document.querySelector(".modal_response_overlay");
-        const modalContent = document.querySelector(".modal_response");
-        const exit_dialog = document.getElementById("exit_dialog");
-
-        function openModalResponse() {
-            modalResponse.style.display = "flex";
-            modalResponse.classList.remove("closing");
-            modalResponse.classList.add("active");
-        }
-
-        function closeModalResponse() {
-            modalResponse.classList.remove("active");
-            modalResponse.classList.add("closing");
-        }
-
-        modalResponse.addEventListener("animationend", (event) => {
-            if (event.animationName === "blurOut") {
-                modalResponse.style.display = "none";
-                modalResponse.classList.remove("closing");
-            }
-        });
-
-        modalResponse.addEventListener("click", closeModalResponse);
-
-        exit_dialog.addEventListener("click", closeModalResponse);
-
-        modalContent.addEventListener("click", (event) => {
-            event.stopPropagation();
-        });
-
-
-        const item1 = document.getElementById("item1");
-        const item2 = document.getElementById("item2");
-        const item3 = document.getElementById("item3");
-
-        function verificar() {
-            if (
-                (item1.value.trim().toLowerCase() === "item1" ||
-                item1.value.trim().toLowerCase() === "item1(ingles)") &&
-                item2.value.trim().toLowerCase() === "item2" &&
-                (item3.value.trim().toLowerCase() === "item3" ||
-                item3.value.trim().toLowerCase() === "item3(ingles)")
-            ) {
-                setTimeout(() => {
-                    alert("Parabéns")
-                }, 500)
-            }
-        }
-
-        item1.addEventListener("input", verificar);
-        item2.addEventListener("input", verificar);
-        item3.addEventListener("input", verificar);
-        
-        const korok = document.querySelector('.triforce_top');
-        const sound_yahaha = document.getElementById('korokSound');
-
-        let korokFound = false;
-
-        korok.addEventListener('click', () => {
-
-            if (!korokFound) {
-                sound_yahaha.currentTime = 0;
-                sound_yahaha.play();
-
-                alert('🌱 Ya-ha-ha! Você me encontrou!');
-                korokFound = true;
-
-                korok.style.animation = 'none';
-
-            } else {
-                alert('Hihi! 😄');
-            }
-
-        });
-
-
-        const container = document.getElementById("meuTexto");
-
-        const walker = document.createTreeWalker(
-            container,
-            NodeFilter.SHOW_TEXT,
-            null,
-            false
-        );
-
-        const textNodes = [];
-        while (walker.nextNode()) {
-            textNodes.push(walker.currentNode);
-        }
-
-        const textos = textNodes.map(node => node.textContent);
-        textNodes.forEach(node => node.textContent = "");
-
-        let nodeIndex = 0;
-        let charIndex = 0;
-
-        const PASSO = 6;
-
-        function escrever() {
-            if (nodeIndex >= textNodes.length) return;
-
-            const textoAtual = textos[nodeIndex];
-
-            const proximoChunk = textoAtual.slice(charIndex, charIndex + PASSO);
-            textNodes[nodeIndex].textContent += proximoChunk;
-            charIndex += PASSO;
-
-            if (charIndex >= textoAtual.length) {
-                nodeIndex++;
-                charIndex = 0;
-            }
-
-            requestAnimationFrame(escrever);
-        }
-
-        escrever();
-
-        const svg = document.getElementById('meuSvg');
-
-        let posX = .5;
-        let direction = 0;
-
-        const maxX = 4;
-        const speedRight = 1.0;
-        const speedLeft = 0.3;
-
-        function animate() {
-            if (direction === .5) {
-                posX += speedRight;
-                if (posX >= maxX) {
-                    direction = -1;
-                }
-            } else {
-                posX -= speedLeft;
-                if (posX <= -maxX) {
-                    direction = .5;
-                }
-            }
-
-            svg.style.transform = `translateX(${posX}px)`;
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-
-        const exitDialog = document.getElementById('exit_dialog');
-
-        let posYDialog = 0.5;
-        let directionDialog = 0.5;
-
-        const maxYDialog = 3;
-        const speedDownDialog = .4;
-        const speedUpDialog = .3;
-
-        function animateDialogVertical() {
-            if (directionDialog === 0.5) {
-                posYDialog += speedDownDialog;
-                if (posYDialog >= maxYDialog) {
-                    directionDialog = -1;
-                }
-            } else {
-                posYDialog -= speedUpDialog;
-                if (posYDialog <= -maxYDialog) {
-                    directionDialog = 0.5;
-                }
-            }
-
-            exitDialog.style.transform = `translateY(${posYDialog}px)`;
-            requestAnimationFrame(animateDialogVertical);
-        }
-
-        animateDialogVertical();
-
-
-
-        const tris = document.querySelectorAll('.tri');
-
-        const DIST = 6;
-        const IN_TIME = 250;   // entra rápido
-        const OUT_TIME = 260;  // sai devagar
-
-        let diagStart = null;
-        let diagPhase = 'in';
-
-        function easeOutFast(t) {
-            return 1 - Math.pow(1 - t, 3);
-        }
-
-        function easeInSlow(t) {
-            return t * t;
-        }
-
-        function animateDiagonal(time) {
-            if (!diagStart) diagStart = time;
-
-            const duration = diagPhase === 'in' ? IN_TIME : OUT_TIME;
-            let t = Math.min((time - diagStart) / duration, 1);
-
-            const eased = diagPhase === 'in'
-                ? easeOutFast(t)
-                : easeInSlow(t);
-
-            const amount = diagPhase === 'in'
-                ? DIST * (1 - eased)
-                : DIST * eased;
-
-            tris.forEach(tri => {
-                const [dx, dy] = tri.dataset.dir.split(',').map(Number);
-                tri.style.setProperty('--tx', `${dx * amount}px`);
-                tri.style.setProperty('--ty', `${dy * amount}px`);
-            });
-
-            if (t < 1) {
-                requestAnimationFrame(animateDiagonal);
-            } else {
-                diagStart = null;
-                diagPhase = diagPhase === 'in' ? 'out' : 'in';
-                requestAnimationFrame(animateDiagonal);
-            }
-        }
-
-        requestAnimationFrame(animateDiagonal);
-
-    </script>
+    <script src="./script/script.js"></script>
 
 </body>
 </html>

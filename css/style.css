@@ -100,6 +100,23 @@
     }
 }
 
+@keyframes korokIdle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes continue {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .7;
+    }
+    100% {
+        opacity: 0;
+    } 
+}
+
 @font-face {
     font-family: 'Rodin';
     src: url('../fonts/FOT-Rodin\ Pro\ B.otf') format('opentype');
@@ -198,7 +215,6 @@ span {
     background-color: #00000060;
     backdrop-filter: blur(8px);
     color: #e4e7cd;
-    cursor: pointer;
 
     opacity: 0;
 }
@@ -305,7 +321,109 @@ span {
     cursor: pointer;
 }
 
+/* =================================== */
+/* ===          MODAL_KOROK        === */
+/* =================================== */
 
+.triforce_top.found {
+    animation: none;
+    filter: grayscale(100%);
+}
+
+.modal_korok_overlay {
+    position: absolute;
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000060;
+    backdrop-filter: blur(8px);
+    color: #e4e7cd;
+
+    opacity: 0;
+}
+
+.modal_korok_overlay.active {
+    animation: blurIn 0.3s ease-in-out forwards;
+}
+
+.modal_korok_overlay.closing {
+    animation: blurOut 0.3s ease-in-out forwards;
+}
+.modal_korok {
+    position: absolute;
+    height: 315px;
+    width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    cursor: pointer;
+    pointer-events: none;
+    animation: korokIdle 2s ease-in-out infinite;
+    background-image: url('https://images.fineartamerica.com/images/artworkimages/medium/3/korok-gun-adam-j-washington-transparent.png');
+    background-repeat: no-repeat;
+    background-position: 770px 40px;
+    background-size: 350px;
+}
+.modal_korok:hover {
+    transform: scale(1.01);
+    filter: brightness(1.25);
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.modal_korok::after {
+    content: "Clique para continuar";
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    letter-spacing: .05em;
+    opacity: 0;
+    pointer-events: none;
+    color: #e4e7cd;
+}
+.modal_korok:hover::after {
+    animation: continue 2s infinite;
+}
+.modal_korok_content {
+    width: 1100px;
+    height: 225px;
+    border-radius: 20px;
+    position: absolute;
+    background-color: #000000c0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal_korok_content > svg {
+    height: 100px;
+    filter: blur(.7px);
+    position: absolute;
+}
+#dialog_border02_left {
+    left: 30px;
+}
+#dialog_border02_right {
+    right: 30px;
+}
+.modal_korok_content > h2 {
+    font-size: 2em;
+    z-index: 50;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+#exit_dialog {
+    position: absolute;
+    height: 30px;
+    bottom: 15px;
+    z-index: 500;
+    cursor: pointer;
+}
 
 /* =================================== */
 /* ===           HEADER            === */

@@ -1,7 +1,7 @@
 
 @media screen and (max-width: 1500px){
     body > img {
-        filter: grayscale(60%) opacity(8%);
+        filter: grayscale(60%) opacity(4%);
     }
     .hearts {
         width: 370px;
@@ -11,6 +11,12 @@
         margin: 2px;
         height: 20px;
         width: 20px;
+    }
+    .contain_pri {
+        height: 1000px;
+    }
+    .triforce_bottom {
+        top: 1145px;
     }
     .content_pri {
         flex-direction: column;
@@ -30,6 +36,9 @@
     .mission_details::before {
         border: 2px solid #ffffff40;
     }
+    .action_buttons {
+        top: 1165px;
+    }
 }
 
 
@@ -46,8 +55,8 @@
     .triforce_top {
         top: 260px;
     }
-    .triforce_botton {
-        top: 1145px;
+    .triforce_bottom {
+        top: 1245px;
     }
     .contain_pri {
         transform: translateY(260px);
@@ -75,7 +84,7 @@
         width: 95%;
     }
     .action_buttons {
-        top: 1165px;
+        top: 1265px;
     }
 }
 
@@ -102,7 +111,7 @@
     .triforce_top {
         left: 14px;
     }
-    .triforce_botton {
+    .triforce_bottom {
         left: 14px;
     }
     .contain_pri {
@@ -113,6 +122,7 @@
     }
     .divisor_botton01 {
         display: block;
+        margin-top: 15px;
     }
     .divisor_botton02 {
         display: none;
@@ -184,7 +194,7 @@
     .triforce_top {
         top: 190.5px;
     }
-    .triforce_botton {
+    .triforce_bottom {
         top: 895px;
     }
     .contain_pri {
@@ -302,6 +312,16 @@
     }
     .text_details > p {
         margin-top: 10px;
+    }
+    .button {
+        margin-top: 15px;
+    }
+    .button_content {
+        height: 40px;
+    }
+    .button_content > p {
+        letter-spacing: .03em;
+        font-size: .7em;
     }
     .divisor {
         width: 300px;

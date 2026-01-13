@@ -155,7 +155,7 @@
         <path d="M -9 0 L -9 -8 L -1 -8 L -5 -4 L -5 -8 L -9 -4 L -5 -4" fill="#ffffff20"/>
     </svg>
     <svg
-        class="triforce_botton"
+        class="triforce_bottom"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="-9 -8 8 8">
         <path d="M -9 0 L -9 -8 L -1 -8 L -5 -4 L -5 -8 L -9 -4 L -5 -4" fill="#ffffff20"/>
@@ -191,79 +191,39 @@
                 </div>
                 <div class="mission_area">
                     <svg
+                        id="tri_top_left"
                         class="tri"
                         data-dir="-1,-1"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="-10 -10 10 10"
-                        style="
-                            position:absolute;
-                            width:12px;
-                            z-index:30;
-                            left:12px;
-                            top:12px;
-                            filter:drop-shadow(0 0 4px #fcfee460);
-                            --tx: 0px;
-                            --ty: 0px;
-                            transform: rotate(0deg)
-                            translate(var(--tx), var(--ty));
-                            ">
+                        >
                         <path d="M 0 -10 L -10 0 L -10 -10 L 0 -10" fill="#fcfee4"/>
                     </svg>
                     <svg
+                        id="tri_top_right"
                         class="tri"
                         data-dir="1,-1"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="-10 -10 10 10"
-                        style="
-                            position:absolute;
-                            width:12px;
-                            z-index:30;
-                            right:12px;
-                            top:12px;
-                            filter:drop-shadow(0 0 4px #fcfee460);
-                            --tx: 0px;
-                            --ty: 0px;
-                            transform: rotate(0deg)
-                            translate(var(--tx), var(--ty));
-                            ">
+                        >
                         <path d="M 0 0 L 0 -10 L -10 -10 L 0 0" fill="#fcfee4"/>
                     </svg>
                     <svg
+                        id="tri_bottom_left"
                         class="tri"
                         data-dir="-1, 1"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="-10 -10 10 10"
-                        style="
-                            position:absolute;
-                            width:12px;
-                            z-index:30;
-                            left:12px;
-                            bottom:12px;
-                            filter:drop-shadow(0 0 4px #fcfee460);
-                            --tx: 0px;
-                            --ty: 0px;
-                            transform: rotate(0deg)
-                            translate(var(--tx), var(--ty));
-                            ">
+                        >
                         <path d="M 0 0 L -10 0 L -10 -10 L 0 0" fill="#fcfee4"/>
                     </svg>
                     <svg
+                        id="tri_bottom_right"
                         class="tri"
                         data-dir="1, 1"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="-10 -10 10 10"
-                        style="
-                            position:absolute;
-                            width:12px;
-                            z-index:30;
-                            right:12px;
-                            bottom:12px;
-                            filter:drop-shadow(0 0 4px #fcfee460);
-                            --tx: 0px;
-                            --ty: 0px;
-                            transform: rotate(0deg)
-                            translate(var(--tx), var(--ty));
-                            ">
+                        >
                         <path d="M 0 0 L -10 0 L 0 -10 L 0 0" fill="#fcfee4"/>
                     </svg>
 
@@ -305,6 +265,48 @@
                         <p>O fantastma do rei Rhoam te disse que Hyrule está a ponto de ser totalmente destruída.</p>
                         <p>A princesa Zelda está lutando para impedir que <span>Ganon</span> saia do Castelo de Hyrule, mas ela não conseguirá contê-lo por muito tempo. A cada segundo que passa, ele está mais perto de recuperar sua força total e destruir o mundo.</p>
                         <p>Você deve ajudar a princesa Zelda a derrotar Ganon antes que o pior aconteça!</p>
+                    </div>
+                    <div class="button">
+                        <svg
+                            id="tri_top_left"
+                            class="tri"
+                            data-dir="-1,-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="-10 -10 10 10"
+                            >
+                            <path d="M 0 -10 L -10 0 L -10 -10 L 0 -10" fill="#fcfee4"/>
+                        </svg>
+                        <svg
+                            id="tri_top_right"
+                            class="tri"
+                            data-dir="1,-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="-10 -10 10 10"
+                            >
+                            <path d="M 0 0 L 0 -10 L -10 -10 L 0 0" fill="#fcfee4"/>
+                        </svg>
+                        <svg
+                            id="tri_bottom_left"
+                            class="tri"
+                            data-dir="-1, 1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="-10 -10 10 10"
+                            >
+                            <path d="M 0 0 L -10 0 L -10 -10 L 0 0" fill="#fcfee4"/>
+                        </svg>
+                        <svg
+                            id="tri_bottom_right"
+                            class="tri"
+                            data-dir="1, 1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="-10 -10 10 10"
+                            >
+                            <path d="M 0 0 L -10 0 L 0 -10 L 0 0" fill="#fcfee4"/>
+                        </svg>
+
+                        <div class="button_content">
+                            <p>Responder</p>
+                        </div>
                     </div>
                     <div class="divisor_botton01"></div>
                     <div class="divisor_botton02"></div>
@@ -354,7 +356,63 @@
         </div>
     </div>
 
+    <audio id="korokSound" src="./public/yahaha.mp3" preload="auto"></audio>
+    
     <script>
+        
+        const korok = document.querySelector('.triforce_top');
+        const sound_yahaha = document.getElementById('korokSound');
+
+        let korokFound = false;
+
+        function showMessage(text) {
+            const msg = document.createElement('div');
+            msg.textContent = text;
+
+            msg.style.position = 'fixed';
+            msg.style.bottom = '20%';
+            msg.style.left = '50%';
+            msg.style.transform = 'translateX(-50%)';
+            msg.style.color = '#fcfee4';
+            msg.style.fontSize = '22px';
+            msg.style.fontFamily = 'sans-serif';
+            msg.style.textShadow = '0 0 8px #000';
+            msg.style.opacity = '0';
+            msg.style.transition = 'opacity 0.3s ease';
+
+            document.body.appendChild(msg);
+
+            // fade in
+            requestAnimationFrame(() => {
+                msg.style.opacity = '1';
+            });
+
+            // fade out
+            setTimeout(() => msg.style.opacity = '0', 1200);
+            setTimeout(() => msg.remove(), 1600);
+        }
+
+        korok.addEventListener('click', () => {
+
+            if (!korokFound) {
+                // 🔊 toca som só na primeira vez
+                sound_yahaha.currentTime = 0;
+                sound_yahaha.play();
+
+                showMessage('🌱 Ya-ha-ha! Você me encontrou!');
+                korokFound = true;
+
+                // para animação quando encontra
+                korok.style.animation = 'none';
+
+            } else {
+                // ❌ sem som
+                showMessage('Hihi! 😄');
+            }
+
+        });
+
+
         const container = document.getElementById("meuTexto");
 
         const walker = document.createTreeWalker(

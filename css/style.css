@@ -62,7 +62,6 @@
         opacity: 0;
     }
     50% {
-        filter: blur(15px);
         opacity: 0;
     }
     100% {
@@ -100,13 +99,13 @@
 
 @keyframes continue {
     0% {
-        opacity: 0;
+        opacity: .3;
     }
     50% {
         opacity: .7;
     }
     100% {
-        opacity: 0;
+        opacity: .3;
     } 
 }
 
@@ -129,23 +128,20 @@
 
 @keyframes reward {
     0% {
-        filter: blur(15px);
-        transform: scale(1.4);
+        filter: blur(20px);
         opacity: 0;
     }
     100% {
         filter: blur(0px);
-        opacity: 100%;
+        opacity: 100%;  
     }
 }
 
 @keyframes reward_content {
     0% {
         box-shadow: 0 0 0 0 #CFA834a0;
+        transform: scale(1.3);
         filter: blur(35px);
-    }
-    40% {
-        filter: blur(10px);
     }
     45% {
         box-shadow: 0 0 0 0 #CFA834a0;
@@ -168,6 +164,20 @@
     }
     100% {
         background-color: transparent;
+    }
+}
+
+@keyframes exit_dialog {
+    0% {
+        filter: blur(20px);
+        opacity: 0;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0px);
+        opacity: 100%;  
     }
 }
 
@@ -298,7 +308,7 @@ span {
     backdrop-filter: blur(8px);
     color: #e4e7cd;
     animation: reward 4s ease-in-out;
-    opacity: 0;
+    /* opacity: 0; */
 }
 .modal_reward_overlay.active {
     animation: blurIn 0.3s ease-in-out forwards;
@@ -308,14 +318,23 @@ span {
 }
 .modal_reward {
     position: absolute;
-    height: 715px;
-    width: 1400px;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 50;
     cursor: auto;
     pointer-events: none;
+}
+.modal_reward_contain {
+    height: 800px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 .modal_reward_content {
     width: 1100px;
@@ -327,7 +346,7 @@ span {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    animation: reward_content 6s;
+    animation: reward_content 5s;
 }
 .modal_reward_content::before {
     content: '';
@@ -481,6 +500,10 @@ span {
     text-align: center;
     color: #e4e7cdd0;
 }
+.modal_reward_contain > .exit_dialog {
+    bottom: 170px;
+    animation: exit_dialog 7s;
+}
 
 
 
@@ -595,7 +618,7 @@ span {
 .input-wrapper > input:focus::placeholder {
     transform: translateY(-5px);
 }
-#exit_dialog {
+.exit_dialog {
     position: absolute;
     height: 30px;
     bottom: 15px;
@@ -928,8 +951,7 @@ header {
     filter:drop-shadow(0 0 4px #fcfee460);
     --tx: 0px;
     --ty: 0px;
-    transform: rotate(0deg)
-    translate(var(--tx), var(--ty));
+    transform: translate3d(var(--tx), var(--ty), 0);
 }
 #tri_top_left {
     top:12px;

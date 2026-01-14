@@ -1,3 +1,75 @@
+const sound_dialog_start = document.getElementById("dialogStartSound");
+const sound_dialog_next = document.getElementById("dialogNextSound");
+const sound_dialog_end = document.getElementById("dialogEndSound");
+const sound_yahaha = document.getElementById("korokSound");
+const sound_korok_found01 = document.getElementById("korokFound01Sound");
+const rewardSound = document.getElementById("rewardSound");
+
+
+/* =========================== */
+/*        MODAL_REWARD         */
+/* =========================== */
+
+const modalRewardOverlay = document.querySelector(".modal_reward_overlay");
+const modalReward = document.querySelector(".modal_reward");
+const modalRewardContain = document.querySelector(".modal_reward_contain");
+const exitReward = modalRewardOverlay.querySelector(".exit_dialog");
+
+let rewardUnlocked = false;
+
+function resetarAnimacaoReward() {
+    modalRewardOverlay.classList.remove("active");
+
+    void modalRewardOverlay.offsetWidth;
+
+    modalRewardOverlay.classList.add("active");
+}
+
+function openModalReward() {
+    modalRewardOverlay.style.display = "flex";
+    modalRewardOverlay.classList.remove("closing");
+
+    resetarAnimacaoReward();
+
+    if (rewardSound) {
+        rewardSound.currentTime = 0;
+        rewardSound.play();
+    }
+}
+
+function closeModalReward() {
+    modalRewardOverlay.classList.remove("active");
+    modalRewardOverlay.classList.add("closing");
+
+    if (rewardSound) {
+        rewardSound.pause();
+        rewardSound.currentTime = 0;
+    }
+
+    rewardUnlocked = false;
+    limparInputs();
+}
+
+modalRewardOverlay.addEventListener("animationend", (e) => {
+    if (e.animationName === "blurOut") {
+        modalRewardOverlay.style.display = "none";
+        modalRewardOverlay.classList.remove("closing");
+    }
+});
+
+modalRewardOverlay.addEventListener("click", closeModalReward);
+modalRewardContain.addEventListener("click", closeModalReward);
+
+if (exitReward) {
+    exitReward.addEventListener("click", closeModalReward);
+}
+
+modalReward.addEventListener("click", (e) => {
+    e.stopPropagation();
+});
+
+
+
 /* ============================== */
 /*         MODAL_RESPONSE         */
 /* ============================== */
@@ -5,15 +77,23 @@
 
 const modalResponse = document.querySelector(".modal_response_overlay");
 const modalContent = document.querySelector(".modal_response");
-const exit_dialog = document.getElementById("exit_dialog");
+const exitResponse = document.querySelector(".exit_dialog");
 
 function openModalResponse() {
+    sound_dialog_start.currentTime = 0;
+    sound_dialog_start.play();
+
     modalResponse.style.display = "flex";
     modalResponse.classList.remove("closing");
     modalResponse.classList.add("active");
 }
 
-function closeModalResponse() {
+function closeModalResponse(playSound = true) {
+    if (playSound && sound_dialog_end) {
+        sound_dialog_end.currentTime = 0;
+        sound_dialog_end.play();
+    }
+
     modalResponse.classList.remove("active");
     modalResponse.classList.add("closing");
 }
@@ -25,9 +105,9 @@ modalResponse.addEventListener("animationend", (event) => {
     }
 });
 
-modalResponse.addEventListener("click", closeModalResponse);
+modalResponse.addEventListener("click", closeModalResponse, );
 
-exit_dialog.addEventListener("click", closeModalResponse);
+exitResponse.addEventListener("click", closeModalResponse);
 
 modalContent.addEventListener("click", (event) => {
     event.stopPropagation();
@@ -45,20 +125,40 @@ const item2 = document.getElementById("item2");
 const item3 = document.getElementById("item3");
 
 function verificar() {
-    if (
-        (
-            item1.value.trim().toLowerCase() === "item1" ||
-            item1.value.trim().toLowerCase() === "item1(ingles)"
-        ) &&
-            item2.value.trim().toLowerCase() === "item2"
-        && (
-            item3.value.trim().toLowerCase() === "item3" ||
-            item3.value.trim().toLowerCase() === "item3(ingles)"
-        )
-    ) {
+    if (rewardUnlocked) return;
+    
+
+    const v1 = item1.value.trim().toLowerCase();
+    const v2 = item2.value.trim().toLowerCase();
+    const v3 = item3.value.trim().toLowerCase();
+
+    const ok =
+        (v1 === "item1" || v1 === "item1(ingles)") &&
+        v2 === "item2" &&
+        (v3 === "item3" || v3 === "item3(ingles)");
+
+    if (ok) {
+        rewardUnlocked = true;
+
+        
+        function limparInputs() {
+            item1.value = "";
+            item2.value = "";
+            item3.value = "";
+    
+            item1.blur();
+            item2.blur();
+            item3.blur();
+        }
+        
+        // fecha modal_response
+        closeModalResponse(false);
+        
+        // espera animação fechar
         setTimeout(() => {
-            alert("Parabéns")
-        }, 500)
+            limparInputs();
+            openModalReward();
+        }, 1500);
     }
 }
 
@@ -74,12 +174,10 @@ item3.addEventListener("input", verificar);
 
 
 const triforceTop = document.querySelector(".triforce_top");
-const sound_yahaha = document.getElementById("korokSound");
-
 const modalKorokOverlay = document.querySelector(".modal_korok_overlay");
 const modalKorok = document.querySelector(".modal_korok");
 const korokTitle = modalKorok.querySelector("h2");
-const korokExit = modalKorok.querySelector("#exit_dialog");
+const korokExit = modalKorok.querySelector(".exit_dialog");
 
 /* DIÁLOGOS */
 
@@ -154,6 +252,8 @@ function openKorokModal(dialogs) {
 }
 
 function closeKorokModal() {
+    sound_dialog_end.currentTime = 0;
+    sound_dialog_end.play();
     modalKorokOverlay.classList.remove("active");
     modalKorokOverlay.classList.add("closing");
 }
@@ -163,14 +263,28 @@ function closeKorokModal() {
 triforceTop.addEventListener("click", () => {
 
     if (!korokFound) {
-        sound_yahaha.currentTime = 0;
-        sound_yahaha.play();
+        sound_dialog_start.currentTime = 0;
+        sound_dialog_start.play();
 
-        openKorokModal(korokDialogsFirstTime);
+        setTimeout(() => {
+            sound_yahaha.currentTime = 0;
+            sound_yahaha.play();
+            openKorokModal(korokDialogsFirstTime);
+        }, 700);
+
 
         korokFound = true;
         triforceTop.classList.add("found");
     } else {
+        sound_dialog_start.currentTime = 0;
+        sound_dialog_start.play();
+
+        setTimeout(() => {
+            sound_korok_found01.currentTime = 0;
+            sound_korok_found01.play();
+        }, 300);
+
+
         openKorokModal(korokDialogsRepeat);
     }
 });
@@ -194,19 +308,26 @@ korokExit.addEventListener("click", closeKorokModal);
 modalKorok.addEventListener("click", (e) => {
     e.stopPropagation();
 
+
+
+    
     if (typingController && typingController.isWriting()) {
         typingController.skip();
         return;
     }
-
+    
     korokDialogIndex++;
-
+    
     if (korokDialogIndex < activeKorokDialogs.length) {
+        sound_dialog_next.currentTime = 0;
+        sound_dialog_next.play();
         typingController = typeDialog(
             korokTitle,
             activeKorokDialogs[korokDialogIndex]
         );
     } else {
+        sound_dialog_end.currentTime = 0;
+        sound_dialog_end.play();
         closeKorokModal();
     }
 });
@@ -302,7 +423,7 @@ animate();
 /* ========================================== */
 
 
-const exitDialog = document.getElementById('exit_dialog');
+const exitDialogs = document.querySelectorAll('.exit_dialog');
 
 let posYDialog = 0.5;
 let directionDialog = 0.5;
@@ -324,7 +445,10 @@ function animateDialogVertical() {
         }
     }
 
-    exitDialog.style.transform = `translateY(${posYDialog}px)`;
+    exitDialogs.forEach(dialog => {
+        dialog.style.transform = `translateY(${posYDialog}px)`;
+    });
+
     requestAnimationFrame(animateDialogVertical);
 }
 

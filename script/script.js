@@ -46,11 +46,15 @@ const item3 = document.getElementById("item3");
 
 function verificar() {
     if (
-        (item1.value.trim().toLowerCase() === "item1" ||
-        item1.value.trim().toLowerCase() === "item1(ingles)") &&
-        item2.value.trim().toLowerCase() === "item2" &&
-        (item3.value.trim().toLowerCase() === "item3" ||
-        item3.value.trim().toLowerCase() === "item3(ingles)")
+        (
+            item1.value.trim().toLowerCase() === "item1" ||
+            item1.value.trim().toLowerCase() === "item1(ingles)"
+        ) &&
+            item2.value.trim().toLowerCase() === "item2"
+        && (
+            item3.value.trim().toLowerCase() === "item3" ||
+            item3.value.trim().toLowerCase() === "item3(ingles)"
+        )
     ) {
         setTimeout(() => {
             alert("Parabéns")

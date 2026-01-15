@@ -23,13 +23,13 @@
 
 @keyframes glow02 {
     0% {
-        filter: drop-shadow(0 0 2px #fcfee4) drop-shadow(0 0 1px #fcfee4);
+        filter: drop-shadow(0 0 2px #fcfee4a0) drop-shadow(0 0 1px #fcfee4a0);
     }
     50% {
-        filter: drop-shadow(0 0 0px #fcfee4);
+        filter: drop-shadow(0 0 0px #fcfee4a0);
     }
     100% {
-        filter: drop-shadow(0 0 2px #fcfee4) drop-shadow(0 0 1px #fcfee4);
+        filter: drop-shadow(0 0 2px #fcfee4a0) drop-shadow(0 0 1px #fcfee4a0);
     }
 }
 
@@ -864,13 +864,13 @@ header {
     width: 17px;
     position: absolute;
     z-index: 10;
-    top: 1046px;
+    top: 896px;
     left: 59px;
     transform: rotate(270deg);
 }
 .contain_pri {
     width: calc(100% - 60px);
-    height: 900px;
+    height: 750px;
     transform: translateY(160px);
     right: 0;
     position: absolute;
@@ -1210,7 +1210,7 @@ header {
 .action_buttons {
     width: 500px;
     height: 50px;
-    top: 1065px;
+    top: 915px;
     right: 0;
     position: absolute;
     display: flex;

@@ -87,6 +87,8 @@ const modalContent = document.querySelector(".modal_response");
 const exitResponse = document.querySelector(".exit_dialog");
 
 function openModalResponse() {
+    resetarEstadoResponse();
+
     sound_dialog_start.currentTime = 0;
     sound_dialog_start.play();
 
@@ -135,6 +137,17 @@ const ERROR_SOUND_DELAY = 900;
 const item1 = document.getElementById("item1");
 const item2 = document.getElementById("item2");
 const item3 = document.getElementById("item3");
+
+function resetarEstadoResponse() {
+    clearTimeout(errorSoundTimeout);
+    errorSoundTimeout = null;
+    lastErrorCombo = "";
+    lastShakeTime = 0;
+
+    [item1, item2, item3].forEach(input => {
+        input.classList.remove("input_error");
+    });
+}
 
 function limparInputs() {
     item1.value = "";

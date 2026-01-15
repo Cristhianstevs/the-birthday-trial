@@ -1,5 +1,8 @@
 
 @media screen and (max-width: 1500px){
+    body {
+        overflow-y: scroll;
+    }
     #bg > img {
         filter: grayscale(60%) opacity(4%);
     }
@@ -12,11 +15,18 @@
         height: 20px;
         width: 20px;
     }
+    .header_info_title {
+        overflow: hidden;
+    }
+    .header_info_title > h1 {
+        overflow: hidden;
+    }
     .contain_pri {
-        height: 1000px;
+        height: 1100px;
+        overflow: hidden;
     }
     .triforce_bottom {
-        top: 1145px;
+        top: 1247px;
     }
     .content_pri {
         flex-direction: column;
@@ -26,47 +36,46 @@
         width: 100%;
         margin-top: 30px;
     }
+    .mission_contain {
+        overflow: hidden;
+    }
+    .details {
+        overflow: hidden;
+    }
     .mission_details {
         background-color:#00000080;
         background-image: none;
         display: flex;
         justify-content: center;
         margin-bottom: 50px;
+        margin-top: -60px;
     }
     .mission_details::before {
         border: 2px solid #ffffff40;
     }
     .action_buttons {
-        top: 1165px;
+        top: 1265px;
     }
 }
 
 
 
 @media screen and (max-width: 1200px) {
-    * {
-        overflow: visible;
-        overflow-x: hidden;
-    }
-    #bg {
-        height: 1400px;
-        overflow-y: scroll;
+    body {
+        height: 1450px;
     }
     .triforce_top {
         top: 260px;
     }
     .triforce_bottom {
-        top: 1245px;
+        top: 1347px;
     }
     .contain_pri {
         transform: translateY(260px);
-        overflow: hidden;
+
     }
     .header_info_pc {
         display: none;
-    }
-    .header_info_title {
-        overflow: hidden;
     }
     .header_mobile {
         display: flex;
@@ -84,25 +93,22 @@
         width: 95%;
     }
     .action_buttons {
-        top: 1265px;
+        width: 360px;
+        top: 1365px;
     }
 }
 
 
 
 @media screen and (max-width: 750px) {
-    #bg {
-        display: flex;
-        justify-content: center;
-    }
     .header_pc {
         width: calc(100% - 20px);
-        margin: 0;
+        margin: 15px;
         display: flex;
         justify-content: space-between;
     }
     .header_mobile {
-        margin: 90px 0 0 0;
+        margin: 90px 0 0 -30px;
         width: 100%;
     }
     .header_info_title > h1 {
@@ -132,7 +138,7 @@
 
 
 @media screen and (max-width: 650px) {
-    #bg {
+    body {
         height: 1000px;
     }
 
@@ -195,7 +201,7 @@
         top: 190.5px;
     }
     .triforce_bottom {
-        top: 895px;
+        top: 897px;
     }
     .contain_pri {
         transform: translateY(190px);
@@ -291,6 +297,9 @@
         line-height: 1em;
         height: fit-content;
     }
+    .details {
+        padding: 20px;
+    }
     .details > h1 {
         font-size: 1.1em;
         height: 23px;
@@ -327,7 +336,7 @@
         width: 300px;
     }
     .action_buttons {
-        width: 300px;
+        width: 240px;
         height: 50px;
         top: 915px;
         right: 0;

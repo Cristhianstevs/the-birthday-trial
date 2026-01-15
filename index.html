@@ -82,13 +82,13 @@
                 </svg>
                 <div class="response">
                     <div class="input-wrapper">
-                        <input type="text" id="item1" placeholder="item 1" autocomplete="off">
+                        <div class="input_content"><input class="input_error" type="text" id="item1" placeholder="item 1" autocomplete="off"></div>
                     </div>
                     <div class="input-wrapper">
-                        <input type="text" id="item2" placeholder="item 2" autocomplete="off">
+                        <div class="input_content"><input class="input_error" type="text" id="item2" placeholder="item 2" autocomplete="off"></div>
                     </div>
                     <div class="input-wrapper">
-                        <input type="text" id="item3" placeholder="item 3" autocomplete="off">
+                        <div class="input_content"><input class="input_error" type="text" id="item3" placeholder="item 3" autocomplete="off"></div>
                     </div>
                 </div>
             </div>
@@ -445,8 +445,7 @@
     <audio id="dialogStartSound" src="./public/dialog_start.wav" preload="auto"></audio>
     <audio id="dialogNextSound" src="./public/dialog_next.wav" preload="auto"></audio>
     <audio id="dialogEndSound" src="./public/dialog_end.wav" preload="auto"></audio>
-
-
+    <audio id="errorInputSound" src="./public/error_input.wav" preload="auto"></audio>
     
     <script src="./script/script.js"></script>
 

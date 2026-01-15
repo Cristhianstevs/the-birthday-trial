@@ -181,6 +181,15 @@
     }
 }
 
+@keyframes errorInput {
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(-6px); }
+    40%  { transform: translateX(6px); }
+    60%  { transform: translateX(-4px); }
+    80%  { transform: translateX(4px); }
+    100% { transform: translateX(0); }
+}
+
 
 
 /* =================================== */
@@ -272,6 +281,7 @@ body {
     width: 100%;
     height: 100%;
     inset: 0;
+    filter: saturate(1.4);
     backdrop-filter: blur(3px) brightness(35%);
     background-color: #1d100050;
     z-index: 1;
@@ -596,27 +606,39 @@ span {
     position: absolute;
     z-index: 100;
 }
-.input-wrapper > input {
+.input_content {
+    transform: translateY(5px);
+    border-bottom: 3px solid #e4e7cd;
+}
+.input_content > input {
     font-family: 'Calamity-Bold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: transparent;
     color: #e4e7cd;
     font-size: 2.2em;
     border: none;
-    border-bottom: 3px solid #e4e7cd;
     text-align: center;
     width: 250px;
     height: 70px;
     line-height: 100px;
-    transform: translateY(5px);
     outline: none;
     position: relative;
 }
-.input-wrapper > input::placeholder {
+.input_content > input::after {
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+    position: absolute;
+    background-color: red;
+}
+.input_content > input::placeholder {
     color: #e4e7cd1d;
     transition: ease-in-out .2s;
 }
-.input-wrapper > input:focus::placeholder {
+.input_content > input:focus::placeholder {
     transform: translateY(-5px);
+}
+.input_error {
+    animation: errorInput 0.35s ease;
 }
 .exit_dialog {
     position: absolute;
@@ -718,6 +740,7 @@ span {
     line-height: 50px;
     text-align: center;
     cursor: pointer;
+    white-space: pre-line;
 }
 
 

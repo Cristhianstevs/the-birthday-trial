@@ -1,9 +1,16 @@
+/* ===================== */
+/*        AUDIOS         */
+/* ===================== */
+
+
 const sound_dialog_start = document.getElementById("dialogStartSound");
 const sound_dialog_next = document.getElementById("dialogNextSound");
 const sound_dialog_end = document.getElementById("dialogEndSound");
 const sound_yahaha = document.getElementById("korokSound");
 const sound_korok_found01 = document.getElementById("korokFound01Sound");
-const rewardSound = document.getElementById("rewardSound");
+const sound_reward = document.getElementById("rewardSound");
+const sound_input_error = document.getElementById("errorInputSound")
+
 
 
 /* =========================== */
@@ -31,9 +38,9 @@ function openModalReward() {
 
     resetarAnimacaoReward();
 
-    if (rewardSound) {
-        rewardSound.currentTime = 0;
-        rewardSound.play();
+    if (sound_reward) {
+        sound_reward.currentTime = 0;
+        sound_reward.play();
     }
 }
 
@@ -41,9 +48,9 @@ function closeModalReward() {
     modalRewardOverlay.classList.remove("active");
     modalRewardOverlay.classList.add("closing");
 
-    if (rewardSound) {
-        rewardSound.pause();
-        rewardSound.currentTime = 0;
+    if (sound_dialog_end) {
+        sound_dialog_end.currentTime = 0;
+        sound_dialog_end.play();
     }
 
     rewardUnlocked = false;
@@ -120,47 +127,103 @@ modalContent.addEventListener("click", (event) => {
 /* ======================== */
 
 
+
+let errorSoundTimeout = null;
+let lastErrorCombo = "";
+
+const ERROR_SOUND_DELAY = 900;
 const item1 = document.getElementById("item1");
 const item2 = document.getElementById("item2");
 const item3 = document.getElementById("item3");
 
+function limparInputs() {
+    item1.value = "";
+    item2.value = "";
+    item3.value = "";
+
+    item1.blur();
+    item2.blur();
+    item3.blur();
+}
+
+let lastShakeTime = 0;
+
+function shakeAllInputs() {
+    const now = Date.now();
+    if (now - lastShakeTime < 500) return;
+
+    lastShakeTime = now;
+
+    [item1, item2, item3].forEach(input => {
+        input.classList.remove("input_error");
+        void input.offsetWidth;
+        input.classList.add("input_error");
+    });
+}
+
 function verificar() {
     if (rewardUnlocked) return;
-    
 
     const v1 = item1.value.trim().toLowerCase();
     const v2 = item2.value.trim().toLowerCase();
     const v3 = item3.value.trim().toLowerCase();
 
-    const ok =
-        (v1 === "item1" || v1 === "item1(ingles)") &&
-        v2 === "item2" &&
-        (v3 === "item3" || v3 === "item3(ingles)");
+    const item1Filled = v1.length > 0;
+    const item2Filled = v2.length > 0;
+    const item3Filled = v3.length > 0;
 
-    if (ok) {
+    const filledCount =
+        (item1Filled ? 1 : 0) +
+        (item2Filled ? 1 : 0) +
+        (item3Filled ? 1 : 0);
+
+    const item1Ok = v1 === "item1" || v1 === "item1(ingles)";
+    const item2Ok = v2 === "item2";
+    const item3Ok = v3 === "item3" || v3 === "item3(ingles)";
+
+    const comboOk = item1Ok && item2Ok && item3Ok;
+
+    // Cancelar feedback se inputs incompletos
+    if (filledCount < 3) {
+        clearTimeout(errorSoundTimeout);
+        errorSoundTimeout = null;
+        lastErrorCombo = "";
+        return;
+    }
+
+    // SUCESSO
+    if (comboOk) {
         rewardUnlocked = true;
+        clearTimeout(errorSoundTimeout);
+        lastErrorCombo = "";
 
-        
-        function limparInputs() {
-            item1.value = "";
-            item2.value = "";
-            item3.value = "";
-    
-            item1.blur();
-            item2.blur();
-            item3.blur();
-        }
-        
-        // fecha modal_response
         closeModalResponse(false);
-        
-        // espera animação fechar
+
         setTimeout(() => {
             limparInputs();
             openModalReward();
         }, 1500);
+
+        return;
+    }
+
+    // ERRO DE COMBINAÇÃO
+    const comboKey = `${v1}|${v2}|${v3}`;
+
+    if (comboKey !== lastErrorCombo) {
+        clearTimeout(errorSoundTimeout);
+
+        errorSoundTimeout = setTimeout(() => {
+            sound_input_error.currentTime = 0;
+            sound_input_error.play();
+            shakeAllInputs();
+        }, ERROR_SOUND_DELAY);
+
+        lastErrorCombo = comboKey;
     }
 }
+
+
 
 item1.addEventListener("input", verificar);
 item2.addEventListener("input", verificar);
@@ -182,14 +245,14 @@ const korokExit = modalKorok.querySelector(".exit_dialog");
 /* DIÁLOGOS */
 
 const korokDialogsFirstTime = [
-    "Ya-ha-ha! Você me encontrou! <br> Aqui vai uma dica!",
+    "Ya-ha-ha! Você me encontrou!\nVou te dar algumas dicas.",
     "Dica 1",
     "Dica 2",
     "Dica 3"
 ];
 
 const korokDialogsRepeat = [
-    "Hi-hi! Essas são as dicas:",
+    "Hi-hi!\nEssas são as dicas:",
     "Dica 1",
     "Dica 2",
     "Dica 3"

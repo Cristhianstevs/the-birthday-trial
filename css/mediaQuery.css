@@ -3,6 +3,11 @@
     body {
         overflow-y: scroll;
     }
+
+    .modal_reward {
+        transform: scale(.9);
+    }
+
     #bg > img {
         filter: grayscale(60%) opacity(4%);
     }
@@ -63,7 +68,22 @@
 @media screen and (max-width: 1200px) {
     body {
         height: 1450px;
+        position: relative;
     }
+
+    .modal_response_overlay, .modal_reward_overlay, .modal_korok_overlay {
+        height: 100%;
+    }
+    .modal_reward {
+        transform: scale(.5);
+    }
+    .modal_response {
+        transform: scale(.6);
+    }
+    .modal_korok_scale {
+        transform: scale(.6);
+    }
+
     .triforce_top {
         top: 260px;
     }
@@ -101,6 +121,16 @@
 
 
 @media screen and (max-width: 750px) {
+    .modal_reward {
+        transform: scale(.4);
+    }
+    .modal_response {
+        transform: scale(.5);
+    }
+    .modal_korok_scale {
+        transform: scale(.4);
+    }
+
     .header_pc {
         width: calc(100% - 20px);
         margin: 15px;
@@ -140,6 +170,16 @@
 @media screen and (max-width: 650px) {
     body {
         height: 1000px;
+    }
+
+    .modal_reward {
+        transform: scale(.25);
+    }
+    .modal_response {
+        transform: scale(.27);
+    }
+    .modal_korok_scale {
+        transform: scale(.27);
     }
 
     .hearts {

@@ -477,7 +477,7 @@ span {
     justify-content: start;
     align-items: start;
     flex-direction: column;
-    height: 250px;
+    height: 270px;
     width: 800px;
     margin-left: 320px;
 }
@@ -492,23 +492,22 @@ span {
     width: 700px;
     height: 2px;
     background-color: #ffffff30;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 .text_reward > p {
-    margin-top: 20px;
+    margin-top: 15px;
     width: 90%;
     line-height: 1.3em;
     font-size: 1.5em;
     font-weight: 900;
-    color: #e4e7cdd0;
 }
 .text_reward > h3 {
-    margin-top: 70px;
-    font-size: 2.3em;
+    margin-top: 25px;
+    font-size: 2.2em;
     letter-spacing: .4em;
     width: 700px;
     text-align: center;
-    color: #e4e7cdd0;
+    color: #e4e7cd60;
 }
 .modal_reward_contain > .exit_dialog {
     bottom: 170px;
@@ -664,13 +663,13 @@ span {
     z-index: 10;
     height: 100vh;
     width: 100vw;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     background-color: #00000060;
     backdrop-filter: blur(8px);
     color: #e4e7cd;
-    /* opacity: 0; */
+    opacity: 0;
 }
 .modal_korok_overlay.active {
     animation: blurIn 0.3s ease-in-out forwards;

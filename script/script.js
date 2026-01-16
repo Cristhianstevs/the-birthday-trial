@@ -129,15 +129,45 @@ modalContent.addEventListener("click", (event) => {
 /* ======================== */
 
 
+/* =========================
+   ÁUDIO
+========================= */
+const sound_typing = new Audio("../public/cursor_move02.wav");
+const sound_delete = new Audio("../public/cursor_move03.wav");
 
+sound_typing.volume = 0.4;
+sound_delete.volume = 0.2;
+
+let lastTypeTime = 0;
+const TYPE_SOUND_COOLDOWN = 40;
+
+function playSound(sound) {
+    const now = Date.now();
+    if (now - lastTypeTime < TYPE_SOUND_COOLDOWN) return;
+    lastTypeTime = now;
+
+    sound.currentTime = 0;
+    sound.play();
+}
+
+
+/* =========================
+   VARIÁVEIS
+========================= */
 let errorSoundTimeout = null;
 let lastErrorCombo = "";
+let lastShakeTime = 0;
 
-const ERROR_SOUND_DELAY = 900;
+const ERROR_SOUND_DELAY = 1500;
+
 const item1 = document.getElementById("item1");
 const item2 = document.getElementById("item2");
 const item3 = document.getElementById("item3");
 
+
+/* =========================
+   RESET / LIMPEZA
+========================= */
 function resetarEstadoResponse() {
     clearTimeout(errorSoundTimeout);
     errorSoundTimeout = null;
@@ -159,8 +189,10 @@ function limparInputs() {
     item3.blur();
 }
 
-let lastShakeTime = 0;
 
+/* =========================
+   SHAKE DE ERRO
+========================= */
 function shakeAllInputs() {
     const now = Date.now();
     if (now - lastShakeTime < 500) return;
@@ -174,6 +206,10 @@ function shakeAllInputs() {
     });
 }
 
+
+/* =========================
+   VERIFICAÇÃO
+========================= */
 function verificar() {
     if (rewardUnlocked) return;
 
@@ -196,7 +232,7 @@ function verificar() {
 
     const comboOk = item1Ok && item2Ok && item3Ok;
 
-    // Cancelar feedback se inputs incompletos
+    // Inputs incompletos → cancela feedback
     if (filledCount < 3) {
         clearTimeout(errorSoundTimeout);
         errorSoundTimeout = null;
@@ -204,23 +240,30 @@ function verificar() {
         return;
     }
 
+    // =========================
     // SUCESSO
+    // =========================
     if (comboOk) {
         rewardUnlocked = true;
+
         clearTimeout(errorSoundTimeout);
         lastErrorCombo = "";
 
-        closeModalResponse(false);
+        setTimeout(() => {
+            closeModalResponse(false);
+        }, 1500);
 
         setTimeout(() => {
             limparInputs();
             openModalReward();
-        }, 1500);
+        }, 3000);
 
         return;
     }
 
-    // ERRO DE COMBINAÇÃO
+    // =========================
+    // ERRO
+    // =========================
     const comboKey = `${v1}|${v2}|${v3}`;
 
     if (comboKey !== lastErrorCombo) {
@@ -237,10 +280,31 @@ function verificar() {
 }
 
 
+/* =========================
+   INPUT HANDLER
+========================= */
+function onTypeInput(e) {
+    switch (e.inputType) {
+        case "insertText":
+            playSound(sound_typing);
+            break;
 
-item1.addEventListener("input", verificar);
-item2.addEventListener("input", verificar);
-item3.addEventListener("input", verificar);
+        case "deleteContentBackward":
+        case "deleteContentForward":
+            playSound(sound_delete);
+            break;
+    }
+
+    verificar();
+}
+
+
+/* =========================
+   EVENT LISTENERS
+========================= */
+[item1, item2, item3].forEach(input => {
+    input.addEventListener("input", onTypeInput);
+});
 
 
 
@@ -346,7 +410,7 @@ triforceTop.addEventListener("click", () => {
             sound_yahaha.currentTime = 0;
             sound_yahaha.play();
             openKorokModal(korokDialogsFirstTime);
-        }, 700);
+        }, 1200);
 
 
         korokFound = true;

@@ -8,8 +8,14 @@ const sound_dialog_next = document.getElementById("dialogNextSound");
 const sound_dialog_end = document.getElementById("dialogEndSound");
 const sound_yahaha = document.getElementById("korokSound");
 const sound_korok_found01 = document.getElementById("korokFound01Sound");
+const sound_korok_found02 = document.getElementById("korokFound02Sound");
 const sound_reward = document.getElementById("rewardSound");
 const sound_input_error = document.getElementById("errorInputSound")
+
+
+/* ==================== */
+/*        START         */
+/* ==================== */
 
 
 
@@ -129,9 +135,7 @@ modalContent.addEventListener("click", (event) => {
 /* ======================== */
 
 
-/* =========================
-   ÁUDIO
-========================= */
+/* ÁUDIO */
 const sound_typing = new Audio("../public/cursor_move02.wav");
 const sound_delete = new Audio("../public/cursor_move03.wav");
 
@@ -151,9 +155,8 @@ function playSound(sound) {
 }
 
 
-/* =========================
-   VARIÁVEIS
-========================= */
+/* VARIÁVEIS */
+
 let errorSoundTimeout = null;
 let lastErrorCombo = "";
 let lastShakeTime = 0;
@@ -165,9 +168,8 @@ const item2 = document.getElementById("item2");
 const item3 = document.getElementById("item3");
 
 
-/* =========================
-   RESET / LIMPEZA
-========================= */
+/* RESET / LIMPEZA */
+
 function resetarEstadoResponse() {
     clearTimeout(errorSoundTimeout);
     errorSoundTimeout = null;
@@ -190,9 +192,8 @@ function limparInputs() {
 }
 
 
-/* =========================
-   SHAKE DE ERRO
-========================= */
+/* SHAKE DE ERRO */
+
 function shakeAllInputs() {
     const now = Date.now();
     if (now - lastShakeTime < 500) return;
@@ -207,9 +208,8 @@ function shakeAllInputs() {
 }
 
 
-/* =========================
-   VERIFICAÇÃO
-========================= */
+/* VERIFICAÇÃO */
+
 function verificar() {
     if (rewardUnlocked) return;
 
@@ -233,6 +233,7 @@ function verificar() {
     const comboOk = item1Ok && item2Ok && item3Ok;
 
     // Inputs incompletos → cancela feedback
+
     if (filledCount < 3) {
         clearTimeout(errorSoundTimeout);
         errorSoundTimeout = null;
@@ -240,9 +241,8 @@ function verificar() {
         return;
     }
 
-    // =========================
     // SUCESSO
-    // =========================
+
     if (comboOk) {
         rewardUnlocked = true;
 
@@ -261,9 +261,8 @@ function verificar() {
         return;
     }
 
-    // =========================
     // ERRO
-    // =========================
+
     const comboKey = `${v1}|${v2}|${v3}`;
 
     if (comboKey !== lastErrorCombo) {
@@ -280,9 +279,8 @@ function verificar() {
 }
 
 
-/* =========================
-   INPUT HANDLER
-========================= */
+/* INPUT HANDLER */
+
 function onTypeInput(e) {
     switch (e.inputType) {
         case "insertText":
@@ -299,9 +297,8 @@ function onTypeInput(e) {
 }
 
 
-/* =========================
-   EVENT LISTENERS
-========================= */
+/* EVENT LISTENERS */
+
 [item1, item2, item3].forEach(input => {
     input.addEventListener("input", onTypeInput);
 });
@@ -318,6 +315,8 @@ const modalKorokOverlay = document.querySelector(".modal_korok_overlay");
 const modalKorok = document.querySelector(".modal_korok");
 const korokTitle = modalKorok.querySelector("h2");
 const korokExit = modalKorok.querySelector(".exit_dialog");
+
+sound_dialog_next.volume = .5;
 
 /* DIÁLOGOS */
 
@@ -392,6 +391,11 @@ function openKorokModal(dialogs) {
 }
 
 function closeKorokModal() {
+    setTimeout (() => {
+        sound_korok_found02.currentTime = 0;
+        sound_korok_found02.play();
+    }, 700)
+
     sound_dialog_end.currentTime = 0;
     sound_dialog_end.play();
     modalKorokOverlay.classList.remove("active");

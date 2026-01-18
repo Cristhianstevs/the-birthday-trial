@@ -190,15 +190,18 @@
     100% { transform: translateX(0); }
 }
 
-@keyframes start_text_shadow {
+@keyframes start_text {
     0% {
         text-shadow: 0 0 10px #CFA834;
+        opacity: 1;
     }
     50% {
         text-shadow: 0 0 0 transparent;
+        opacity: .9;
     }
     100% {
         text-shadow: 0 0 10px #CFA834;
+        opacity: 1;
     }
 }
 
@@ -222,11 +225,11 @@
         width: 0px;
         right: 0;
     }
-    5% {
+    7% {
         width: 100%;
         right: 0;
     }
-    95% {
+    93% {
         width: 100%;
         left: 0;
     }
@@ -239,18 +242,15 @@
 @keyframes mission_left {
     0% {
         transform: translateX(15px);
-        opacity: .2;
-    }
-    5% {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-    95% {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-    98% {
         opacity: 0;
+    }
+    7% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    93% {
+        transform: translateX(0px);
+        opacity: 1;
     }
     100% {
         transform: translateX(-15px);
@@ -281,6 +281,28 @@
     }
 }
 
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes videoFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .4;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 1.2s ease forwards;
+}
+
+.video.fade-in video {
+    animation: videoFadeIn 1.5s ease forwards;
+}
 
 
 /* =================================== */
@@ -358,7 +380,8 @@ body {
     position: relative;
     height: 100%;
     width: 100%;
-    background-image: url("../public/background01_zelda.jpg");
+    background-image: url(../public/background27_zelda.jpg);
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     line-height: 1.6em;
@@ -397,14 +420,15 @@ span {
 /* ========================== */
 
 
-.start, .start_mission {
+.start, .start_contain, .start_presents, .start_title, .start_subtitle, .start_mission {
     position: absolute;
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    user-select: none;
+    cursor: none;
 }
 .start h3 {
     line-height: 2em;
@@ -412,25 +436,41 @@ span {
     font-size: 1.5em;
 }
 .start_contain {
-    display: none;
-    animation: start_text_shadow 2s ease-in-out infinite;
+    cursor: pointer;
+    display: none; /*um*/
+}
+.start_contain > h3 {
+    animation: start_text 2s ease-in-out infinite;
 }
 .start_presents {
-    display: none;
+    opacity: 0;
+    display: none; /*dois*/
     animation: start_text_opacity 6s ease-in-out;
 }
 .start_title {
-    display: none;
+    opacity: 0;
+    display: none; /*tres*/
     animation: start_text_opacity 6s ease-in-out;
 }
 .start_subtitle {
-    display: none;
+    opacity: 0;
+    display: none; /*quatro*/
     animation: start_text_opacity 6s ease-in-out;
 }
-.start_mission {
+.video {
+    height: 100vh;
+    width: 100vw;
     display: flex;
-    background-image: url(../public/background01_zelda.jpg);
-    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+.video > video {
+    display: none; /*cinco*/
+    height: 100%;
+    opacity: .4;
+}
+.start_mission {
+    display: none; /*cinco*/
 }
 .start_mission_height {
     display: flex;
@@ -446,7 +486,7 @@ span {
     width: 100%;
     gap: 10px;
     opacity: 0;
-    animation: mission_left 4s ease-in;
+    animation: mission_left 3.8s ease-in;
 }
 .start_mission_svg_wrapper {
     width: 50px;
@@ -461,7 +501,7 @@ span {
     align-items: center;
     z-index: 30;
     width: 100%;
-    height: 140px;
+    height: 130px;
     margin: 10px 0;
 }
 .start_mission_overlay::after {
@@ -469,7 +509,7 @@ span {
     position: absolute;
     width: 0px;
     height: 100%;
-    background-color: #dbe3a020;
+    background-color: #dbe3a009;
     animation: mission_all_left 4s ease-in;
 }
 .start_mission_overlay {
@@ -497,7 +537,7 @@ span {
     position: relative;
     letter-spacing: .005em;
     opacity: 0;
-    animation: mission_left 4s ease-in;
+    animation: mission_left 3.8s ease-in;
 }
 .start_mission_objective {
     width: 100%;
@@ -1290,7 +1330,7 @@ header {
     width: 70%;
     z-index: 0;
     position: relative;
-    background-image: linear-gradient(to right, #00000080 60%, #00000000);
+    background-image: linear-gradient(to right, #000000c0 30%, #00000000);
     border-radius: 3px;
 }
 .mission_details::before {

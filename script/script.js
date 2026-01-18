@@ -3,6 +3,10 @@
 /* ===================== */
 
 
+const sound_start = document.getElementById("startSound");
+const sound_start_mission = document.getElementById("StartMissionSound");
+const sound_objective = document.getElementById("objectiveSound");
+const sound_inventory_open = document.getElementById("inventoryOpenSound");
 const sound_dialog_start = document.getElementById("dialogStartSound");
 const sound_dialog_next = document.getElementById("dialogNextSound");
 const sound_dialog_end = document.getElementById("dialogEndSound");
@@ -13,15 +17,168 @@ const sound_reward = document.getElementById("rewardSound");
 const sound_input_error = document.getElementById("errorInputSound")
 
 
-/* ==================== */
-/*        START         */
-/* ==================== */
+
+/* ======================================= */
+/*         ANIMATION_TEXT_WHRITING         */
+/* ======================================= */
+
+
+function iniciarEscrita() {
+    const container = document.getElementById("meuTexto");
+    if (!container) return;
+
+    const walker = document.createTreeWalker(
+        container,
+        NodeFilter.SHOW_TEXT,
+        null,
+        false
+    );
+
+    const textNodes = [];
+    while (walker.nextNode()) {
+        textNodes.push(walker.currentNode);
+    }
+
+    const textos = textNodes.map(node => node.textContent);
+    textNodes.forEach(node => node.textContent = "");
+
+    let nodeIndex = 0;
+    let charIndex = 0;
+
+    const PASSO = 6;
+
+    function escrever() {
+        if (nodeIndex >= textNodes.length) return;
+
+        const textoAtual = textos[nodeIndex];
+        const proximoChunk = textoAtual.slice(charIndex, charIndex + PASSO);
+
+        textNodes[nodeIndex].textContent += proximoChunk;
+        charIndex += PASSO;
+
+        if (charIndex >= textoAtual.length) {
+            nodeIndex++;
+            charIndex = 0;
+        }
+
+        requestAnimationFrame(escrever);
+    }
+
+    escrever();
+}
+
+
+
+/* =============================== */
+/*         START SEQUENCE          */
+/* =============================== */
+
+const startScreen = document.querySelector(".start");
+const pressStart = document.querySelector(".start_contain");
+const presents = document.querySelector(".start_presents");
+const title = document.querySelector(".start_title");
+const subtitle = document.querySelector(".start_subtitle");
+const videoWrap = document.querySelector(".video");
+const video = videoWrap.querySelector("video");
+const mission = document.querySelector(".start_mission");
+const bg = document.getElementById("bg");
+
+let started = false;
+
+/* UTIL */
+function show(el) {
+    el.style.display = "flex";
+}
+
+function hide(el) {
+    el.style.display = "none";
+}
+
+function wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+/* INIT */
+pressStart.style.display = "flex";
+
+/* SEQUÊNCIA PRINCIPAL */
+async function startGameSequence() {
+    if (started) return;
+    started = true;
+
+    sound_start.currentTime = 0;
+    sound_start.play();
+
+    // Fade-out Press Start
+    pressStart.classList.add("fade-out");
+    await wait(1200);
+    hide(pressStart);
+    await wait(4000);
+
+
+    // Cristhian Apresenta
+    show(presents);
+    await wait(6000);
+    hide(presents);
+    await wait(1200);
+
+    // The Legend of Zelda
+    show(title);
+    await wait(6000);
+    hide(title);
+    await wait(1200);
+
+    // The Birthday Trial
+    show(subtitle);
+    await wait(6000);
+    hide(subtitle);
+    await wait(1000);
+
+    // Vídeo começa
+    show(videoWrap);
+
+    video.style.display = "block";
+    video.currentTime = 0;
+
+    videoWrap.classList.add("fade-in");
+    video.play();
+
+    // 1.5 segundos só vídeo
+    await wait(1500);
+
+    // Missão Principal entra
+    show(mission);
+
+    sound_start_mission.currentTime = 0;
+    sound_start_mission.play();
+
+    setTimeout(() => {
+        sound_objective.currentTime = 0;
+        sound_objective.play();
+    }, 1520);
+
+    // Espera o vídeo acabar
+    video.addEventListener("ended", () => {
+        startScreen.style.display = "none";
+        bg.style.display = "flex";
+
+        sound_inventory_open.currentTime = 0;
+        sound_inventory_open.play();
+
+        iniciarEscrita();
+    }, { once: true });
+}
+
+/* INPUT */
+startScreen.addEventListener("click", startGameSequence);
+startScreen.addEventListener("keydown", startGameSequence);
 
 
 
 /* =========================== */
 /*        MODAL_REWARD         */
 /* =========================== */
+
 
 const modalRewardOverlay = document.querySelector(".modal_reward_overlay");
 const modalReward = document.querySelector(".modal_reward");
@@ -478,51 +635,6 @@ modalKorok.addEventListener("click", (e) => {
 
 
 
-/* ======================================= */
-/*         ANIMATION_TEXT_WHRITING         */
-/* ======================================= */
-
-
-const container = document.getElementById("meuTexto");
-
-const walker = document.createTreeWalker(
-    container,
-    NodeFilter.SHOW_TEXT,
-    null,
-    false
-);
-
-const textNodes = [];
-while (walker.nextNode()) {
-    textNodes.push(walker.currentNode);
-}
-
-const textos = textNodes.map(node => node.textContent);
-textNodes.forEach(node => node.textContent = "");
-
-let nodeIndex = 0;
-let charIndex = 0;
-
-const PASSO = 6;
-
-function escrever() {
-    if (nodeIndex >= textNodes.length) return;
-
-    const textoAtual = textos[nodeIndex];
-
-    const proximoChunk = textoAtual.slice(charIndex, charIndex + PASSO);
-    textNodes[nodeIndex].textContent += proximoChunk;
-    charIndex += PASSO;
-
-    if (charIndex >= textoAtual.length) {
-        nodeIndex++;
-        charIndex = 0;
-    }
-
-    requestAnimationFrame(escrever);
-}
-
-escrever();
 
 
 

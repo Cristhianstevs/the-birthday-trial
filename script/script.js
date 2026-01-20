@@ -4,17 +4,35 @@
 
 
 const sound_start = document.getElementById("startSound");
+
 const sound_start_mission = document.getElementById("StartMissionSound");
 const sound_objective = document.getElementById("objectiveSound");
+
+const sound_voice01 = document.getElementById("voiceSound01");
+const sound_voice02 = document.getElementById("voiceSound02");
+const sound_voice03 = document.getElementById("voiceSound03");
+const sound_voice04 = document.getElementById("voiceSound04");
+const sound_voice05 = document.getElementById("voiceSound05");
+const sound_voice06 = document.getElementById("voiceSound06");
+const sound_voice07 = document.getElementById("voiceSound07");
+
 const sound_inventory_open = document.getElementById("inventoryOpenSound");
+
 const sound_dialog_start = document.getElementById("dialogStartSound");
 const sound_dialog_next = document.getElementById("dialogNextSound");
 const sound_dialog_end = document.getElementById("dialogEndSound");
+
 const sound_yahaha = document.getElementById("korokSound");
 const sound_korok_found01 = document.getElementById("korokFound01Sound");
 const sound_korok_found02 = document.getElementById("korokFound02Sound");
+
 const sound_reward = document.getElementById("rewardSound");
+
+const sound_typing = document.getElementById("cursorMove02Sound");
+const sound_delete = document.getElementById("cursorMove03Sound");
+
 const sound_input_error = document.getElementById("errorInputSound")
+
 
 
 
@@ -26,44 +44,44 @@ const sound_input_error = document.getElementById("errorInputSound")
 function iniciarEscrita() {
     const container = document.getElementById("meuTexto");
     if (!container) return;
-
+    
     const walker = document.createTreeWalker(
         container,
         NodeFilter.SHOW_TEXT,
         null,
         false
     );
-
+    
     const textNodes = [];
     while (walker.nextNode()) {
         textNodes.push(walker.currentNode);
     }
-
+    
     const textos = textNodes.map(node => node.textContent);
     textNodes.forEach(node => node.textContent = "");
-
+    
     let nodeIndex = 0;
     let charIndex = 0;
-
+    
     const PASSO = 6;
-
+    
     function escrever() {
         if (nodeIndex >= textNodes.length) return;
-
+        
         const textoAtual = textos[nodeIndex];
         const proximoChunk = textoAtual.slice(charIndex, charIndex + PASSO);
-
+        
         textNodes[nodeIndex].textContent += proximoChunk;
         charIndex += PASSO;
-
+        
         if (charIndex >= textoAtual.length) {
             nodeIndex++;
             charIndex = 0;
         }
-
+        
         requestAnimationFrame(escrever);
     }
-
+    
     escrever();
 }
 
@@ -80,6 +98,13 @@ const title = document.querySelector(".start_title");
 const subtitle = document.querySelector(".start_subtitle");
 const videoWrap = document.querySelector(".video");
 const video = videoWrap.querySelector("video");
+const speak01 = document.getElementById("speak01");
+const speak02 = document.getElementById("speak02");
+const speak03 = document.getElementById("speak03");
+const speak04 = document.getElementById("speak04");
+const speak05 = document.getElementById("speak05");
+const speak06 = document.getElementById("speak06");
+const speak07 = document.getElementById("speak07");
 const mission = document.querySelector(".start_mission");
 const bg = document.getElementById("bg");
 
@@ -105,46 +130,104 @@ pressStart.style.display = "flex";
 async function startGameSequence() {
     if (started) return;
     started = true;
-
+    
     sound_start.currentTime = 0;
     sound_start.play();
+    
+    sound_voice01.volume = 1;
+    sound_voice02.volume = 1;
+    sound_voice03.volume = 1;
+    sound_voice04.volume = 1;
+    sound_voice05.volume = 1;
+    sound_voice06.volume = 1;
+    sound_voice07.volume = 1;
 
     // Fade-out Press Start
     pressStart.classList.add("fade-out");
     await wait(1200);
     hide(pressStart);
     await wait(4000);
-
-
+    
+    
     // Cristhian Apresenta
     show(presents);
     await wait(6000);
     hide(presents);
     await wait(1200);
-
+    
     // The Legend of Zelda
     show(title);
     await wait(6000);
     hide(title);
     await wait(1200);
-
+    
     // The Birthday Trial
     show(subtitle);
     await wait(6000);
     hide(subtitle);
     await wait(1000);
-
+    
     // Vídeo começa
     show(videoWrap);
 
     video.style.display = "block";
     video.currentTime = 0;
-
+    
+    
+    videoWrap.classList.add("zoom-out");
     videoWrap.classList.add("fade-in");
     video.play();
 
-    // 1.5 segundos só vídeo
-    await wait(1500);
+    await wait(4000);
+
+    show(speak01);
+    sound_voice05.currentTime = 0;
+    sound_voice05.play();
+    await wait(6000);
+    hide(speak01);
+    await wait(2000);
+
+    show(speak02);
+    sound_voice02.currentTime = 0;
+    sound_voice02.play();
+    await wait(5000);
+    hide(speak02);
+    await wait(2000);
+
+    show(speak03);
+    sound_voice03.currentTime = 0;
+    sound_voice03.play();
+    await wait(5000);
+    hide(speak03);
+    await wait(2000);
+
+    show(speak04);
+    sound_voice04.currentTime = 0;
+    sound_voice04.play();
+    await wait(6000);
+    hide(speak04);
+    await wait(2000);
+
+    show(speak05);
+    sound_voice01.currentTime = 0;
+    sound_voice01.play();
+    await wait(7000);
+    hide(speak05);
+    await wait(2000);
+
+    show(speak06);
+    sound_voice06.currentTime = 0;
+    sound_voice06.play();
+    await wait(6000);
+    hide(speak06);
+    await wait(2000);
+
+    show(speak07);
+    sound_voice07.currentTime = 0;
+    sound_voice07.play();
+    await wait(5000);
+    hide(speak07);
+    await wait(2000);
 
     // Missão Principal entra
     show(mission);
@@ -157,16 +240,15 @@ async function startGameSequence() {
         sound_objective.play();
     }, 1520);
 
-    // Espera o vídeo acabar
-    video.addEventListener("ended", () => {
-        startScreen.style.display = "none";
-        bg.style.display = "flex";
+    await wait(7000);
 
-        sound_inventory_open.currentTime = 0;
-        sound_inventory_open.play();
+    startScreen.style.display = "none";
+    bg.style.display = "flex";
 
-        iniciarEscrita();
-    }, { once: true });
+    sound_inventory_open.currentTime = 0;
+    sound_inventory_open.play();
+
+    iniciarEscrita();
 }
 
 /* INPUT */
@@ -291,10 +373,6 @@ modalContent.addEventListener("click", (event) => {
 /*         RESPONSE         */
 /* ======================== */
 
-
-/* ÁUDIO */
-const sound_typing = new Audio("../public/cursor_move02.wav");
-const sound_delete = new Audio("../public/cursor_move03.wav");
 
 sound_typing.volume = 0.4;
 sound_delete.volume = 0.2;
@@ -479,16 +557,16 @@ sound_dialog_next.volume = .5;
 
 const korokDialogsFirstTime = [
     "Ya-ha-ha! Você me encontrou!\nVou te dar algumas dicas.",
-    "Dica 1",
-    "Dica 2",
-    "Dica 3"
+    "Um: A quem pertence",
+    "Dois: O seu tipo",
+    "Três: Me é familiar"
 ];
 
 const korokDialogsRepeat = [
     "Hi-hi!\nEssas são as dicas:",
-    "Dica 1",
-    "Dica 2",
-    "Dica 3"
+    "Um: A quem pertence",
+    "Dois: O seu tipo",
+    "Três: Me é familiar"
 ];
 
 let activeKorokDialogs = [];

@@ -9,17 +9,26 @@ const sound_start_mission = document.getElementById("StartMissionSound");
 const sound_objective = document.getElementById("objectiveSound");
 
 const sound_voice01 = document.getElementById("voiceSound01");
+sound_voice01.volume = 1;
 const sound_voice02 = document.getElementById("voiceSound02");
+sound_voice02.volume = 1;
 const sound_voice03 = document.getElementById("voiceSound03");
+sound_voice03.volume = 1;
 const sound_voice04 = document.getElementById("voiceSound04");
+sound_voice04.volume = 1;
 const sound_voice05 = document.getElementById("voiceSound05");
+sound_voice05.volume = 1;
 const sound_voice06 = document.getElementById("voiceSound06");
+sound_voice06.volume = 1;
 const sound_voice07 = document.getElementById("voiceSound07");
+sound_voice07.volume = 1;
 
 const sound_inventory_open = document.getElementById("inventoryOpenSound");
+sound_inventory_open.volume = .1;
 
 const sound_dialog_start = document.getElementById("dialogStartSound");
 const sound_dialog_next = document.getElementById("dialogNextSound");
+sound_dialog_next.volume = .5;
 const sound_dialog_end = document.getElementById("dialogEndSound");
 
 const sound_yahaha = document.getElementById("korokSound");
@@ -29,10 +38,11 @@ const sound_korok_found02 = document.getElementById("korokFound02Sound");
 const sound_reward = document.getElementById("rewardSound");
 
 const sound_typing = document.getElementById("cursorMove02Sound");
+sound_typing.volume = 0.4;
 const sound_delete = document.getElementById("cursorMove03Sound");
+sound_delete.volume = 0.2;
 
 const sound_input_error = document.getElementById("errorInputSound")
-
 
 
 
@@ -133,14 +143,6 @@ async function startGameSequence() {
     
     sound_start.currentTime = 0;
     sound_start.play();
-    
-    sound_voice01.volume = 1;
-    sound_voice02.volume = 1;
-    sound_voice03.volume = 1;
-    sound_voice04.volume = 1;
-    sound_voice05.volume = 1;
-    sound_voice06.volume = 1;
-    sound_voice07.volume = 1;
 
     // Fade-out Press Start
     pressStart.classList.add("fade-out");
@@ -170,15 +172,14 @@ async function startGameSequence() {
     // Vídeo começa
     show(videoWrap);
 
-    video.style.display = "block";
-    video.currentTime = 0;
+    video.currentTime = 0;    
     
-    
-    videoWrap.classList.add("zoom-out");
     videoWrap.classList.add("fade-in");
+    video.muted = false;
+    video.volume = 1;
     video.play();
 
-    await wait(4000);
+    await wait(5000);
 
     show(speak01);
     sound_voice05.currentTime = 0;
@@ -240,7 +241,7 @@ async function startGameSequence() {
         sound_objective.play();
     }, 1520);
 
-    await wait(7000);
+    await wait(6000);
 
     startScreen.style.display = "none";
     bg.style.display = "flex";
@@ -372,10 +373,6 @@ modalContent.addEventListener("click", (event) => {
 /* ======================== */
 /*         RESPONSE         */
 /* ======================== */
-
-
-sound_typing.volume = 0.4;
-sound_delete.volume = 0.2;
 
 let lastTypeTime = 0;
 const TYPE_SOUND_COOLDOWN = 40;
@@ -550,8 +547,6 @@ const modalKorokOverlay = document.querySelector(".modal_korok_overlay");
 const modalKorok = document.querySelector(".modal_korok");
 const korokTitle = modalKorok.querySelector("h2");
 const korokExit = modalKorok.querySelector(".exit_dialog");
-
-sound_dialog_next.volume = .5;
 
 /* DIÁLOGOS */
 

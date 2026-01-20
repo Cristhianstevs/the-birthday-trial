@@ -301,7 +301,10 @@
 }
 
 .video.fade-in video {
-    animation: videoFadeIn 1.5s ease forwards;
+    visibility: visible;
+    animation:
+        videoFadeIn 5s ease-in forwards,
+        zoomOutVideo 64s ease-in forwards;
 }
 
 @keyframes zoomOutVideo {
@@ -311,10 +314,6 @@
     to {
         transform: scale(1);
     }
-}
-
-.video.zoom-out video {
-    animation: zoomOutVideo 65s ease-in forwards;
 }
 
 
@@ -478,7 +477,8 @@ span {
     justify-content: center;
 }
 .video > video {
-    display: none; /*cinco*/
+    visibility: hidden; /*cinco*/
+    opacity: 0;
     height: 100%;
     width: 100%;
     opacity: .4;

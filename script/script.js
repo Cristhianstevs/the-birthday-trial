@@ -301,6 +301,10 @@ function closeModalReward() {
 
     rewardUnlocked = false;
     limparInputs();
+
+    setTimeout(() => {
+        startFinalSequence();
+    }, 2000);
 }
 
 modalRewardOverlay.addEventListener("animationend", (e) => {
@@ -837,3 +841,259 @@ function animateDiagonal(time) {
 }
 
 requestAnimationFrame(animateDiagonal);
+
+
+
+/* =============================== */
+/*     FINAL VIDEO SEQUENCE        */
+/* =============================== */
+
+
+const complete = document.querySelector(".complete");
+const videoFinalWrap = document.querySelector(".video_contain_final");
+const videoFinal = document.getElementById("video_final");
+
+const speak01Final = document.getElementById("speak01_final");
+const speak02Final = document.getElementById("speak02_final");
+const speak03Final = document.getElementById("speak03_final");
+const speak04Final = document.getElementById("speak04_final");
+const speak05Final = document.getElementById("speak05_final");
+
+const completeMission = document.querySelector(".complete_mission");
+
+let finalStarted = false;
+
+/* SEQUÊNCIA FINAL */
+
+async function startFinalSequence() {
+    if (finalStarted) return;
+    finalStarted = true;
+
+    // fade-out do bg
+    bg.classList.add("fade-out");
+
+    // garante que o complete esteja visível antes de animar
+    complete.style.display = "flex";
+
+    // força reflow (importante para garantir a transição)
+    complete.offsetHeight;
+
+    // fade-in do complete
+    complete.classList.add("show");
+
+    // depois da animação, esconde o bg de vez
+    setTimeout(() => {
+        bg.style.display = "none";
+    }, 1800); // mesmo tempo do transition
+
+    // reset visual
+    hide(videoFinalWrap);
+    hide(completeMission);
+
+    hide(speak01Final);
+    hide(speak02Final);
+    hide(speak03Final);
+    hide(speak04Final);
+    hide(speak05Final);
+
+    // mostra vídeo
+    show(videoFinalWrap);
+    videoFinalWrap.classList.add("show");
+
+    videoFinal.currentTime = 0;
+    videoFinal.muted = true;
+    videoFinal.volume = 1;
+    videoFinal.play();
+
+    await wait(5000);
+
+    show(speak01Final);
+    sound_voice01.currentTime = 0;
+    sound_voice01.play();
+    await wait(5000);
+    hide(speak01Final);
+    await wait(2000);
+
+    show(speak02Final);
+    sound_voice02.currentTime = 0;
+    sound_voice02.play();
+    await wait(5000);
+    hide(speak02Final);
+    await wait(2000);
+
+    show(speak03Final);
+    sound_voice03.currentTime = 0;
+    sound_voice03.play();
+    await wait(5000);
+    hide(speak03Final);
+    await wait(2000);
+
+    show(speak04Final);
+    sound_voice04.currentTime = 0;
+    sound_voice04.play();
+    await wait(5000);
+    hide(speak04Final);
+    await wait(2000);
+
+    show(speak05Final);
+    sound_voice05.currentTime = 0;
+    sound_voice05.play();
+    await wait(5000);
+    hide(speak05Final);
+    await wait(2000);
+
+    // encerra vídeo
+    videoFinal.pause();
+    hide(videoFinalWrap);
+
+    // missão completa
+    show(completeMission);
+
+    sound_start_mission.currentTime = 0;
+    sound_start_mission.play();
+
+    setTimeout(() => {
+        sound_objective.currentTime = 0;
+        sound_objective.play();
+    }, 1500);
+
+    await wait(6000);
+    
+    setTimeout(() => {
+        startFinalCredits();
+    }, 2000);
+}
+
+
+
+/* =========================== */
+/*         END CREDITS         */
+/* =========================== */
+
+
+/* IMAGENS DOS CRÉDITOS */
+
+const creditImages = document.querySelectorAll(
+    ".credits_image_contain > div"
+);
+
+const imageAnimationMap = [
+    "move_tl_tr",
+    "move_br_tl",
+    "move_cl_cr",
+    "move_tl_tr",
+    "move_cc_ct",
+    "move_cl_cr",
+    "move_cb_ct",
+    "move_br_tl",
+    "move_cc_ct",
+    "move_cl_cr",
+    "move_cc_ct",
+    "move_tl_tr",
+    "move_cl_cr",
+    "move_cc_ct",
+    "move_cc_ct",
+    "move_cl_cr",
+    "move_cr_cl",
+    "move_cl_cr",
+    "move_bl_tr",
+    "move_tl_bl"
+];
+
+const IMAGE_DURATION = 15000;
+let currentImageIndex = 0;
+let imageTimer = null;
+
+function showCreditImage(index) {
+    creditImages.forEach(img => {
+        img.className = img.className.replace(/\b(active|move_\S+)\b/g, "");
+    });
+
+    const img = creditImages[index];
+    if (!img) return;
+
+    void img.offsetWidth;
+
+    img.classList.add("active");
+    img.classList.add(imageAnimationMap[index]);
+}
+
+function startCreditImages() {
+    showCreditImage(0);
+
+    imageTimer = setInterval(() => {
+        currentImageIndex++;
+
+        if (currentImageIndex >= creditImages.length) {
+            clearInterval(imageTimer);
+            return;
+        }
+
+        showCreditImage(currentImageIndex);
+    }, IMAGE_DURATION);
+}
+
+/* SCROLL DOS CRÉDITOS */
+
+const credits = document.querySelector(".credits");
+const creditsContainer = document.querySelector(".credits_contain");
+const finalScreen = document.getElementById("finalScreen");
+const CREDITS_DURATION = 350;
+
+function startCreditsScroll() {
+    creditsContainer.style.animation =
+        `creditsScroll ${CREDITS_DURATION}s linear forwards`;
+
+    creditsContainer.addEventListener("animationend", onCreditsFinished);
+}
+
+/* FINAL DOS CRÉDITOS */
+
+function onCreditsFinished() {
+    console.log("Créditos finalizados");
+    credits.style.display = "none";
+    finalScreen.style.display = "flex";
+}
+
+/* START FINAL */
+
+function startFinalCredits() {
+    credits.style.display = "flex";
+    startCreditImages();
+    startCreditsScroll();
+}
+
+
+
+/* ============================ */
+/*         FINAL SCREEN         */
+/* ============================ */
+
+
+function button_restart_credits() {
+    sound_dialog_start.currentTime = 0;
+    sound_dialog_start.play();
+
+    setTimeout(() => {
+        finalScreen.style.display = "none";
+        startFinalCredits();
+    }, 1500);
+}
+
+function button_restart() {
+    sound_dialog_start.currentTime = 0;
+    sound_dialog_start.play();
+
+    setTimeout(() => {
+        window.location.reload()
+    }, 1500);
+}
+
+function button_reward() {
+    sound_dialog_start.currentTime = 0;
+    sound_dialog_start.play();
+
+    setTimeout(() => {
+        openModalReward();
+    }, 1500);
+}

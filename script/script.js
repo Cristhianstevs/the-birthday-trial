@@ -49,8 +49,7 @@ sound_dialog_next.volume = .5;
 sound_reward.volume = 0.5;
 sound_typing.volume = 0.4;
 sound_delete.volume = 0.2;
-sound_credits.volume = 0.4;
-sound_credits.playbackRate = 0.95;
+
 
 /* ======================================= */
 /*         ANIMATION_TEXT_WHRITING         */
@@ -1074,6 +1073,7 @@ function startFinalCredits() {
     credits.style.display = "flex";
 
     sound_credits.currentTime = 0;
+    sound_credits.volume = 0.2;
     sound_credits.play();
 
     startCreditImages();

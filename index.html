@@ -524,7 +524,7 @@
             <p>Continue aprimorando suas habilidades</p>
         </div>
         <div class="speaks_final" id="speak04_final">
-            <p>Parabéns</p>
+            <p>Parabéns, herói</p>
         </div>
         <div class="speaks_final" id="speak05_final">
             <p>Que a deusa sorria para você</p>
@@ -547,10 +547,7 @@
                     </div>
                 </div>
                 <div class="complete_mission_objective">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-60 -60 120 120">
-                        <path d="M -60 0 A 1 1 0 0 0 60 0 A 1 1 0 0 0 -60 0 M -39 0 A 1 1 0 0 1 39 0 A 1 1 0 0 1 -39 0 M -20 0 A 1 1 0 0 0 20 0 A 1 1 0 0 0 -20 0" fill="#f9d008"/>
-                    </svg>
-                    <p>Completo</p>
+                    <p>Concluída</p>
                 </div>
             </div>
         </div>
@@ -761,11 +758,19 @@
                 <span class="credit_sector"><h4>SUPERVISOR TÉCNICO</h4></span>
                 <span class="credit_prof"><p>Cristhian Esteves</p></span>
             </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>MANOBRISTA DE NAVIO</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>AUXILIAR SUPLENTE RESERVA DE SERVIÇOS GERAIS</h4></span>
+                <span class="credit_prof"><p>CHAT GPT</p></span>
+            </span>
 
             <div class="credits_spacing_final"></div>
 
             <span class="credits_content">
-                <span class="credit_sector">
+                <span class="credit_sector_final">
                     <h4 class="frase_final">{texto parabêns}</h4>
                 </span>
             </span>
@@ -909,6 +914,7 @@
 
     <audio id="StartMissionSound" src="./public/start_mission.wav" preload="auto"></audio>
     <audio id="objectiveSound" src="./public/start_mission_objective.wav" preload="auto"></audio>
+    <audio id="completeMissionSound" src="./public/complete_mission.wav" preload="auto"></audio>
 
     <audio id="voiceSound01" src="./public/voice01.wav" preload="auto"></audio>
     <audio id="voiceSound02" src="./public/voice02.wav" preload="auto"></audio>
@@ -919,6 +925,7 @@
     <audio id="voiceSound07" src="./public/voice01.wav" preload="auto"></audio>
 
     <audio id="inventoryOpenSound" src="./public/inventory_open.wav" preload="auto"></audio>
+    <audio id="inventoryCloseSound" src="./public/inventory_close.wav" preload="auto"></audio>
 
     <audio id="rewardSound" src="./public/reward.mp3" preload="auto"></audio>
 
@@ -935,6 +942,8 @@
     <audio id="cursorMove03Sound" src="./public/cursor_move03.wav" preload="auto"></audio>
 
     <audio id="errorInputSound" src="./public/error_input.wav" preload="auto"></audio>
+
+    <audio id="creditsSound" src="./public/the_final_trial.mp3" preload="auto"></audio>
     
     <script src="./script/script.js"></script>
 

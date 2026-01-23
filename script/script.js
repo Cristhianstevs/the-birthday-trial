@@ -7,28 +7,21 @@ const sound_start = document.getElementById("startSound");
 
 const sound_start_mission = document.getElementById("StartMissionSound");
 const sound_objective = document.getElementById("objectiveSound");
+const sound_complete_mission = document.getElementById("completeMissionSound");
 
 const sound_voice01 = document.getElementById("voiceSound01");
-sound_voice01.volume = 1;
 const sound_voice02 = document.getElementById("voiceSound02");
-sound_voice02.volume = 1;
 const sound_voice03 = document.getElementById("voiceSound03");
-sound_voice03.volume = 1;
 const sound_voice04 = document.getElementById("voiceSound04");
-sound_voice04.volume = 1;
 const sound_voice05 = document.getElementById("voiceSound05");
-sound_voice05.volume = 1;
 const sound_voice06 = document.getElementById("voiceSound06");
-sound_voice06.volume = 1;
 const sound_voice07 = document.getElementById("voiceSound07");
-sound_voice07.volume = 1;
 
 const sound_inventory_open = document.getElementById("inventoryOpenSound");
-sound_inventory_open.volume = .1;
+const sound_inventory_close = document.getElementById("inventoryCloseSound");
 
 const sound_dialog_start = document.getElementById("dialogStartSound");
 const sound_dialog_next = document.getElementById("dialogNextSound");
-sound_dialog_next.volume = .5;
 const sound_dialog_end = document.getElementById("dialogEndSound");
 
 const sound_yahaha = document.getElementById("korokSound");
@@ -38,13 +31,26 @@ const sound_korok_found02 = document.getElementById("korokFound02Sound");
 const sound_reward = document.getElementById("rewardSound");
 
 const sound_typing = document.getElementById("cursorMove02Sound");
-sound_typing.volume = 0.4;
 const sound_delete = document.getElementById("cursorMove03Sound");
+
+const sound_input_error = document.getElementById("errorInputSound");
+
+const sound_credits = document.getElementById("creditsSound");
+
+sound_voice01.volume = 1;
+sound_voice02.volume = 1;
+sound_voice03.volume = 1;
+sound_voice04.volume = 1;
+sound_voice05.volume = 1;
+sound_voice06.volume = 1;
+sound_voice07.volume = 1;
+sound_inventory_open.volume = .1;
+sound_dialog_next.volume = .5;
+sound_reward.volume = 0.5;
+sound_typing.volume = 0.4;
 sound_delete.volume = 0.2;
-
-const sound_input_error = document.getElementById("errorInputSound")
-
-
+sound_credits.volume = 0.4;
+sound_credits.playbackRate = 0.95;
 
 /* ======================================= */
 /*         ANIMATION_TEXT_WHRITING         */
@@ -293,6 +299,8 @@ function openModalReward() {
 function closeModalReward() {
     modalRewardOverlay.classList.remove("active");
     modalRewardOverlay.classList.add("closing");
+
+    bg.style.cursor = "none";
 
     if (sound_dialog_end) {
         sound_dialog_end.currentTime = 0;
@@ -871,6 +879,8 @@ async function startFinalSequence() {
 
     // fade-out do bg
     bg.classList.add("fade-out");
+    sound_inventory_close.currentTime = 0;
+    sound_inventory_close.play();
 
     // garante que o complete esteja visível antes de animar
     complete.style.display = "flex";
@@ -884,7 +894,7 @@ async function startFinalSequence() {
     // depois da animação, esconde o bg de vez
     setTimeout(() => {
         bg.style.display = "none";
-    }, 1800); // mesmo tempo do transition
+    }, 100); // mesmo tempo do transition
 
     // reset visual
     hide(videoFinalWrap);
@@ -942,22 +952,25 @@ async function startFinalSequence() {
     hide(speak05Final);
     await wait(2000);
 
-    // encerra vídeo
-    videoFinal.pause();
-    hide(videoFinalWrap);
-
+    
     // missão completa
     show(completeMission);
 
     sound_start_mission.currentTime = 0;
     sound_start_mission.play();
-
+    
     setTimeout(() => {
-        sound_objective.currentTime = 0;
-        sound_objective.play();
+        sound_complete_mission.currentTime = 0;
+        sound_complete_mission.play();
     }, 1500);
 
-    await wait(6000);
+    await wait(3000);
+
+    // encerra vídeo
+    videoFinal.pause();
+    hide(videoFinalWrap);
+    
+    await wait(3000);
     
     setTimeout(() => {
         startFinalCredits();
@@ -1059,6 +1072,10 @@ function onCreditsFinished() {
 
 function startFinalCredits() {
     credits.style.display = "flex";
+
+    sound_credits.currentTime = 0;
+    sound_credits.play();
+
     startCreditImages();
     startCreditsScroll();
 }

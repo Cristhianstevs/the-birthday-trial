@@ -2043,6 +2043,7 @@ header {
     background-color: #0c0c0c;
     display: none;
     justify-content: center;
+    z-index: 99999;
 }
 
 .credit_sector > h4, .credit_area > h4, .credit_prof > p {

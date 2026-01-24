@@ -29,6 +29,7 @@ function preloadAudios(audios) {
                     audio.currentTime = 0;
                     audio.volume = originalVolume;
                     resolve();
+                });
             });
         })
     );

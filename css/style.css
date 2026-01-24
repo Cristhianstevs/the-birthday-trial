@@ -652,6 +652,7 @@ body {
     overflow: hidden;
     opacity: 1;
     transition: opacity 1.2s ease;
+    cursor: wait;
 }
 .loading.hidden {
     opacity: 0;

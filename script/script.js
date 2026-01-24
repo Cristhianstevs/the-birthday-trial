@@ -1,3 +1,164 @@
+/* ========================= */
+/*        PRELOADING         */
+/* ========================= */
+
+
+let assetsLoaded = false;
+
+function preloadImages(urls) {
+    return Promise.all(
+        urls.map(src => {
+            return new Promise(resolve => {
+                const img = new Image();
+                img.src = src;
+                img.onload = resolve;
+                img.onerror = resolve;
+            });
+        })
+    );
+}
+
+function preloadAudios(audios) {
+    return Promise.all(
+        audios.map(audio => {
+            return new Promise(resolve => {
+                const originalVolume = audio.volume;
+                audio.volume = 0;
+                audio.play().then(() => {
+                    audio.pause();
+                    audio.currentTime = 0;
+                    audio.volume = originalVolume;
+                    resolve();
+            });
+        })
+    );
+}
+
+function preloadVideo(video) {
+    return new Promise(resolve => {
+        video.muted = true;
+        video.playsInline = true;
+
+        video.addEventListener("canplaythrough", resolve, { once: true });
+        video.load();
+    });
+}
+
+
+async function preloadEverything() {
+    const loadingScreen = document.getElementById("loadingScreen");
+
+    show(loadingScreen);
+
+
+
+    try {
+        await preloadImages([
+            "../public/credit_img01.jpeg",
+            "../public/credit_img02.jpeg",
+            "../public/credit_img03.jpeg",
+            "../public/credit_img04.jpeg",
+            "../public/credit_img05.jpeg",
+            "../public/credit_img06.jpeg",
+            "../public/credit_img07.jpeg",
+            "../public/credit_img08.jpeg",
+            "../public/credit_img09.jpeg",
+            "../public/credit_img10.jpeg",
+            "../public/credit_img11.jpeg",
+            "../public/credit_img12.jpeg",
+            "../public/credit_img13.jpeg",
+            "../public/credit_img14.jpeg",
+            "../public/credit_img15.jpeg",
+            "../public/credit_img16.jpeg",
+            "../public/credit_img17.jpeg",
+            "../public/credit_img18.jpeg",
+            "../public/credit_img19.jpeg",
+            "../public/credit_img20.jpeg",
+            "../public/background01_zelda.jpg",
+            "../public/background02_zelda.jpg",
+            "../public/background03_zelda.jpg",
+            "../public/background04_zelda.jpg",
+            "../public/background05_zelda.jpg",
+            "../public/background06_zelda.jpg",
+            "../public/background07_zelda.jpg",
+            "../public/background08_zelda.jpg",
+            "../public/background09_zelda.jpg",
+            "../public/background10_zelda.jpg",
+            "../public/background11_zelda.jpg",
+            "../public/background12_zelda.jpg",
+            "../public/background13_zelda.jpg",
+            "../public/background14_zelda.jpg",
+            "../public/background15_zelda.jpg",
+            "../public/background16_zelda.jpg",
+            "../public/background17_zelda.jpg",
+            "../public/background18_zelda.jpg",
+            "../public/background19_zelda.jpg",
+            "../public/background20_zelda.jpg",
+            "../public/background21_zelda.jpg",
+            "../public/background22_zelda.jpg",
+            "../public/background23_zelda.jpg",
+            "../public/background24_zelda.jpg",
+            "../public/background25_zelda.jpg",
+            "../public/background26_zelda.jpg",
+            "../public/background27_zelda.jpg",
+            "../public/background28_zelda.jpg",
+            "../public/reward06.jpg",
+            "../public/alert_icon.png",
+            "../public/korok01.png",
+            "../public/korok02.png",
+            "../public/korok03.png",
+            "../public/master_sword.png",
+            "../public/reward.png",
+            "../public/reward03.png",
+            "../public/reward04.png",
+            "../public/reward07.png",
+            "../public/reward08.png",
+            "../public/reward09.png",
+            "../public/rupee_icon.png",
+            "../public/korok02.webp",          
+            "../public/reward02.webp",          
+        ]);
+
+        await preloadAudios([
+            sound_start,
+            sound_start_mission,
+            sound_objective,
+            sound_inventory_open,
+            sound_inventory_close,
+            sound_voice01,
+            sound_voice02,
+            sound_voice03,
+            sound_voice04,
+            sound_voice05,
+            sound_voice06,
+            sound_voice07,
+            sound_credits
+        ]);
+
+        await preloadVideo(video);
+        await preloadVideo(videoFinal);
+
+    } catch (e) {
+        console.warn("Erro no preload:", e);
+    }
+
+    assetsLoaded = true;
+
+    // fade-out suave do loading
+    loadingScreen.classList.add("hidden");
+    
+    setTimeout(() => {
+        hide(loadingScreen);
+        show(startScreen);
+        pressStart.classList.add("show");
+    }, 1200);
+}
+
+
+window.addEventListener("load", preloadEverything);
+
+
+
 /* ===================== */
 /*        AUDIOS         */
 /* ===================== */
@@ -127,6 +288,7 @@ let started = false;
 
 /* UTIL */
 function show(el) {
+    if (!el) return;
     el.style.display = "flex";
 }
 
@@ -143,6 +305,7 @@ pressStart.style.display = "flex";
 
 /* SEQUÊNCIA PRINCIPAL */
 async function startGameSequence() {
+    if (!assetsLoaded) return;
     if (started) return;
     started = true;
     
@@ -1012,18 +1175,16 @@ const imageAnimationMap = [
     "move_tl_bl"
 ];
 
-const IMAGE_DURATION = 15000;
+const IMAGE_TOTAL_DURATION = 18000;
+const IMAGE_OVERLAP = 2500; 
 let currentImageIndex = 0;
 let imageTimer = null;
 
 function showCreditImage(index) {
-    creditImages.forEach(img => {
-        img.className = img.className.replace(/\b(active|move_\S+)\b/g, "");
-    });
-
     const img = creditImages[index];
     if (!img) return;
 
+    img.className = img.className.replace(/\b(active|move_\S+)\b/g, "");
     void img.offsetWidth;
 
     img.classList.add("active");
@@ -1031,18 +1192,18 @@ function showCreditImage(index) {
 }
 
 function startCreditImages() {
-    showCreditImage(0);
+    let index = 0;
 
-    imageTimer = setInterval(() => {
-        currentImageIndex++;
+    function nextImage() {
+        showCreditImage(index);
 
-        if (currentImageIndex >= creditImages.length) {
-            clearInterval(imageTimer);
-            return;
-        }
+        index++;
+        if (index >= creditImages.length) return;
 
-        showCreditImage(currentImageIndex);
-    }, IMAGE_DURATION);
+        setTimeout(nextImage, IMAGE_TOTAL_DURATION - IMAGE_OVERLAP);
+    }
+
+    nextImage();
 }
 
 /* SCROLL DOS CRÉDITOS */
@@ -1050,7 +1211,7 @@ function startCreditImages() {
 const credits = document.querySelector(".credits");
 const creditsContainer = document.querySelector(".credits_contain");
 const finalScreen = document.getElementById("finalScreen");
-const CREDITS_DURATION = 350;
+const CREDITS_DURATION = 340;
 
 function startCreditsScroll() {
     creditsContainer.style.animation =

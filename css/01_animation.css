@@ -1,0 +1,524 @@
+/* ======================================= */
+/* ===            ANIMATION            === */
+/* ======================================= */
+
+
+@keyframes loading_tri {
+    0% {
+        transform: scale(1);
+        
+    }
+    50% {
+        transform: scale(.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 8px #fcfee4;
+    }
+    25% {
+        box-shadow: 0 0 4px #fcfee480;
+    }
+    50% {
+        box-shadow: 0 0 0x #fcfee420;
+    }
+    75% {
+        box-shadow: 0 0 4px #fcfee480;
+    }
+    100% {
+        box-shadow: 0 0 8px #fcfee4;
+    }
+}
+
+@keyframes glow02 {
+    0% {
+        filter: drop-shadow(0 0 2px #fcfee4a0) drop-shadow(0 0 1px #fcfee4a0);
+    }
+    50% {
+        filter: drop-shadow(0 0 0px #fcfee4a0);
+    }
+    100% {
+        filter: drop-shadow(0 0 2px #fcfee4a0) drop-shadow(0 0 1px #fcfee4a0);
+    }
+}
+
+@keyframes glow03 {
+    0% {
+        filter: drop-shadow(0 0 2px #fcfee450) drop-shadow(0 0 1px #fcfee450);
+    }
+    50% {
+        filter: drop-shadow(0 0 0px #fcfee450);
+    }
+    100% {
+        filter: drop-shadow(0 0 2px #fcfee450) drop-shadow(0 0 1px #fcfee450);
+    }
+}
+
+@keyframes blur {
+    0% {
+        filter: blur(15px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0px);
+        opacity: 100%;
+    }
+}
+
+@keyframes blur_button {
+    0% {
+        filter: blur(15px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0px);
+        opacity: 100%;
+    }
+}
+
+@keyframes blurIn {
+    from {
+        filter: blur(15px);
+        opacity: 0;
+    }
+    to {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes blurOut {
+    from {
+        filter: blur(0px);
+        opacity: 1;
+    }
+    to {
+        filter: blur(15px);
+        opacity: 0;
+    }
+}
+
+@keyframes korokIdle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes continue {
+    0% {
+        opacity: .3;
+    }
+    50% {
+        opacity: .7;
+    }
+    100% {
+        opacity: .3;
+    } 
+}
+
+@keyframes rotate-slow {
+    0% { transform: rotate(0deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1.2); }
+}
+
+@keyframes rotate-medium {
+    0% { transform: rotate(0deg) scale(1.3); }
+    50% { opacity: 0.8; }
+    100% { transform: rotate(360deg) scale(1.3); }
+}
+
+@keyframes rotate-reverse-fast {
+    0% { transform: rotate(0deg) scale(1.3); }
+    50% { opacity: 0.8; }
+    100% { transform: rotate(-360deg) scale(1.3); }
+}
+
+@keyframes reward {
+    0% {
+        filter: blur(20px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0px);
+        opacity: 100%;  
+    }
+}
+
+@keyframes reward_content {
+    0% {
+        box-shadow: 0 0 0 0 #CFA834a0;
+        transform: scale(1.3);
+        filter: blur(35px);
+    }
+    45% {
+        box-shadow: 0 0 0 0 #CFA834a0;
+    }
+    100% {
+        box-shadow: 0 0 30px 90px transparent;
+        filter: blur(0px);
+    }
+}
+
+@keyframes reward_content_overlay {
+    0% {
+        background-color: transparent;
+    }
+    40% {
+        background-color: transparent;
+    }
+    45% {
+        background-color: #CFA834a0;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+@keyframes exit_dialog {
+    0% {
+        filter: blur(20px);
+        opacity: 0;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0px);
+        opacity: 100%;  
+    }
+}
+
+@keyframes errorInput {
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(-6px); }
+    40%  { transform: translateX(6px); }
+    60%  { transform: translateX(-4px); }
+    80%  { transform: translateX(4px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes start_text {
+    0% {
+        text-shadow: 0 0 10px #CFA834;
+        opacity: 1;
+    }
+    50% {
+        text-shadow: 0 0 0 transparent;
+        opacity: .9;
+    }
+    100% {
+        text-shadow: 0 0 10px #CFA834;
+        opacity: 1;
+    }
+}
+
+@keyframes start_text_opacity {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes mission_all_left {
+    0% {
+        width: 0px;
+        right: 0;
+    }
+    7% {
+        width: 100%;
+        right: 0;
+    }
+    93% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0px;
+        left: 0;
+    }
+}
+
+@keyframes mission_left {
+    0% {
+        transform: translateX(15px);
+        opacity: 0;
+    }
+    7% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    93% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-15px);
+        opacity: 0;
+    } 
+}
+
+@keyframes objective {
+    0% {
+        transform: translateX(15px);
+        opacity: 0;       
+    }
+    32% {
+        transform: translateX(15px);
+        opacity: 0;       
+    }
+    38% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    90% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-15px);
+        opacity: 0;
+    }
+}
+
+@keyframes complete_mission {
+    0% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+    32% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+    38% {
+        transform: scale(.92);
+        opacity: 1;
+    }
+    39% {
+        transform: scale(1);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 1.2s ease forwards;
+}
+
+@keyframes videoFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .4;
+    }
+}
+
+@keyframes zoomOutVideo {
+    from {
+        transform: scale(1.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.video.fade-in video {
+    visibility: visible;
+    animation:
+        videoFadeIn 5s ease-in forwards,
+        zoomOutVideo 66s linear forwards;
+}
+
+.video.static video {
+    transform: none;
+}
+
+@keyframes creditsScroll {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10000px);
+    }
+}
+
+
+
+@keyframes tl_tr {
+    0% {
+        background-position: top left;
+    }
+    100% {
+        background-position: top right;
+    }
+}
+.move_tl_tr {
+    animation: tl_tr 18.5s linear forwards;
+}
+
+
+
+@keyframes tr_tl {
+    0% {
+        background-position: top right;
+    }
+    100% {
+        background-position: top left;
+    }
+}
+.move_tr_tl {
+    animation: tr_tl 18.5s linear forwards;
+}
+
+
+
+@keyframes tl_br {
+    0% {
+        background-position: top left;
+    }
+    100% {
+        background-position: bottom right;
+    }
+}
+.move_tl_br {
+    animation: tl_br 18.5s linear forwards;
+}
+
+
+
+@keyframes br_tl {
+    0% {
+        background-position: bottom right;
+    }
+    100% {
+        background-position: top left;
+    }
+}
+.move_br_tl {
+    animation: br_tl 18.5s linear forwards;
+}
+
+
+
+@keyframes bl_tr {
+    0% {
+        background-position: bottom left;
+    }
+    100% {
+        background-position: top right;
+    }
+}
+.move_bl_tr {
+    animation: bl_tr 18.5s linear forwards;
+}
+
+
+
+@keyframes cl_cr {
+    0% {
+        background-position: center left;
+    }
+    100% {
+        background-position: center right;
+    }
+}
+.move_cl_cr {
+    animation: cl_cr 18.5s linear forwards;
+}
+
+
+
+@keyframes cr_cl {
+    0% {
+        background-position: center right;
+    }
+    100% {
+        background-position: center left;
+    }
+}
+.move_cr_cl {
+    animation: cr_cl 18.5s linear forwards;
+}
+
+
+
+@keyframes cc_ct {
+    0% {
+        background-position: center center;
+    }
+    100% {
+        background-position: center top;
+    }
+}
+.move_cc_ct {
+    animation: cc_ct 18.5s linear forwards;
+}
+
+
+
+@keyframes cb_cc {
+    0% {
+        background-position: center bottom;
+    }
+    100% {
+        background-position: center center;
+    }
+}
+.move_cb_cc {
+    animation: cb_cc 18.5s linear forwards;
+}
+
+
+
+@keyframes cb_ct {
+    0% {
+        background-position: center bottom;
+    }
+    100% {
+        background-position: center top;
+    }
+}
+.move_cb_ct {
+    animation: cb_ct 18.5s linear forwards;
+}
+
+
+
+@keyframes tl_bl {
+    0% {
+        background-position: top left;
+    }
+    100% {
+        background-position: bottom left;
+    }
+}
+.move_tl_bl {
+    animation: tl_bl 18.5s linear forwards;
+}

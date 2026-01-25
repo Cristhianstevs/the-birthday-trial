@@ -3,12 +3,16 @@
     body {
         overflow-y: scroll;
     }
-
+    
+    #loadingScreen, .start {
+        overflow: hidden;
+    }
+    
     .modal_reward {
         transform: scale(.9);
     }
 
-    #bg > img {
+    #inventory > img {
         filter: grayscale(60%) opacity(4%);
     }
     .hearts {

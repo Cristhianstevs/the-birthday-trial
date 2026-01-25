@@ -1,0 +1,78 @@
+/* =================================== */
+/* ===            HOOTS            === */
+/* =================================== */
+
+
+:root {
+    --botw-gold-light: rgba(184, 174, 84, 0.6);
+    --botw-gold-mid: rgba(125, 117, 46, 0.5);
+    --botw-green-dark: rgba(60, 70, 30, 0.7);
+    --botw-deep-shadow: rgba(20, 30, 10, 0.9);
+    --transparent: rgba(0,0,0,0);
+}
+
+
+
+/* =================================== */
+/* ===            GERAL            === */
+/* =================================== */
+
+
+::selection {
+  background-color: #e4e7cd10;
+}
+* {
+    padding: 0;
+    margin: 0;
+    pointer-events: auto;
+    user-select: none;
+}
+body {
+    overflow: hidden;
+    font-family: 'Calamity-Regular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0C0C0C;
+    color: #e4e7cd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+#inventory {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: url(../public/background15_zelda.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    line-height: 1.6em;
+    display: none;
+    justify-content: space-between;
+    animation: blur .4s;
+    opacity: 1;
+    transition: opacity .1s linear;
+}
+#inventory.fade-out {
+    opacity: 0;
+}
+#inventory::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    filter: saturate(1.4);
+    backdrop-filter: blur(3px) brightness(35%);
+    background-color: #1d100050;
+    z-index: 1;
+}
+#inventory > * {
+    z-index: 2;
+}
+#inventory > img {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    filter: grayscale(60%) opacity(10%);
+}

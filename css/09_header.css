@@ -1,0 +1,98 @@
+/* =================================== */
+/* ===           HEADER            === */
+/* =================================== */
+
+
+header {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 160px;
+    width: calc(100% - 180px);
+    margin: 0 60px 0 60px;
+    z-index: 10;
+    color: #e4e7cd;
+}
+.header_mobile {
+    display: none;
+}
+.hearts {
+    display: flex;
+    flex-wrap: wrap;
+    width: 480px;
+    gap: 0;
+}
+.hearts > svg {
+    margin: 3px;
+    height: 25px;
+    width: 25px;
+}
+.header_info {
+    display: flex;
+    gap: 5px;
+    margin-top: 15px;
+}
+.header_info_title > h1{
+    font-family: 'Calamity-Bold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.8em;
+    font-weight: 700;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    line-height: 7em;
+}
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: -35px;
+    height: 15px;
+}
+.circle_select {
+    width: 7px;
+    height: 7px;
+    background-color: #e4e7cd;
+    border-radius: 36%;
+    transform: rotate(45deg);
+}
+.circle_not_select {
+    width: 6px;
+    height: 6px;
+    background-color: #e4e7cd50;
+    border-radius: 36%;
+    transform: rotate(45deg);
+    
+}
+.header_info_icon {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+.header_info_icon > svg {
+    width: 32px;
+}
+.header_info_icon > h2 {
+    font-size: 1.4em;
+    text-align: center;
+    height: 30px;
+    width: 110px;
+    letter-spacing: 1px;
+    transform: scaleY(.92);
+}
+.rupees {
+    display: flex;
+    align-items: center;
+}
+.rupees > img {
+    width: 60px;
+}
+.rupees > h1 {
+    letter-spacing: 3px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}

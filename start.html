@@ -5,7 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Birthday Trial</title>
     <link rel="shortcut icon" href="./public/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- ========================== -->
+    <!-- ==|       STYLES       |== -->
+    <!-- ========================== -->
+
+    <link rel="stylesheet" href="./css/01_animation.css">
+    <link rel="stylesheet" href="./css/02_fonts.css">
+    <link rel="stylesheet" href="./css/03_geral.css">
+
+    <link rel="stylesheet" href="./css/04_loading.css">
+    <link rel="stylesheet" href="./css/05_start.css">
+
+    <link rel="stylesheet" href="./css/06_modalReward.css">
+    <link rel="stylesheet" href="./css/07_modalResponse.css">
+    <link rel="stylesheet" href="./css/08_modalKorok.css">
+
+    <link rel="stylesheet" href="./css/09_header.css">
+    <link rel="stylesheet" href="./css/10_containPri.css">
+    <link rel="stylesheet" href="./css/11_actionButtons.css">
+    <link rel="stylesheet" href="./css/12_complete.css">
+    <link rel="stylesheet" href="./css/13_credits.css">
+    <link rel="stylesheet" href="./css/14_finalScreen.css">
     <link rel="stylesheet" href="./css/mediaQuery.css">
 </head>
 
@@ -14,7 +35,7 @@
 
 
     <!-- =========================== -->
-    <!-- ===       LOADING       === -->
+    <!-- ==|       LOADING       |== -->
     <!-- =========================== -->
 
 
@@ -46,7 +67,7 @@
 
 
     <!-- ========================= -->
-    <!-- ===       START       === -->
+    <!-- ==|       START       |== -->
     <!-- ========================= -->
 
 
@@ -119,7 +140,7 @@
 
 
     <!-- ================================ -->
-    <!-- ===       MODAL_REWARD       === -->
+    <!-- ==|       MODAL_REWARD       |== -->
     <!-- ================================ -->
 
 
@@ -170,7 +191,7 @@
 
 
     <!-- ================================== -->
-    <!-- ===       MODAL_RESPONSE       === -->
+    <!-- ==|       MODAL_RESPONSE       |== -->
     <!-- ================================== -->
 
     
@@ -207,7 +228,7 @@
 
 
     <!-- =============================== -->
-    <!-- ===       MODAL_KOROK       === -->
+    <!-- ==|       MODAL_KOROK       |== -->
     <!-- =============================== -->
 
 
@@ -235,11 +256,11 @@
 
 
     <!-- ============================= -->
-    <!-- ===       INVENTORY       === -->
+    <!-- ==|       INVENTORY       |== -->
     <!-- ============================= -->
 
 
-    <div id="bg">
+    <div id="inventory">
 
         <img src="./public/master_sword.png" alt="Master Sword">
         
@@ -248,7 +269,7 @@
 
         
         <!-- ========================== -->
-        <!-- ===       HEADER       === -->
+        <!-- ==|       HEADER       |== -->
         <!-- ========================== -->
 
 
@@ -392,7 +413,7 @@
 
 
         <!-- =============================== -->
-        <!-- ===       CONTAIN_PRI       === -->
+        <!-- ==|       CONTAIN_PRI       |== -->
         <!-- =============================== -->
 
 
@@ -408,7 +429,9 @@
             viewBox="-9 -8 8 8">
             <path d="M -9 0 L -9 -8 L -1 -8 L -5 -4 L -5 -8 L -9 -4 L -5 -4" fill="#ffffff20"/>
         </svg>
+
         <div class="contain_pri">
+
             <div class="borda_cima" style="position: absolute; height: 2px; width: 40px; background-color: #ffffff10; transform: rotate(135deg) translateX(18px); top: -3px; left: 0;"></div>
             <div class="borda_cima" style="position: absolute; height: 2px; width: 40px; background-color: #ffffff10; transform: rotate(45deg) translateX(-18px); bottom: -3px; left: 0;"></div>
             <div class="content_pri">
@@ -416,7 +439,7 @@
 
 
                 <!-- =============== -->
-                <!-- === MISSION === -->
+                <!-- ==| MISSION |== -->
                 <!-- =============== -->
 
                 <div class="mission">
@@ -506,7 +529,7 @@
 
 
                 <!-- ======================= -->
-                <!-- === MISSION_DETAILS === -->
+                <!-- ==| MISSION_DETAILS |== -->
                 <!-- ======================= -->
 
                 <div class="mission_details">
@@ -579,7 +602,7 @@
 
 
         <!-- ================================== -->
-        <!-- ===       ACTION_BUTTONS       === -->
+        <!-- ==|       ACTION_BUTTONS       |== -->
         <!-- ================================== -->
 
 
@@ -610,8 +633,8 @@
                             <mask id="cut_button_a">
                             <rect width="100%" height="100%" fill="white"/>
                             <text x="52%" y="72%" text-anchor="middle"
-                                    font-size="12" font-weight="bold"
-                                    fill="black">A</text>
+                                  font-size="12" font-weight="bold"
+                                  fill="black">A</text>
                             </mask>
                         </defs>
                         <circle cx="11" cy="11" r="11"
@@ -628,7 +651,7 @@
 
 
     <!-- ============================ -->
-    <!-- ===       COMPLETE       === -->
+    <!-- ==|       COMPLETE       |== -->
     <!-- ============================ -->
 
 
@@ -680,7 +703,7 @@
 
 
     <!-- =========================== -->
-    <!-- ===       CREDITS       === -->
+    <!-- ==|       CREDITS       |== -->
     <!-- =========================== -->
 
 
@@ -916,7 +939,7 @@
 
 
     <!-- ================================ -->
-    <!-- ===       FINAL_SCREEN       === -->
+    <!-- ==|       FINAL_SCREEN       |== -->
     <!-- ================================ -->
 
 
@@ -1053,7 +1076,7 @@
 
 
     <!-- ========================== -->
-    <!-- ===       AUDIOS       === -->
+    <!-- ==|       AUDIOS       |== -->
     <!-- ========================== -->
 
 
@@ -1097,11 +1120,23 @@
 
 
     <!-- =========================== -->
-    <!-- ===       SCRIPTS       === -->
+    <!-- ==|       SCRIPTS       |== -->
     <!-- =========================== -->
-    
 
-    <script src="./script/script.js"></script>
+
+    <script src="./script/01_preloading.js"></script>
+    <script src="./script/02_audios.js"></script>
+    <script src="./script/03_animationTextWriting.js"></script>
+    <script src="./script/04_startSequence.js"></script>
+    <script src="./script/05_modalReward.js"></script>
+    <script src="./script/06_modalResponse.js"></script>
+    <script src="./script/07_modalKorok.js"></script>
+    <script src="./script/08_animationArrowJoystickRight.js"></script>
+    <script src="./script/09_animationIconExitDialog.js"></script>
+    <script src="./script/10_animationArrowSelected.js"></script>
+    <script src="./script/11_finalVideoSequence.js"></script>
+    <script src="./script/12_credits.js"></script>
+    <script src="./script/13_finalScreen.js"></script>
 
 </body>
 </html>

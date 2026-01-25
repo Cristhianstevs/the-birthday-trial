@@ -1053,7 +1053,7 @@ async function startFinalSequence() {
     // garante que o complete esteja visível antes de animar
     complete.style.display = "flex";
 
-    // força reflow (importante para garantir a transição)
+    // força reflow
     complete.offsetHeight;
 
     // fade-in do complete
@@ -1181,7 +1181,7 @@ const imageAnimationMap = [
     "move_tl_bl"
 ];
 
-const IMAGE_TOTAL_DURATION = 18000;
+const IMAGE_TOTAL_DURATION = 18500;
 const IMAGE_OVERLAP = 2500; 
 let currentImageIndex = 0;
 let imageTimer = null;

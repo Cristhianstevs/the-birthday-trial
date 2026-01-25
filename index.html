@@ -11,6 +11,13 @@
 
 <body>
 
+
+
+    <!-- =========================== -->
+    <!-- ===       LOADING       === -->
+    <!-- =========================== -->
+
+
     <div class="loading" id="loadingScreen">
         <div class="loading_zelda">
             <svg class="loading_balls_tri_up_top">
@@ -31,9 +38,16 @@
             <svg class="loading_balls_tri_down_right">
                 <circle cx="50" cy="50" r="40" />
             </svg>
-            <div class=""></div>
         </div>
     </div>
+
+
+
+
+
+    <!-- ========================= -->
+    <!-- ===       START       === -->
+    <!-- ========================= -->
 
 
     <div class="start">
@@ -101,6 +115,14 @@
     </div>
 
 
+
+
+
+    <!-- ================================ -->
+    <!-- ===       MODAL_REWARD       === -->
+    <!-- ================================ -->
+
+
     <div class="modal_reward_overlay">
         <div class="modal_reward">
             <div class="modal_reward_contain">
@@ -143,6 +165,15 @@
         </div>
     </div>
 
+
+
+
+
+    <!-- ================================== -->
+    <!-- ===       MODAL_RESPONSE       === -->
+    <!-- ================================== -->
+
+    
     <div class="modal_response_overlay">
         <div class="modal_response">
             <h2>Responder</h2>
@@ -171,6 +202,15 @@
         </div>
     </div>
     
+
+
+
+
+    <!-- =============================== -->
+    <!-- ===       MODAL_KOROK       === -->
+    <!-- =============================== -->
+
+
     <div class="modal_korok_overlay">
         <div class="modal_korok_scale">
             <div class="modal_korok">
@@ -190,9 +230,28 @@
         </div>
     </div>
 
+
+
+
+
+    <!-- ============================= -->
+    <!-- ===       INVENTORY       === -->
+    <!-- ============================= -->
+
+
     <div id="bg">
 
         <img src="./public/master_sword.png" alt="Master Sword">
+        
+        
+
+
+        
+        <!-- ========================== -->
+        <!-- ===       HEADER       === -->
+        <!-- ========================== -->
+
+
         <header class="header_pc">
             <div class="hearts">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
@@ -327,6 +386,16 @@
                 </div>
             </div>
         </header>
+
+
+
+
+
+        <!-- =============================== -->
+        <!-- ===       CONTAIN_PRI       === -->
+        <!-- =============================== -->
+
+
         <svg
             class="triforce_top"
             xmlns="http://www.w3.org/2000/svg"
@@ -343,6 +412,13 @@
             <div class="borda_cima" style="position: absolute; height: 2px; width: 40px; background-color: #ffffff10; transform: rotate(135deg) translateX(18px); top: -3px; left: 0;"></div>
             <div class="borda_cima" style="position: absolute; height: 2px; width: 40px; background-color: #ffffff10; transform: rotate(45deg) translateX(-18px); bottom: -3px; left: 0;"></div>
             <div class="content_pri">
+
+
+
+                <!-- =============== -->
+                <!-- === MISSION === -->
+                <!-- =============== -->
+
                 <div class="mission">
                     <div class="icon_area">
                         <div class="name_area">
@@ -426,6 +502,13 @@
                         </div>
                     </div>
                 </div>
+
+
+
+                <!-- ======================= -->
+                <!-- === MISSION_DETAILS === -->
+                <!-- ======================= -->
+
                 <div class="mission_details">
                     <div class="details">
                         <h1>Um presente misterioso</h1>
@@ -492,7 +575,14 @@
         </div>
 
 
-        
+
+
+
+        <!-- ================================== -->
+        <!-- ===       ACTION_BUTTONS       === -->
+        <!-- ================================== -->
+
+
         <div class="action_buttons">
             <div class="b_button">
                 <p>Voltar</p>
@@ -533,6 +623,13 @@
         </div>
     </div>
 
+
+
+
+
+    <!-- ============================ -->
+    <!-- ===       COMPLETE       === -->
+    <!-- ============================ -->
 
 
     <div class="complete">
@@ -578,6 +675,13 @@
         </div>
     </div>
 
+
+
+
+
+    <!-- =========================== -->
+    <!-- ===       CREDITS       === -->
+    <!-- =========================== -->
 
 
     <div class="credits">
@@ -807,6 +911,15 @@
         </div>
     </div>
 
+
+
+
+
+    <!-- ================================ -->
+    <!-- ===       FINAL_SCREEN       === -->
+    <!-- ================================ -->
+
+
     <div class="final_screen" id="finalScreen">
         <div class="final_screen_contain">
             <div class="button" onclick="button_restart()">
@@ -935,6 +1048,15 @@
         </div>
     </div>
 
+
+
+
+
+    <!-- ========================== -->
+    <!-- ===       AUDIOS       === -->
+    <!-- ========================== -->
+
+
     <audio id="startSound" src="./public/start.wav" preload="auto"></audio>
 
     <audio id="StartMissionSound" src="./public/start_mission.wav" preload="auto"></audio>
@@ -969,7 +1091,16 @@
     <audio id="errorInputSound" src="./public/error_input.wav" preload="auto"></audio>
 
     <audio id="creditsSound" src="./public/the_final_trial.mp3" preload="auto"></audio>
+
+
+
+
+
+    <!-- =========================== -->
+    <!-- ===       SCRIPTS       === -->
+    <!-- =========================== -->
     
+
     <script src="./script/script.js"></script>
 
 </body>

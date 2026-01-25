@@ -353,7 +353,7 @@
     visibility: visible;
     animation:
         videoFadeIn 5s ease-in forwards,
-        zoomOutVideo 64s ease-in forwards;
+        zoomOutVideo 65s ease forwards;
 }
 
 .video.static video {
@@ -380,7 +380,7 @@
     }
 }
 .move_tl_tr {
-    animation: tl_tr 18s linear forwards;
+    animation: tl_tr 18.5s linear forwards;
 }
 
 
@@ -394,7 +394,7 @@
     }
 }
 .move_tr_tl {
-    animation: tr_tl 18s linear forwards;
+    animation: tr_tl 18.5s linear forwards;
 }
 
 
@@ -408,7 +408,7 @@
     }
 }
 .move_tl_br {
-    animation: tl_br 18s linear forwards;
+    animation: tl_br 18.5s linear forwards;
 }
 
 
@@ -422,7 +422,7 @@
     }
 }
 .move_br_tl {
-    animation: br_tl 18s linear forwards;
+    animation: br_tl 18.5s linear forwards;
 }
 
 
@@ -436,7 +436,7 @@
     }
 }
 .move_bl_tr {
-    animation: bl_tr 18s linear forwards;
+    animation: bl_tr 18.5s linear forwards;
 }
 
 
@@ -450,7 +450,7 @@
     }
 }
 .move_cl_cr {
-    animation: cl_cr 18s linear forwards;
+    animation: cl_cr 18.5s linear forwards;
 }
 
 
@@ -464,7 +464,7 @@
     }
 }
 .move_cr_cl {
-    animation: cr_cl 18s linear forwards;
+    animation: cr_cl 18.5s linear forwards;
 }
 
 
@@ -478,7 +478,7 @@
     }
 }
 .move_cc_ct {
-    animation: cc_ct 18s linear forwards;
+    animation: cc_ct 18.5s linear forwards;
 }
 
 
@@ -492,7 +492,7 @@
     }
 }
 .move_cb_cc {
-    animation: cb_cc 18s linear forwards;
+    animation: cb_cc 18.5s linear forwards;
 }
 
 
@@ -506,7 +506,7 @@
     }
 }
 .move_cb_ct {
-    animation: cb_ct 18s linear forwards;
+    animation: cb_ct 18.5s linear forwards;
 }
 
 
@@ -520,7 +520,7 @@
     }
 }
 .move_tl_bl {
-    animation: tl_bl 18s linear forwards;
+    animation: tl_bl 18.5s linear forwards;
 }
 
 
@@ -584,6 +584,7 @@
     padding: 0;
     margin: 0;
     pointer-events: auto;
+    user-select: none;
 }
 body {
     overflow: hidden;
@@ -637,9 +638,9 @@ body {
 
 
 
-/* ========================== */
-/* ===        START       === */
-/* ========================== */
+/* ============================ */
+/* ===        LOADING       === */
+/* ============================ */
 
 
 .loading {
@@ -767,6 +768,7 @@ body {
     height: 100%;
     width: 100%;
     opacity: .4;
+    object-fit: cover;
 }
 .speaks {
     height: 100vh;
@@ -1860,9 +1862,9 @@ header {
 
 
 
-/* ================================ */
-/* ===        VIDEO FINAL       === */
-/* ================================ */
+/* ============================= */
+/* ===        COMPLETE       === */
+/* ============================= */
 
 
 .complete {
@@ -2225,7 +2227,7 @@ header {
 
 
 /* ==================================== */
-/* ===         FINAL SCREEN         === */
+/* ===         FINAL_SCREEN         === */
 /* ==================================== */
 
 

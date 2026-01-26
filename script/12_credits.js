@@ -37,7 +37,7 @@ const IMAGE_TOTAL_DURATION = 18500;
 const IMAGE_OVERLAP = 2500;
 
 const CREDITS_DURATION = 340; // segundos
-const FINAL_SCREEN_ANTICIPATION = 9; // segundos
+const FINAL_SCREEN_ANTICIPATION = 11; // segundos
 
 let anticipationTimer = null;
 
@@ -88,7 +88,10 @@ function resetCreditsScroll() {
 
 function showFinalScreenEarly() {
     finalScreen.style.display = "flex";
-    finalScreen.classList.add("show");
+
+    requestAnimationFrame(() => {
+        finalScreen.classList.add("show");
+    });
 }
 
 function startCreditsScroll() {
@@ -100,11 +103,14 @@ function startCreditsScroll() {
     creditsContainer.removeEventListener("animationend", onCreditsFinished);
     creditsContainer.addEventListener("animationend", onCreditsFinished, { once: true });
 
-    // antecipação correta (visual apenas)
+    // antecipação visual
     anticipationTimer = setTimeout(
         showFinalScreenEarly,
         (CREDITS_DURATION - FINAL_SCREEN_ANTICIPATION) * 1000
     );
+
+    // fallback de segurança (caso animationend falhe)
+    setTimeout(onCreditsFinished, CREDITS_DURATION * 1000);
 }
 
 /* =========================== */

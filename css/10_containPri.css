@@ -212,6 +212,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    padding: 25px;
+    aspect-ratio: 1/1;
+}
+.selected::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #CFA834;
+    box-shadow: 0 0 3px #CFA83490, inset 0 0 3px #CFA83490;
+    position: absolute;
+    background-color: transparent;
+    animation: borderSelected 1.3s ease-out infinite;
+}
+.selected > svg {
     filter: drop-shadow(0 0 5px #f9d00860) drop-shadow(0 0 4px #f9d10860) drop-shadow(0 0 2px #f9d10860);
 }
 

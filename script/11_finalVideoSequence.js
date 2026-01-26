@@ -120,8 +120,13 @@ async function startFinalSequence() {
     await wait(3000);
 
     // Encerra vídeo
-    videoFinal.pause();
-    hide(videoFinalWrap);
+    videoFinalWrap.classList.add("fade-out");
+
+    setTimeout(() => {
+        videoFinal.pause();
+        hide(videoFinalWrap);
+        videoFinalWrap.classList.remove("fade-out");
+    }, 1200);
     
     await wait(3000);
     

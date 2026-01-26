@@ -107,6 +107,29 @@
     }
 }
 
+@keyframes borderSelected {
+    0% {
+        transform: scale(.4);
+        opacity: 0;
+    }
+    5% {
+        transform: scale(.4);
+        opacity: 1;
+    }
+    25% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    95% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
 @keyframes korokIdle {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-5px); }

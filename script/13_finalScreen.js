@@ -12,7 +12,7 @@ function button_restart() {
     }, 1500);
 }
 
-// Código / Recompensa
+// Código Recompensa
 function button_reward() {
     sound_dialog_start.currentTime = 0;
     sound_dialog_start.play();

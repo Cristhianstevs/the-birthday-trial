@@ -14,9 +14,10 @@
     justify-content: center;
     flex-direction: column;
     font-size: 2.5em;
-    pointer-events: none;
+    pointer-events: auto;
     animation: reward 4s ease;
-    z-index: 90;
+    background-color: #0c0c0c;
+    z-index: 9999999;
 }
 #finalScreen {
     opacity: 0;

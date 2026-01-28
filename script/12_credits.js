@@ -36,8 +36,8 @@ const imageAnimationMap = [
 const IMAGE_TOTAL_DURATION = 18500;
 const IMAGE_OVERLAP = 2500;
 
-const CREDITS_DURATION = 340; // segundos
-const FINAL_SCREEN_ANTICIPATION = 11; // segundos
+const CREDITS_DURATION = 340;
+const FINAL_SCREEN_ANTICIPATION = 11;
 
 let anticipationTimer = null;
 
@@ -109,7 +109,6 @@ function startCreditsScroll() {
         (CREDITS_DURATION - FINAL_SCREEN_ANTICIPATION) * 1000
     );
 
-    // fallback de segurança (caso animationend falhe)
     setTimeout(onCreditsFinished, CREDITS_DURATION * 1000);
 }
 

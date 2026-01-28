@@ -2,6 +2,8 @@
 /* ===            ANIMATION            === */
 /* ======================================= */
 
+/* Isso pode melhorar, pode ficar mais organizado, desculpa, foi feitos as pressas */
+
 
 @keyframes loading_tri {
     0% {
@@ -38,13 +40,13 @@
 
 @keyframes glow02 {
     0% {
-        filter: drop-shadow(0 0 2px #fcfee4a0) drop-shadow(0 0 1px #fcfee4a0);
+        filter: drop-shadow(0 0 2px #fcfee4f0) drop-shadow(0 0 1px #fcfee4f0);
     }
     50% {
-        filter: drop-shadow(0 0 0px #fcfee4a0);
+        filter: drop-shadow(0 0 0px #fcfee4f0);
     }
     100% {
-        filter: drop-shadow(0 0 2px #fcfee4a0) drop-shadow(0 0 1px #fcfee4a0);
+        filter: drop-shadow(0 0 2px #fcfee4f0) drop-shadow(0 0 1px #fcfee4f0);
     }
 }
 

@@ -4,6 +4,7 @@
 
 
 @font-face {
+    /* Antes de achar a Calamity disseram que essa Rodin parecia bastante com a fonte do jogo, mas agora não utilizo mais... Fiquei com pena de tirar, vai que alguém precisa. */
     font-family: 'Rodin';
     src: url('../fonts/FOT-Rodin\ Pro\ B.otf') format('opentype');
     font-weight: 500;

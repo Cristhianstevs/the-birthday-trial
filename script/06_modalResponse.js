@@ -131,9 +131,9 @@ function verificar() {
         (item2Filled ? 1 : 0) +
         (item3Filled ? 1 : 0);
 
-    const item1Ok = v1 === "item1" || v1 === "item1(ingles)";
-    const item2Ok = v2 === "item2";
-    const item3Ok = v3 === "item3" || v3 === "item3(ingles)";
+    const item1Ok = v1 === "soldado" || v1 === "soldier";
+    const item2Ok = v2 === "pétreo" || v2 === "petreo" ||  v2 === "stone";
+    const item3Ok = v3 === "korok";
 
     const comboOk = item1Ok && item2Ok && item3Ok;
 

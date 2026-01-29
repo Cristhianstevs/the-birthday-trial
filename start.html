@@ -18,15 +18,16 @@
     <link rel="stylesheet" href="./css/05_start.css">
 
     <link rel="stylesheet" href="./css/06_modalReward.css">
-    <link rel="stylesheet" href="./css/07_modalResponse.css">
-    <link rel="stylesheet" href="./css/08_modalKorok.css">
+    <link rel="stylesheet" href="./css/07_modalSure.css">
+    <link rel="stylesheet" href="./css/08_modalResponse.css">
+    <link rel="stylesheet" href="./css/09_modalKorok.css">
 
-    <link rel="stylesheet" href="./css/09_header.css">
-    <link rel="stylesheet" href="./css/10_containPri.css">
-    <link rel="stylesheet" href="./css/11_actionButtons.css">
-    <link rel="stylesheet" href="./css/12_complete.css">
-    <link rel="stylesheet" href="./css/13_credits.css">
-    <link rel="stylesheet" href="./css/14_finalScreen.css">
+    <link rel="stylesheet" href="./css/10_header.css">
+    <link rel="stylesheet" href="./css/11_containPri.css">
+    <link rel="stylesheet" href="./css/12_actionButtons.css">
+    <link rel="stylesheet" href="./css/13_complete.css">
+    <link rel="stylesheet" href="./css/14_credits.css">
+    <link rel="stylesheet" href="./css/15_finalScreen.css">
     <link rel="stylesheet" href="./css/mediaQuery.css">
 </head>
 
@@ -210,6 +211,100 @@
 
 
 
+    <!-- ============================== -->
+    <!-- ==|       MODAL_SURE       |== -->
+    <!-- ============================== -->
+
+    <div class="modal_sure_overlay">
+        <div class="modal_sure_contain">
+            <div class="modal_sure_text">
+                <p>Colocou o código?</p>
+                <p>Continuar irá iniciar o final melancólico.</p>
+            </div>
+            <div class="button" id="button_sure_yes">
+                <svg
+                    id="tri_top_left"
+                    class="tri"
+                    data-dir="-1,-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 -10 L -10 0 L -10 -10 L 0 -10" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_top_right"
+                    class="tri"
+                    data-dir="1,-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L 0 -10 L -10 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_bottom_left"
+                    class="tri"
+                    data-dir="-1, 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L -10 0 L -10 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_bottom_right"
+                    class="tri"
+                    data-dir="1, 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L -10 0 L 0 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <div class="button_content">
+                    <p>Sim</p>
+                </div>
+            </div>
+            <div class="button"  id="button_sure_no">
+                <svg
+                    id="tri_top_left"
+                    class="tri"
+                    data-dir="-1,-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 -10 L -10 0 L -10 -10 L 0 -10" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_top_right"
+                    class="tri"
+                    data-dir="1,-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L 0 -10 L -10 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_bottom_left"
+                    class="tri"
+                    data-dir="-1, 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L -10 0 L -10 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_bottom_right"
+                    class="tri"
+                    data-dir="1, 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L -10 0 L 0 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <div class="button_content">
+                    <p>Não</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- ================================== -->
@@ -534,7 +629,7 @@
                                 </div>
                                 <div class="mission_text">
                                     <h1>Um presente misterioso</h1>
-                                    <p>Floresta de Hyrule</p>
+                                    <p>Floresta Korok</p>
                                 </div>
                             </div>
                             <div class="mission_select">
@@ -1121,6 +1216,9 @@
 
     <audio id="rewardSound" src="./public/reward.mp3" preload="auto"></audio>
 
+    <audio id="openSureSound" src="./public/open_sure.wav" preload="auto"></audio>
+    <audio id="noSureSound" src="./public/sure_no.wav" preload="auto"></audio>
+
     <audio id="korokSound" src="./public/yahaha.mp3" preload="auto"></audio>
 
     <audio id="korokFound01Sound" src="./public/korok_found01.wav" preload="auto"></audio>
@@ -1151,14 +1249,15 @@
     <script src="./script/03_animationTextWriting.js"></script>
     <script src="./script/04_startSequence.js"></script>
     <script src="./script/05_modalReward.js"></script>
-    <script src="./script/06_modalResponse.js"></script>
-    <script src="./script/07_modalKorok.js"></script>
-    <script src="./script/08_animationArrowJoystickRight.js"></script>
-    <script src="./script/09_animationIconExitDialog.js"></script>
-    <script src="./script/10_animationArrowSelected.js"></script>
-    <script src="./script/11_finalVideoSequence.js"></script>
-    <script src="./script/12_credits.js"></script>
-    <script src="./script/13_finalScreen.js"></script>
+    <script src="./script/06_modalSure.js"></script>
+    <script src="./script/07_modalResponse.js"></script>
+    <script src="./script/08_modalKorok.js"></script>
+    <script src="./script/09_animationArrowJoystickRight.js"></script>
+    <script src="./script/10_animationIconExitDialog.js"></script>
+    <script src="./script/11_animationArrowSelected.js"></script>
+    <script src="./script/12_finalVideoSequence.js"></script>
+    <script src="./script/13_credits.js"></script>
+    <script src="./script/14_finalScreen.js"></script>
 
 </body>
 </html>

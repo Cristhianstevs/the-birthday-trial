@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Birthday Trial</title>
+    <link rel="shortcut icon" href="./public/favicon.png" type="image/x-icon">
+
+    <!-- ========================== -->
+    <!-- ==|       STYLES       |== -->
+    <!-- ========================== -->
+
+    <link rel="stylesheet" href="./css/01_animation.css">
+    <link rel="stylesheet" href="./css/02_fonts.css">
+    <link rel="stylesheet" href="./css/03_geral.css">
+
+    <link rel="stylesheet" href="./css/04_loading.css">
+    <link rel="stylesheet" href="./css/05_start.css">
+
+    <link rel="stylesheet" href="./css/06_modalReward.css">
+    <link rel="stylesheet" href="./css/07_modalSure.css">
+    <link rel="stylesheet" href="./css/08_modalResponse.css">
+    <link rel="stylesheet" href="./css/09_modalKorok.css">
+
+    <link rel="stylesheet" href="./css/10_header.css">
+    <link rel="stylesheet" href="./css/11_containPri.css">
+    <link rel="stylesheet" href="./css/12_actionButtons.css">
+    <link rel="stylesheet" href="./css/13_complete.css">
+    <link rel="stylesheet" href="./css/14_credits.css">
+    <link rel="stylesheet" href="./css/15_finalScreen.css">
+    <link rel="stylesheet" href="./css/mediaQuery.css">
+</head>
+
+<body>
+
+
+
+    <!-- =========================== -->
+    <!-- ==|       LOADING       |== -->
+    <!-- =========================== -->
+
+
+    <div class="loading" id="loadingScreen">
+        <div class="loading_zelda">
+            <svg class="loading_balls_tri_up_top">
+                <circle cx="50" cy="50" r="40" />
+            </svg>
+            <svg class="loading_balls_tri_up_left">
+                <circle cx="50" cy="50" r="40" />
+            </svg>
+            <svg class="loading_balls_tri_up_right">
+                <circle cx="50" cy="50" r="40" />
+            </svg>
+            <svg class="loading_balls_tri_down_bottom">
+                <circle cx="50" cy="50" r="40" />
+            </svg>
+            <svg class="loading_balls_tri_down_left">
+                <circle cx="50" cy="50" r="40" />
+            </svg>
+            <svg class="loading_balls_tri_down_right">
+                <circle cx="50" cy="50" r="40" />
+            </svg>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- ========================= -->
+    <!-- ==|       START       |== -->
+    <!-- ========================= -->
+
+
+    <div class="start">
+        <div class="start_contain">
+            <h3>Continuar</h3>
+        </div>
+        <div class="start_presents">
+            <h3>Cristhian Apresenta</h3>
+        </div>
+        <div class="start_title">
+            <h3>The Legend of Zelda</h3>
+        </div>
+        <div class="start_subtitle">
+            <h3>The Birthday Trial</h3>
+        </div>
+        <div class="video">
+            <video src="public/video_master_sword03.mp4" muted preload="auto"></video>
+        </div>
+        <div class="speaks" id="speak01">
+            <p>Ao herói que deseja o grande tesouro ancestral.</p>
+        </div>
+        <div class="speaks" id="speak02">
+            <p>Nas terras do Grande Platô.</p>
+        </div>
+        <div class="speaks" id="speak03">
+            <p>Encontre três termos ocultos.</p>
+        </div>
+        <div class="speaks" id="speak04">
+            <p>Um: Nas águas que carregam o nome do fim. Sob o véu branco, ali chegou seu fim.</p>
+        </div>
+        <div class="speaks" id="speak05">
+            <p>Dois: Trace o despertar à arena esquecida, da grande torre à morte esculpida. Onde as linhas se cruzarem no chão, da terra nascerão.</p>
+        </div>
+        <div class="speaks" id="speak06">
+            <p>Três: No ápice da maior ruína do platô, procure pelo inesperado. Só assim encontrará o tão almejado.</p>
+        </div>
+        <div class="speaks" id="speak07">
+            <p>Os filhos da floresta podem ajudar.</p>
+        </div>
+        <div class="start_mission">
+            <div class="start_mission_height">
+                <div class="start_mission_type">
+                    <div class="start_mission_svg_wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-205 -196 410 243">
+                            <path d="M 0 47 L -15 8 C -11 5 -9 -8 -10 -15 C -17 -23 -23 -26 -31 -29 C -19 -40 -17 -46 -16 -54 C -14 -60 -11 -65 -7 -70 L 0 -90 L 7 -70 C 11 -65 14 -60 16 -54 C 17 -46 19 -40 31 -29 C 23 -26 17 -23 10 -15 C 9 -8 11 5 15 8 M -33 18 L -29 18 C -22 18 -22 24 -25 26 L -42 41 L -37 27 L -60 27 L -53 46 L -80 24 C -83 22 -82 18 -78 18 L -46 18 L -34 -9 C -29 -18 -15 -12 -20 -2 L -33 18 M 33 18 L 29 18 C 22 18 22 24 25 26 L 42 41 L 37 27 L 59 27 L 53 46 L 80 24 C 83 22 82 18 78 18 L 46 18 L 34 -9 C 29 -18 15 -12 20 -2 L 33 18 M -52 0 L -80 -6 L -57 -56 C -60 -57 -64 -60 -66 -63 L -108 -13 L -137 -33 L -75 -78 C -78 -82 -79 -85 -80 -89 L -159 -59 L -179 -98 L -82 -107 C -83 -111 -82 -115 -82 -119 L -188 -132 L -205 -183 L -76 -136 C -71 -146 -65 -155 -54 -161 C -64 -141 -85 -91 -30 -72 C -16 -67 -23 -41 -43 -48 L -52 0 M 52 0 L 80 -6 L 57 -56 C 60 -57 64 -60 66 -63 L 108 -13 L 137 -33 L 75 -78 C 78 -82 79 -85 80 -89 L 159 -59 L 179 -98 L 82 -107 C 83 -111 82 -115 82 -119 L 188 -132 L 205 -183 L 76 -136 C 71 -146 65 -155 54 -161 C 64 -141 85 -91 30 -72 C 16 -67 23 -41 43 -48 L 52 0 M 0 -100 L -62 -100 L 0 -196 L 62 -100 L 0 -100 L 31 -148 L -31 -148" fill="#f9d008"/>
+                        </svg>
+                    </div>
+                    <div class="start_mission_type_wrapper">
+                        <h2>Missão Principal</h2>
+                    </div>
+                </div>
+                <div class="start_mission_overlay">
+                    <div class="start_mission_overlay_wrapper">
+                        <h1>Um Presente Misterioso</h1>
+                    </div>
+                </div>
+                <div class="start_mission_objective">
+                    <div class="objective_icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-60 -60 120 120">
+                            <path d="M -60 0 A 1 1 0 0 0 60 0 A 1 1 0 0 0 -60 0 M -39 0 A 1 1 0 0 1 39 0 A 1 1 0 0 1 -39 0 M -20 0 A 1 1 0 0 0 20 0 A 1 1 0 0 0 -20 0" fill="#f9d008"/>
+                        </svg>
+                    </div>
+                    <p>Novo Objetivo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- ================================ -->
+    <!-- ==|       MODAL_REWARD       |== -->
+    <!-- ================================ -->
+
+
+    <div class="modal_reward_overlay">
+        <div class="modal_reward">
+            <div class="modal_reward_contain">
+                <div class="modal_reward_content">
+                    <svg id="border_modal_top_left" class="border_modal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 74">
+                        <path d="M 0 0 L 28 0 L 0 28 L 0 0 M 0 14 L 14 14 L 14 0 L 0 14 M 0 33 L 0 72 A 1 1 0 0 0 4 72 L 4 35 L 35 4 L 72 4 A 1 1 0 0 0 72 0 L 33 0 L 0 33" fill="#e4e7cd50"/>
+                    </svg>
+                    <svg id="border_modal_top_right" class="border_modal" xmlns="http://www.w3.org/2000/svg" viewBox="-74 0 74 74">
+                        <path d="M 0 0 L -28 0 L 0 28 L 0 0 M 0 14 L -14 14 L -14 0 L 0 14 M 0 33 L 0 72 A -1 1 0 0 1 -4 72 L -4 35 L -35 4 L -72 4 A -1 1 0 0 1 -72 0 L -33 0 L 0 33" fill="#e4e7cd50"/>
+                    </svg>
+                    <svg id="border_modal_bottom_left" class="border_modal" xmlns="http://www.w3.org/2000/svg" viewBox="0 -74 74 74">
+                        <path d="M 0 0 L 28 0 L 0 -28 L 0 0 M 0 -14 L 14 -14 L 14 0 L 0 -14 M 0 -33 L 0 -72 A 1 -1 0 0 1 4 -72 L 4 -35 L 35 -4 L 72 -4 A 1 -1 0 0 1 72 0 L 33 0 L 0 -33" fill="#e4e7cd50"/>
+                    </svg>
+                    <svg id="border_modal_bottom_right" class="border_modal" xmlns="http://www.w3.org/2000/svg" viewBox="-74 -74 74 74">
+                        <path d="M 0 0 L -28 0 L 0 -28 L 0 0 M 0 -14 L -14 -14 L -14 0 L 0 -14 M 0 -33 L 0 -72 A -1 -1 0 0 0 -4 -72 L -4 -35 L -35 -4 L -72 -4 A -1 -1 0 0 0 -72 0 L -33 0 L 0 -33" fill="#e4e7cd50"/>
+                    </svg>
+                    <div class="image_reward">
+                        <div class="item-container">
+                            <div class="sunburst-complex-fx">
+                                <div class="fx-layer-base"></div>
+                                <div class="fx-layer-rays-1"></div>
+                                <div class="fx-layer-rays-2"></div>
+                                <div class="fx-center-vignette"></div>
+                            </div>
+                
+                            <img src="./public/reward09.png" class="sword-image" alt="Imagem da Recompensa">
+                        </div>
+                    </div>
+                    <div class="text_reward">
+                        <h2>Zelda Breath of the Wild - Expansion Pass</h2>
+                        <div class="modal_divisor"></div>
+                        <p>Uma música dramática toca, e uma antiga bênção desperta diante de você. A jornada está longe do fim. Novos desafios aguardam o verdadeiro herói. Use o código abaixo para liberar uma nova expansão da aventura.</p>
+                        <div class="code">
+                            <p>X</p>
+                            <p>X</p>
+                            <p>X</p>
+                            <p>X</p>
+                            <p>-</p>
+                            <p>X</p>
+                            <p>X</p>
+                            <p>X</p>
+                            <p>X</p>
+                            <p>-</p>
+                            <p>X</p>
+                            <p>X</p>
+                            <p>X</p>
+                            <p>X</p>
+                            <p>-</p>
+                            <p>X</p>
+                            <p>X</p>
+                            <p>X</p>
+                            <p>X</p>
+                        </div>
+                    </div>
+                </div>
+                <svg class="exit_dialog" xmlns="http://www.w3.org/2000/svg" viewBox="-64 0 128 89">
+                    <path d="M -64 0 L 64 0 L 0 89 L -64 0 M -40 14 L 0 68 L 40 14 L -40 14 M -24 21 L 0 55 L 24 21 L -24 21" fill="#e4e7cd"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ============================== -->
+    <!-- ==|       MODAL_SURE       |== -->
+    <!-- ============================== -->
+
+    <div class="modal_sure_overlay">
+        <div class="modal_sure_contain">
+            <div class="modal_sure_text">
+                <p>Colocou o código?</p>
+                <p>Continuar irá iniciar o final melancólico.</p>
+            </div>
+            <div class="button" id="button_sure_yes">
+                <svg
+                    id="tri_top_left"
+                    class="tri"
+                    data-dir="-1,-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 -10 L -10 0 L -10 -10 L 0 -10" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_top_right"
+                    class="tri"
+                    data-dir="1,-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L 0 -10 L -10 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_bottom_left"
+                    class="tri"
+                    data-dir="-1, 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L -10 0 L -10 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_bottom_right"
+                    class="tri"
+                    data-dir="1, 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L -10 0 L 0 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <div class="button_content">
+                    <p>Sim</p>
+                </div>
+            </div>
+            <div class="button"  id="button_sure_no">
+                <svg
+                    id="tri_top_left"
+                    class="tri"
+                    data-dir="-1,-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 -10 L -10 0 L -10 -10 L 0 -10" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_top_right"
+                    class="tri"
+                    data-dir="1,-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L 0 -10 L -10 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_bottom_left"
+                    class="tri"
+                    data-dir="-1, 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L -10 0 L -10 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_bottom_right"
+                    class="tri"
+                    data-dir="1, 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L -10 0 L 0 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <div class="button_content">
+                    <p>Não</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================================== -->
+    <!-- ==|       MODAL_RESPONSE       |== -->
+    <!-- ================================== -->
+
+    
+    <div class="modal_response_overlay">
+        <div class="modal_response">
+            <h2>Responder</h2>
+            <div class="modal_response_content">
+                <svg id="dialog_border_left" xmlns="http://www.w3.org/2000/svg" viewBox="-10 -87 41 174">
+                    <path d="M -10 0 L 0 -10 L 10 0 L 0 10 L -10 0 M 1 -18 L -5 -28 C -3 -36 0 -54 31 -87 C 17 -65 8 -47 8 -30 L 1 -18 M 1 18 L -5 28 C -3 36 0 54 31 87 C 17 65 8 47 8 30 L 1 18" fill="#e4e7cd50"/>
+                </svg>
+                <svg id="dialog_border_right" xmlns="http://www.w3.org/2000/svg" viewBox="-31 -87 41 174">
+                    <path d="M -10 0 L 0 -10 L 10 0 L 0 10 L -10 0 M -1 -18 L 5 -28 C 3 -36 0 -54 -31 -87 C -17 -65 -8 -47 -8 -30 L -1 -18 M -1 18 L 5 28 C 3 36 0 54 -31 87 C -17 65 -8 47 -8 30 L -1 18" fill="#e4e7cd50"/>
+                </svg>
+                <div class="response">
+                    <div class="input-wrapper">
+                        <div class="input_content"><input class="input_error" type="text" id="item1" placeholder="item 1" autocomplete="off"></div>
+                    </div>
+                    <div class="input-wrapper">
+                        <div class="input_content"><input class="input_error" type="text" id="item2" placeholder="item 2" autocomplete="off"></div>
+                    </div>
+                    <div class="input-wrapper">
+                        <div class="input_content"><input class="input_error" type="text" id="item3" placeholder="item 3" autocomplete="off"></div>
+                    </div>
+                </div>
+            </div>
+            <svg class="exit_dialog" xmlns="http://www.w3.org/2000/svg" viewBox="-64 0 128 89">
+                <path d="M -64 0 L 64 0 L 0 89 L -64 0 M -40 14 L 0 68 L 40 14 L -40 14 M -24 21 L 0 55 L 24 21 L -24 21" fill="#e4e7cd"/>
+            </svg>
+        </div>
+    </div>
+    
+
+
+
+
+    <!-- =============================== -->
+    <!-- ==|       MODAL_KOROK       |== -->
+    <!-- =============================== -->
+
+
+    <div class="modal_korok_overlay">
+        <div class="modal_korok_scale">
+            <div class="modal_korok">
+                <div class="modal_korok_content">
+                    <h2></h2>
+                    <svg id="dialog_border02_left" xmlns="http://www.w3.org/2000/svg" viewBox="-10 -82 20 164">
+                        <path d="M -10 0 L 0 -10 L 10 0 L 0 10 L -10 0 M 0 -18 L -7 -28 L 0 -82 L 7 -28 L 0 -18 M 0 18 L -8 28 L 0 82 L 8 28 L 0 18" fill="#e4e7cd50"/>
+                    </svg>
+                    <svg id="dialog_border02_right" xmlns="http://www.w3.org/2000/svg" viewBox="-10 -82 20 164">
+                        <path d="M -10 0 L 0 -10 L 10 0 L 0 10 L -10 0 M 0 -18 L -7 -28 L 0 -82 L 7 -28 L 0 -18 M 0 18 L -8 28 L 0 82 L 8 28 L 0 18" fill="#e4e7cd50"/>
+                    </svg>
+                </div>
+                <svg class="exit_dialog" xmlns="http://www.w3.org/2000/svg" viewBox="-64 0 128 89">
+                    <path d="M -64 0 L 64 0 L 0 89 L -64 0 M -40 14 L 0 68 L 40 14 L -40 14 M -24 21 L 0 55 L 24 21 L -24 21" fill="#e4e7cd"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- ============================= -->
+    <!-- ==|       INVENTORY       |== -->
+    <!-- ============================= -->
+
+
+    <div id="inventory">
+
+        <img src="./public/master_sword.png" alt="Master Sword">
+        
+        
+
+
+        
+        <!-- ========================== -->
+        <!-- ==|       HEADER       |== -->
+        <!-- ========================== -->
+
+
+        <header class="header_pc">
+            <div class="hearts">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#E33E3A"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#F9F231"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#F9F231"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9.31913 -9.90018 17.64 13.9">
+                    <path d="M -4 1 L -8 -3 C -12 -7 -6 -13 -2 -8 C 0 -6 -1 -6 1 -8 C 5 -13 11 -7 7 -3 L 3 1 C -1 5 0 5 -4 1" fill="#F9F231"/>
+                </svg>
+            </div>
+            <div class="header_info header_info_pc">
+                <div class="header_info_title">
+                    <h1>Diário de viagem</h1>
+                    <br>
+                    <div class="circle">
+                        <div class="circle_select"></div>
+                        <div class="circle_not_select"></div>
+                        <div class="circle_not_select"></div>
+                    </div>
+                </div>
+                <div class="header_info_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -20 36.2 30">
+                        <path d="M 0 10 L -13 10 Q -16 10 -16 7 L -16 -16 Q -16 -20 -12 -20 L 11 -20 Q 14 -20 15 -17 L 20 6 Q 21 10 17 10 L 0 10 M -4 2 L -1 2 L -1 -4 L 1 -4 L 4 2 L 7 2 L 4 -4 C 7 -5 7 -12 2 -12 L -4 -12 L -4 2 M -1 -6 L 1 -6 C 4 -6 4 -10 1 -10 L -1 -10 L -1 -6" fill="#e4e7cd"/>
+                    </svg>
+                    <h2>Algibeira</h2>
+                </div>
+            </div>
+            <div class="rupees">
+                <img src="./public/rupee_icon.png" alt="">
+                <h1>39</h1>
+            </div>
+        </header>
+        <header class="header_mobile">
+            <div class="header_info">
+                <div class="header_info_title">
+                    <h1>Diário de viagem</h1>
+                    <br>
+                    <div class="circle">
+                        <div class="circle_select"></div>
+                        <div class="circle_not_select"></div>
+                        <div class="circle_not_select"></div>
+                    </div>
+                </div>
+                <div class="header_info_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -20 36.2 30">
+                        <path d="M 0 10 L -13 10 Q -16 10 -16 7 L -16 -16 Q -16 -20 -12 -20 L 11 -20 Q 14 -20 15 -17 L 20 6 Q 21 10 17 10 L 0 10 M -4 2 L -1 2 L -1 -4 L 1 -4 L 4 2 L 7 2 L 4 -4 C 7 -5 7 -12 2 -12 L -4 -12 L -4 2 M -1 -6 L 1 -6 C 4 -6 4 -10 1 -10 L -1 -10 L -1 -6" fill="#e4e7cd"/>
+                    </svg>
+                    <h2>Algibeira</h2>
+                </div>
+            </div>
+        </header>
+
+
+
+
+
+        <!-- =============================== -->
+        <!-- ==|       CONTAIN_PRI       |== -->
+        <!-- =============================== -->
+
+
+        <svg
+            class="triforce_top"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="-9 -8 8 8">
+            <path d="M -9 0 L -9 -8 L -1 -8 L -5 -4 L -5 -8 L -9 -4 L -5 -4" fill="#ffffff20"/>
+        </svg>
+        <svg
+            class="triforce_bottom"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="-9 -8 8 8">
+            <path d="M -9 0 L -9 -8 L -1 -8 L -5 -4 L -5 -8 L -9 -4 L -5 -4" fill="#ffffff20"/>
+        </svg>
+
+        <div class="contain_pri">
+
+            <div class="borda_cima" style="position: absolute; height: 2px; width: 40px; background-color: #ffffff10; transform: rotate(135deg) translateX(18px); top: -3px; left: 0;"></div>
+            <div class="borda_cima" style="position: absolute; height: 2px; width: 40px; background-color: #ffffff10; transform: rotate(45deg) translateX(-18px); bottom: -3px; left: 0;"></div>
+            <div class="content_pri">
+
+
+
+                <!-- =============== -->
+                <!-- ==| MISSION |== -->
+                <!-- =============== -->
+
+                <div class="mission">
+                    <div class="icon_area">
+                        <div class="name_area">
+                            <h3>Missão principal</h3>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-205 -196 410 243">
+                            <path d="M 0 47 L -15 8 C -11 5 -9 -8 -10 -15 C -17 -23 -23 -26 -31 -29 C -19 -40 -17 -46 -16 -54 C -14 -60 -11 -65 -7 -70 L 0 -90 L 7 -70 C 11 -65 14 -60 16 -54 C 17 -46 19 -40 31 -29 C 23 -26 17 -23 10 -15 C 9 -8 11 5 15 8 M -33 18 L -29 18 C -22 18 -22 24 -25 26 L -42 41 L -37 27 L -60 27 L -53 46 L -80 24 C -83 22 -82 18 -78 18 L -46 18 L -34 -9 C -29 -18 -15 -12 -20 -2 L -33 18 M 33 18 L 29 18 C 22 18 22 24 25 26 L 42 41 L 37 27 L 59 27 L 53 46 L 80 24 C 83 22 82 18 78 18 L 46 18 L 34 -9 C 29 -18 15 -12 20 -2 L 33 18 M -52 0 L -80 -6 L -57 -56 C -60 -57 -64 -60 -66 -63 L -108 -13 L -137 -33 L -75 -78 C -78 -82 -79 -85 -80 -89 L -159 -59 L -179 -98 L -82 -107 C -83 -111 -82 -115 -82 -119 L -188 -132 L -205 -183 L -76 -136 C -71 -146 -65 -155 -54 -161 C -64 -141 -85 -91 -30 -72 C -16 -67 -23 -41 -43 -48 L -52 0 M 52 0 L 80 -6 L 57 -56 C 60 -57 64 -60 66 -63 L 108 -13 L 137 -33 L 75 -78 C 78 -82 79 -85 80 -89 L 159 -59 L 179 -98 L 82 -107 C 83 -111 82 -115 82 -119 L 188 -132 L 205 -183 L 76 -136 C 71 -146 65 -155 54 -161 C 64 -141 85 -91 30 -72 C 16 -67 23 -41 43 -48 L 52 0 M 0 -100 L -62 -100 L 0 -196 L 62 -100 L 0 -100 L 31 -148 L -31 -148" fill="#fcfee4"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -15 30 30">
+                            <path d="M 0 15 L -15 0 L 0 -15 L 15 0 L 0 15 M -10 0 L -7 3 L -4 0 L -3 -5 Q 0 -9 3 -5 L 4 0 L 7 3 L 10 0 L 0 -10 L -10 0 M -2 9 L 2 9 L 2 5 Q 0 1 -2 5 L -2 9" fill="#ffffff50"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-134.257 -141 269.6 257.1">
+                            <path d="M -4 79 C -11 94 -28 118 -58 116 C -47 106 -40 86 -48 79 C -161 79 -165 -80 -48 -81 L 47 -81 C 164 -81 168 79 40 79 M -69 -1 C -69 21 -37 21 -37 -1 S -69 -23 -69 -1 M 37 -1 C 37 21 69 21 69 -1 S 37 -23 37 -1 M -16 -1 C -16 21 16 21 16 -1 S -16 -23 -16 -1" fill="#ffffff50"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-52 -55 104 98">
+                            <path d="M 52 43 L 20 43 L 20 37 L 0 37 L -20 37 L -20 43 L -52 43 L -52 -55 L -20 -55 L -20 -49 L 0 -49 L 20 -49 L 20 -55 L 52 -55 L 52 43 M 29 34 L 43 34 L 43 20 L 29 20 L 29 34 M 29 -46 L 29 -32 L 43 -32 L 43 -46 L 29 -46 M 29 12 L 43 12 L 43 -2 L 29 -2 L 29 12 M 29 -10 L 43 -10 L 43 -24 L 29 -24 L 29 -10 M -43 -46 L -43 -32 L -29 -32 L -29 -46 L -43 -46 M -43 -24 L -43 -10 L -29 -10 L -29 -24 L -43 -24 M -43 -2 L -43 12 L -29 12 L -29 -2 L -43 -2 M -43 20 L -43 34 L -29 34 L -29 20 L -43 20 M -20 -40 L -20 -11 L 20 -11 L 20 -40 L -20 -40 M -20 28 L 20 28 L 20 -1 L -20 -1 L -20 28" fill="#ffffff50"/>
+                        </svg>
+                        <svg id="r_joystick" xmlns="http://www.w3.org/2000/svg" viewBox="-53 -57 106 95">
+                            <path d="M 0 29 C 35 29 53 6 53 -15 C 53 -28 39 -58 0 -58 C -39 -58 -53 -28 -53 -15 C -53 6 -35 29 0 29 M -17 29 C -5 31 5 31 17 29 L 17 37 Q 17 38 16 38 L -16 38 Q -17 38 -17 37 L -17 29 M 0 16 C -26 16 -44 -2 -44 -15 C -44 -36 -21 -52 0 -52 S 44 -36 44 -15 C 44 -2 26 16 0 16 L 0 14 C -23 14 -42 -2 -42 -15 C -43 -36 -20 -51 0 -51 S 43 -36 42 -15 C 42 -2 23 14 0 14 M -12 -2 L -5 -2 L -5 -16 L 2 -16 L 7 -2 L 15 -2 L 9 -16 C 19 -18 19 -39 4 -39 L -12 -39 L -12 -2 M -5 -21 L -5 -33 L 2 -33 C 10 -33 10 -21 2 -21 L -5 -21" fill="#fcfee4"/>
+                        </svg>
+                        <svg class="seta_r_joystick" id="meuSvg" xmlns="http://www.w3.org/2000/svg" viewBox="-16.375 -27.8934 32.38 55.79">
+                            <path d="M 13 4 L -13 26 C -16 29 -17 28 -16 26 C -3 -7 -3 7 -16 -26 C -17 -28 -16 -29 -13 -26 L 13 -4 C 17 -1 17 1 13 4" fill="#fcfee4"/>
+                        </svg>
+                    </div>
+                    <div class="mission_area">
+                        <svg
+                            id="tri_top_left"
+                            class="tri"
+                            data-dir="-1,-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="-10 -10 10 10"
+                            >
+                            <path d="M 0 -10 L -10 0 L -10 -10 L 0 -10" fill="#fcfee4"/>
+                        </svg>
+                        <svg
+                            id="tri_top_right"
+                            class="tri"
+                            data-dir="1,-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="-10 -10 10 10"
+                            >
+                            <path d="M 0 0 L 0 -10 L -10 -10 L 0 0" fill="#fcfee4"/>
+                        </svg>
+                        <svg
+                            id="tri_bottom_left"
+                            class="tri"
+                            data-dir="-1, 1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="-10 -10 10 10"
+                            >
+                            <path d="M 0 0 L -10 0 L -10 -10 L 0 0" fill="#fcfee4"/>
+                        </svg>
+                        <svg
+                            id="tri_bottom_right"
+                            class="tri"
+                            data-dir="1, 1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="-10 -10 10 10"
+                            >
+                            <path d="M 0 0 L -10 0 L 0 -10 L 0 0" fill="#fcfee4"/>
+                        </svg>
+                        <div class="mission_contain">
+                            <div class="mission_content">
+                                <div class="mission_icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-205 -196 410 243">
+                                        <path d="M 0 47 L -15 8 C -11 5 -9 -8 -10 -15 C -17 -23 -23 -26 -31 -29 C -19 -40 -17 -46 -16 -54 C -14 -60 -11 -65 -7 -70 L 0 -90 L 7 -70 C 11 -65 14 -60 16 -54 C 17 -46 19 -40 31 -29 C 23 -26 17 -23 10 -15 C 9 -8 11 5 15 8 M -33 18 L -29 18 C -22 18 -22 24 -25 26 L -42 41 L -37 27 L -60 27 L -53 46 L -80 24 C -83 22 -82 18 -78 18 L -46 18 L -34 -9 C -29 -18 -15 -12 -20 -2 L -33 18 M 33 18 L 29 18 C 22 18 22 24 25 26 L 42 41 L 37 27 L 59 27 L 53 46 L 80 24 C 83 22 82 18 78 18 L 46 18 L 34 -9 C 29 -18 15 -12 20 -2 L 33 18 M -52 0 L -80 -6 L -57 -56 C -60 -57 -64 -60 -66 -63 L -108 -13 L -137 -33 L -75 -78 C -78 -82 -79 -85 -80 -89 L -159 -59 L -179 -98 L -82 -107 C -83 -111 -82 -115 -82 -119 L -188 -132 L -205 -183 L -76 -136 C -71 -146 -65 -155 -54 -161 C -64 -141 -85 -91 -30 -72 C -16 -67 -23 -41 -43 -48 L -52 0 M 52 0 L 80 -6 L 57 -56 C 60 -57 64 -60 66 -63 L 108 -13 L 137 -33 L 75 -78 C 78 -82 79 -85 80 -89 L 159 -59 L 179 -98 L 82 -107 C 83 -111 82 -115 82 -119 L 188 -132 L 205 -183 L 76 -136 C 71 -146 65 -155 54 -161 C 64 -141 85 -91 30 -72 C 16 -67 23 -41 43 -48 L 52 0 M 0 -100 L -62 -100 L 0 -196 L 62 -100 L 0 -100 L 31 -148 L -31 -148" fill="#fcfee4"/>
+                                    </svg>
+                                </div>
+                                <div class="mission_text">
+                                    <h1>Um presente misterioso</h1>
+                                    <p>Floresta Korok</p>
+                                </div>
+                            </div>
+                            <div class="mission_select">
+                                <div class="selected">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-60 -60 120 120">
+                                        <path d="M -60 0 A 1 1 0 0 0 60 0 A 1 1 0 0 0 -60 0 M -39 0 A 1 1 0 0 1 39 0 A 1 1 0 0 1 -39 0 M -20 0 A 1 1 0 0 0 20 0 A 1 1 0 0 0 -20 0" fill="#f9d008"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- ======================= -->
+                <!-- ==| MISSION_DETAILS |== -->
+                <!-- ======================= -->
+
+                <div class="mission_details">
+                    <div class="details">
+                        <h1>Um presente misterioso</h1>
+                        <div class="divisor_top"></div>
+                        <div class="delegator_local">
+                            <div class="delegator">
+                                <img src="./public/alert_icon.png" alt="Alerta">
+                                <p>???</p>
+                            </div>
+                            <div class="local">Floresta Korok</div>
+                        </div>
+                        <div class="text_details" id="meuTexto">
+                            <p>Você ouviu uma voz vinda da espada, dizendo para inserir três palavras-chave ocultas encontradas no <span>Grande Platô</span>, a fim de liberar um grande tesouro ancestral! Procure pelo Korok na página! A espada disse que eles podem ajudar!</p>
+                            <p>Um: “Nas águas que carregam o nome do fim. Sob o véu branco, ali chegou seu fim.”</p>
+                            <p>Dois: “Trace o despertar à arena esquecida, da grande torre à morte esculpida. Onde as linhas se cruzarem no chão, da terra nascerão.”</p>
+                            <p>Três: "No ápice da maior ruína do platô, procure pelo inesperado. Só assim encontrará o tão almejado."</p>
+                        </div>
+                        <div class="button" onclick="openModalResponse()">
+                            <svg
+                                id="tri_top_left"
+                                class="tri"
+                                data-dir="-1,-1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="-10 -10 10 10"
+                                >
+                                <path d="M 0 -10 L -10 0 L -10 -10 L 0 -10" fill="#fcfee4"/>
+                            </svg>
+                            <svg
+                                id="tri_top_right"
+                                class="tri"
+                                data-dir="1,-1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="-10 -10 10 10"
+                                >
+                                <path d="M 0 0 L 0 -10 L -10 -10 L 0 0" fill="#fcfee4"/>
+                            </svg>
+                            <svg
+                                id="tri_bottom_left"
+                                class="tri"
+                                data-dir="-1, 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="-10 -10 10 10"
+                                >
+                                <path d="M 0 0 L -10 0 L -10 -10 L 0 0" fill="#fcfee4"/>
+                            </svg>
+                            <svg
+                                id="tri_bottom_right"
+                                class="tri"
+                                data-dir="1, 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="-10 -10 10 10"
+                                >
+                                <path d="M 0 0 L -10 0 L 0 -10 L 0 0" fill="#fcfee4"/>
+                            </svg>
+                            <div class="button_content">
+                                <p>Responder</p>
+                            </div>
+                        </div>
+                        <div class="divisor_botton01"></div>
+                        <div class="divisor_botton02"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- ================================== -->
+        <!-- ==|       ACTION_BUTTONS       |== -->
+        <!-- ================================== -->
+
+
+        <div class="action_buttons">
+            <div class="b_button">
+                <p>Voltar</p>
+                <div class="b_button_icon">
+                    <svg width="22" height="22" viewBox="0 0 22 22" style="display: flex; align-items: center; justify-content: center;">
+                        <defs>
+                            <mask id="cut_button_b">
+                            <rect width="100%" height="100%" fill="white"/>
+                            <text x="52%" y="72%" text-anchor="middle"
+                                    font-size="12" font-weight="900"
+                                    fill="black">B</text>
+                            </mask>
+                        </defs>
+                        <circle cx="11" cy="11" r="11"
+                                fill="#e4e7cd"
+                                mask="url(#cut_button_b)" />
+                    </svg>
+                </div>
+            </div>
+            <div class="a_button">
+                <p>Definir destino</p>
+                <div class="a_button_icon">
+                    <svg width="22" height="22" viewBox="0 0 22 22" style="display: flex; align-items: center; justify-content: center;">
+                        <defs>
+                            <mask id="cut_button_a">
+                            <rect width="100%" height="100%" fill="white"/>
+                            <text x="52%" y="72%" text-anchor="middle"
+                                  font-size="12" font-weight="bold"
+                                  fill="black">A</text>
+                            </mask>
+                        </defs>
+                        <circle cx="11" cy="11" r="11"
+                                fill="#e4e7cd"
+                                mask="url(#cut_button_a)" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- ============================ -->
+    <!-- ==|       COMPLETE       |== -->
+    <!-- ============================ -->
+
+
+    <div class="complete">
+        <div class="video_contain_final">
+            <video id="video_final" src="public/video_master_sword03.mp4" muted preload="auto"></video>
+        </div>
+        <div class="speaks_final" id="speak01_final">
+            <p>Você provou ser digno do tesouro.</p>
+        </div>
+        <div class="speaks_final" id="speak02_final">
+            <p>Mas sua aventura apenas começou.</p>
+        </div>
+        <div class="speaks_final" id="speak03_final">
+            <p>Continue aprimorando suas habilidades.</p>
+        </div>
+        <div class="speaks_final" id="speak04_final">
+            <p>Parabéns, herói.</p>
+        </div>
+        <div class="speaks_final" id="speak05_final">
+            <p>Que a deusa sorria para você.</p>
+        </div>
+        <div class="complete_mission">
+            <div class="complete_mission_height">
+                <div class="complete_mission_type">
+                    <div class="complete_mission_svg_wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-205 -196 410 243">
+                            <path d="M 0 47 L -15 8 C -11 5 -9 -8 -10 -15 C -17 -23 -23 -26 -31 -29 C -19 -40 -17 -46 -16 -54 C -14 -60 -11 -65 -7 -70 L 0 -90 L 7 -70 C 11 -65 14 -60 16 -54 C 17 -46 19 -40 31 -29 C 23 -26 17 -23 10 -15 C 9 -8 11 5 15 8 M -33 18 L -29 18 C -22 18 -22 24 -25 26 L -42 41 L -37 27 L -60 27 L -53 46 L -80 24 C -83 22 -82 18 -78 18 L -46 18 L -34 -9 C -29 -18 -15 -12 -20 -2 L -33 18 M 33 18 L 29 18 C 22 18 22 24 25 26 L 42 41 L 37 27 L 59 27 L 53 46 L 80 24 C 83 22 82 18 78 18 L 46 18 L 34 -9 C 29 -18 15 -12 20 -2 L 33 18 M -52 0 L -80 -6 L -57 -56 C -60 -57 -64 -60 -66 -63 L -108 -13 L -137 -33 L -75 -78 C -78 -82 -79 -85 -80 -89 L -159 -59 L -179 -98 L -82 -107 C -83 -111 -82 -115 -82 -119 L -188 -132 L -205 -183 L -76 -136 C -71 -146 -65 -155 -54 -161 C -64 -141 -85 -91 -30 -72 C -16 -67 -23 -41 -43 -48 L -52 0 M 52 0 L 80 -6 L 57 -56 C 60 -57 64 -60 66 -63 L 108 -13 L 137 -33 L 75 -78 C 78 -82 79 -85 80 -89 L 159 -59 L 179 -98 L 82 -107 C 83 -111 82 -115 82 -119 L 188 -132 L 205 -183 L 76 -136 C 71 -146 65 -155 54 -161 C 64 -141 85 -91 30 -72 C 16 -67 23 -41 43 -48 L 52 0 M 0 -100 L -62 -100 L 0 -196 L 62 -100 L 0 -100 L 31 -148 L -31 -148" fill="#f9d008"/>
+                        </svg>
+                    </div>
+                    <div class="complete_mission_type_wrapper">
+                        <h2>Missão Principal</h2>
+                    </div>
+                </div>
+                <div class="complete_mission_overlay">
+                    <div class="complete_mission_overlay_wrapper">
+                        <h1>Um Presente Misterioso</h1>
+                    </div>
+                </div>
+                <div class="complete_mission_objective">
+                    <p>Concluída</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- =========================== -->
+    <!-- ==|       CREDITS       |== -->
+    <!-- =========================== -->
+
+
+    <div class="credits">
+        <div class="credits_image_contain">
+            <div class="credits_image01"></div>
+            <div class="credits_image02"></div>
+            <div class="credits_image03"></div>
+            <div class="credits_image04"></div>
+            <div class="credits_image05"></div>
+            <div class="credits_image06"></div>
+            <div class="credits_image07"></div>
+            <div class="credits_image08"></div>
+            <div class="credits_image09"></div>
+            <div class="credits_image10"></div>
+            <div class="credits_image11"></div>
+            <div class="credits_image12"></div>
+            <div class="credits_image13"></div>
+            <div class="credits_image14"></div>
+            <div class="credits_image15"></div>
+            <div class="credits_image16"></div>
+            <div class="credits_image17"></div>
+            <div class="credits_image18"></div>
+            <div class="credits_image19"></div>
+            <div class="credits_image20"></div>
+        </div>
+        <div class="credits_contain">
+            <div class="credit_area">
+                <h4>STAFF</h4>
+            </div>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>DIRETOR</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>DIRETOR ASSISTENTE</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>DESIGNER DE JOGOS</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>SUPERVISOR DE ROTEIRO</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+
+            <div class="credits_spacing"></div>
+
+            <span class="credits_content">
+                <span class="credit_sector"><h4>SUPERVISOR TÉCNICO</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>HTML FULL EXPERIENCE</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>CSS DESIGNER</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>JAVASCRIPT JUNIOR</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>JAVASCRIPT PLENO</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>JAVASCRIPT SÊNIOR</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>ESTAGIÁRIO</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>ARQUITETO DE ENIGMA</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>REPOSITOR DE SUPERMERCADO</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>ESPECIALISTA EM UI/UX</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>DESENVOLVEDOR SONORO</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>DEUS DO OLIMPO</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>DESENVOLVEDOR NPC</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>ENGENHEIRO DE PROMPT</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>AFUGENTADOR DE POMBOS</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+
+            <div class="credits_spacing"></div>
+            
+            <span class="credits_content">
+                <span class="credit_sector"><h4>ESPECIALISTA EM SEGURANÇA</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>JOVEM APRENDIZ</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>CAÇADOR DE TEMPESTADES</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>ANALISTA DE SOFTWARE</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            
+            <div class="credits_spacing"></div>
+
+            <span class="credits_content">
+                <span class="credit_sector"><h4>ÚLTIMO ROMÂNTICO</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>PROGRAMADOR</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>TRADUTOR</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>ESPECIALISTA EM EFEITOS ESPECIAIS</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>FAZEDOR DE VIÚVAS</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>DESENVOLVEDOR DE FÍSICA</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>MAÉSTRO</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>DESENVOLVEDOR DE AMBIENTE</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>ENGENHEIRO DE SOFTWARE</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            
+            <div class="credits_spacing"></div>
+
+            <span class="credits_content">
+                <span class="credit_sector"><h4>CUIQUEIRO</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>ANALISTA DE DADOS</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>ESPECIALISTA EM IA</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>DESENVOLVEDOR DE CÂMERA</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>تجربة كاملة</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>LIDER TÉCNICO</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>SUPORTE</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>ARQUITETO DE SISTEMAS</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>SUPERVISOR TÉCNICO</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>MANOBRISTA DE NAVIO</h4></span>
+                <span class="credit_prof"><p>Cristhian Esteves</p></span>
+            </span>
+            <span class="credits_content">
+                <span class="credit_sector"><h4>AUXILIAR DE SERVIÇOS GERAIS RESERVA</h4></span>
+                <span class="credit_prof"><p>Chat GPT</p></span>
+            </span>
+
+            <div class="credits_spacing_final"></div>
+
+            <span class="credits_content">
+                <span class="credit_sector_final">
+                    <h4 class="frase_final">PARABÉNS JOOOOTA! Obrigado por fazer parte da minha vida. Sou muito grato por tudo que fez por mim e por todos os momentos incríveis! Idas ao cinema, revezadas em games, churrascos sinceros, passeios, trocas de informação e bons assuntos... Você é o melhor tio que alguém poderia ter! E ainda bem que sou seu sobrinho! Curta seu presente com honra, seja o herói que Hyrule precisa e pegue todos os koroks antes de salvar a princesa, certeza que ela vai entender... Feliz aniversário!</h4>
+                </span>
+            </span>
+
+            <div class="credits_spacing_final"></div>
+            <div class="credits_spacing"></div>
+            <div class="credits_spacing"></div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- ================================ -->
+    <!-- ==|       FINAL_SCREEN       |== -->
+    <!-- ================================ -->
+
+
+    <div class="final_screen" id="finalScreen">
+        <div class="final_screen_contain">
+            <div class="button" onclick="button_restart()">
+                <svg
+                    id="tri_top_left"
+                    class="tri"
+                    data-dir="-1,-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 -10 L -10 0 L -10 -10 L 0 -10" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_top_right"
+                    class="tri"
+                    data-dir="1,-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L 0 -10 L -10 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_bottom_left"
+                    class="tri"
+                    data-dir="-1, 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L -10 0 L -10 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_bottom_right"
+                    class="tri"
+                    data-dir="1, 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L -10 0 L 0 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <div class="button_content">
+                    <p>Novo Jogo</p>
+                </div>
+            </div>
+            <div class="button"  onclick="button_reward()">
+                <svg
+                    id="tri_top_left"
+                    class="tri"
+                    data-dir="-1,-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 -10 L -10 0 L -10 -10 L 0 -10" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_top_right"
+                    class="tri"
+                    data-dir="1,-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L 0 -10 L -10 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_bottom_left"
+                    class="tri"
+                    data-dir="-1, 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L -10 0 L -10 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_bottom_right"
+                    class="tri"
+                    data-dir="1, 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L -10 0 L 0 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <div class="button_content">
+                    <p>Código</p>
+                </div>
+            </div>
+            <div class="button" onclick="button_restart_credits()">
+                <svg
+                    id="tri_top_left"
+                    class="tri"
+                    data-dir="-1,-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 -10 L -10 0 L -10 -10 L 0 -10" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_top_right"
+                    class="tri"
+                    data-dir="1,-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L 0 -10 L -10 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_bottom_left"
+                    class="tri"
+                    data-dir="-1, 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L -10 0 L -10 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <svg
+                    id="tri_bottom_right"
+                    class="tri"
+                    data-dir="1, 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="-10 -10 10 10"
+                    >
+                    <path d="M 0 0 L -10 0 L 0 -10 L 0 0" fill="#fcfee4"/>
+                </svg>
+                <div class="button_content">
+                    <p>Créditos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- ========================== -->
+    <!-- ==|       AUDIOS       |== -->
+    <!-- ========================== -->
+
+
+    <audio id="startSound" src="./public/start.wav" preload="auto"></audio>
+
+    <audio id="StartMissionSound" src="./public/start_mission.wav" preload="auto"></audio>
+    <audio id="objectiveSound" src="./public/start_mission_objective.wav" preload="auto"></audio>
+    <audio id="completeMissionSound" src="./public/complete_mission.wav" preload="auto"></audio>
+
+    <audio id="voiceSound01" src="./public/voice01.wav" preload="auto"></audio>
+    <audio id="voiceSound02" src="./public/voice02.wav" preload="auto"></audio>
+    <audio id="voiceSound03" src="./public/voice03.wav" preload="auto"></audio>
+    <audio id="voiceSound04" src="./public/voice04.wav" preload="auto"></audio>
+    <audio id="voiceSound05" src="./public/voice05.wav" preload="auto"></audio>
+    <audio id="voiceSound06" src="./public/voice06.wav" preload="auto"></audio>
+    <audio id="voiceSound07" src="./public/voice01.wav" preload="auto"></audio>
+
+    <audio id="inventoryOpenSound" src="./public/inventory_open.wav" preload="auto"></audio>
+    <audio id="inventoryCloseSound" src="./public/inventory_close.wav" preload="auto"></audio>
+
+    <audio id="rewardSound" src="./public/reward.mp3" preload="auto"></audio>
+
+    <audio id="openSureSound" src="./public/open_sure.wav" preload="auto"></audio>
+    <audio id="noSureSound" src="./public/sure_no.wav" preload="auto"></audio>
+
+    <audio id="korokSound" src="./public/yahaha.mp3" preload="auto"></audio>
+
+    <audio id="korokFound01Sound" src="./public/korok_found01.wav" preload="auto"></audio>
+    <audio id="korokFound02Sound" src="./public/korok_found02.wav" preload="auto"></audio>
+
+    <audio id="dialogStartSound" src="./public/dialog_start.wav" preload="auto"></audio>
+    <audio id="dialogNextSound" src="./public/dialog_next.wav" preload="auto"></audio>
+    <audio id="dialogEndSound" src="./public/dialog_end.wav" preload="auto"></audio>
+
+    <audio id="cursorMove02Sound" src="./public/cursor_move02.wav" preload="auto"></audio>
+    <audio id="cursorMove03Sound" src="./public/cursor_move03.wav" preload="auto"></audio>
+
+    <audio id="errorInputSound" src="./public/error_input.wav" preload="auto"></audio>
+
+    <audio id="creditsSound" src="./public/the_final_trial.mp3" preload="auto"></audio>
+
+
+
+
+
+    <!-- =========================== -->
+    <!-- ==|       SCRIPTS       |== -->
+    <!-- =========================== -->
+
+
+    <script src="./script/01_preloading.js"></script>
+    <script src="./script/02_audios.js"></script>
+    <script src="./script/03_animationTextWriting.js"></script>
+    <script src="./script/04_startSequence.js"></script>
+    <script src="./script/05_modalReward.js"></script>
+    <script src="./script/06_modalSure.js"></script>
+    <script src="./script/07_modalResponse.js"></script>
+    <script src="./script/08_modalKorok.js"></script>
+    <script src="./script/09_animationArrowJoystickRight.js"></script>
+    <script src="./script/10_animationIconExitDialog.js"></script>
+    <script src="./script/11_animationArrowSelected.js"></script>
+    <script src="./script/12_finalVideoSequence.js"></script>
+    <script src="./script/13_credits.js"></script>
+    <script src="./script/14_finalScreen.js"></script>
+
+</body>
+</html>

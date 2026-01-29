@@ -13,16 +13,16 @@ const korokExit = modalKorok.querySelector(".exit_dialog");
 
 const korokDialogsFirstTime = [
     "Ya-ha-ha! Você me encontrou!\nVou te dar algumas dicas.",
-    "Um: A quem pertence",
-    "Dois: O seu tipo",
-    "Três: Me é familiar"
+    "Um: A quem pertence.",
+    "Dois: O seu tipo.",
+    "Três: Me é familiar."
 ];
 
 const korokDialogsRepeat = [
     "Hi-hi!\nEssas são as dicas:",
-    "Um: A quem pertence",
-    "Dois: O seu tipo",
-    "Três: Me é familiar"
+    "Um: A quem pertence.",
+    "Dois: O seu tipo.",
+    "Três: Me é familiar."
 ];
 
 let activeKorokDialogs = [];

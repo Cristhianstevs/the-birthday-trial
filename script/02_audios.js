@@ -20,6 +20,11 @@ const sound_voice07 = document.getElementById("voiceSound07");
 const sound_inventory_open = document.getElementById("inventoryOpenSound");
 const sound_inventory_close = document.getElementById("inventoryCloseSound");
 
+const sound_reward = document.getElementById("rewardSound");
+
+const sound_open_sure = document.getElementById("openSureSound");
+const sound_no_sure = document.getElementById("noSureSound");
+
 const sound_dialog_start = document.getElementById("dialogStartSound");
 const sound_dialog_next = document.getElementById("dialogNextSound");
 const sound_dialog_end = document.getElementById("dialogEndSound");
@@ -27,8 +32,6 @@ const sound_dialog_end = document.getElementById("dialogEndSound");
 const sound_yahaha = document.getElementById("korokSound");
 const sound_korok_found01 = document.getElementById("korokFound01Sound");
 const sound_korok_found02 = document.getElementById("korokFound02Sound");
-
-const sound_reward = document.getElementById("rewardSound");
 
 const sound_typing = document.getElementById("cursorMove02Sound");
 const sound_delete = document.getElementById("cursorMove03Sound");
@@ -55,3 +58,21 @@ setVolume(sound_dialog_next, 0.5)
 setVolume(sound_reward, 0.5)
 setVolume(sound_typing, 0.4)
 setVolume(sound_delete, 0.2)
+
+
+
+/* =============================== */
+/*        BUTTON_HOVER_SOUND       */
+/* =============================== */
+
+
+const buttons = document.querySelectorAll(".button");
+
+buttons.forEach(button => {
+    button.addEventListener("mouseenter", () => {
+        if (!sound_typing) return;
+
+        sound_typing.currentTime = 0;
+        sound_typing.play();
+    });
+});

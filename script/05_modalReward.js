@@ -2,7 +2,6 @@
 /*        MODAL_REWARD         */
 /* =========================== */
 
-
 const modalRewardOverlay = document.querySelector(".modal_reward_overlay");
 const modalReward = document.querySelector(".modal_reward");
 const modalRewardContain = document.querySelector(".modal_reward_contain");
@@ -10,14 +9,14 @@ const exitReward = modalRewardOverlay.querySelector(".exit_dialog");
 
 let rewardUnlocked = false;
 
+/* RESET ANIMAÇÃO */
 function resetarAnimacaoReward() {
     modalRewardOverlay.classList.remove("active");
-
     void modalRewardOverlay.offsetWidth;
-
     modalRewardOverlay.classList.add("active");
 }
 
+/* ABRIR */
 function openModalReward() {
     modalRewardOverlay.style.display = "flex";
     modalRewardOverlay.classList.remove("closing");
@@ -30,6 +29,7 @@ function openModalReward() {
     }
 }
 
+/* FECHAR */
 function closeModalReward() {
     modalRewardOverlay.classList.remove("active");
     modalRewardOverlay.classList.add("closing");
@@ -43,12 +43,9 @@ function closeModalReward() {
 
     rewardUnlocked = false;
     limparInputs();
-
-    setTimeout(() => {
-        startFinalSequence();
-    }, 2000);
 }
 
+/* FIM DA ANIMAÇÃO */
 modalRewardOverlay.addEventListener("animationend", (e) => {
     if (e.animationName === "blurOut") {
         modalRewardOverlay.style.display = "none";
@@ -56,13 +53,23 @@ modalRewardOverlay.addEventListener("animationend", (e) => {
     }
 });
 
-modalRewardOverlay.addEventListener("click", closeModalReward);
-modalRewardContain.addEventListener("click", closeModalReward);
+/* CLIQUES */
+modalRewardOverlay.addEventListener("click", () => {
+    openModalSure();
+});
+
+modalRewardContain.addEventListener("click", () => {
+    openModalSure();
+});
 
 if (exitReward) {
-    exitReward.addEventListener("click", closeModalReward);
+    exitReward.addEventListener("click", (e) => {
+        e.stopPropagation();
+        closeModalReward();
+    });
 }
 
+/* NÃO FECHA AO CLICAR DENTRO */
 modalReward.addEventListener("click", (e) => {
     e.stopPropagation();
 });

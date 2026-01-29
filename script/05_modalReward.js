@@ -7,6 +7,7 @@ const modalReward = document.querySelector(".modal_reward");
 const modalRewardContain = document.querySelector(".modal_reward_contain");
 const exitReward = modalRewardOverlay.querySelector(".exit_dialog");
 
+let rewardFromFinalScreen = false;
 let rewardUnlocked = false;
 
 /* RESET ANIMAÇÃO */
@@ -17,7 +18,9 @@ function resetarAnimacaoReward() {
 }
 
 /* ABRIR */
-function openModalReward() {
+function openModalReward(fromFinalScreen = false) {
+    rewardFromFinalScreen = fromFinalScreen;
+
     modalRewardOverlay.style.display = "flex";
     modalRewardOverlay.classList.remove("closing");
 
@@ -54,13 +57,16 @@ modalRewardOverlay.addEventListener("animationend", (e) => {
 });
 
 /* CLIQUES */
-modalRewardOverlay.addEventListener("click", () => {
-    openModalSure();
-});
+function handleRewardOverlayClick() {
+    if (rewardFromFinalScreen) {
+        closeModalReward(); // comportamento simples no final
+    } else {
+        openModalSure(); // comportamento normal do jogo
+    }
+}
 
-modalRewardContain.addEventListener("click", () => {
-    openModalSure();
-});
+modalRewardOverlay.addEventListener("click", handleRewardOverlayClick);
+modalRewardContain.addEventListener("click", handleRewardOverlayClick);
 
 if (exitReward) {
     exitReward.addEventListener("click", (e) => {

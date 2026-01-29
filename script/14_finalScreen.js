@@ -18,7 +18,7 @@ function button_reward() {
     sound_dialog_start.play();
 
     setTimeout(() => {
-        openModalReward();
+        openModalReward(true);
     }, 1500);
 }
 

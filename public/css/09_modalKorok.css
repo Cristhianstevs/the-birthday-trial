@@ -44,7 +44,7 @@
     cursor: pointer;
     pointer-events: none;
     animation: korokIdle 2s ease-in-out infinite;
-    background-image: url("../public/korok03.png");
+    background-image: url("../assets/image/korok03.png");
     background-repeat: no-repeat;
     background-position: 770px 40px;
     background-size: 350px;

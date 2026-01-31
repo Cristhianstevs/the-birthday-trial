@@ -6,25 +6,25 @@
 @font-face {
     /* Antes de achar a Calamity disseram que essa Rodin parecia bastante com a fonte do jogo, mas agora não utilizo mais... Fiquei com pena de tirar, vai que alguém precisa. */
     font-family: 'Rodin';
-    src: url('../fonts/FOT-Rodin\ Pro\ B.otf') format('opentype');
+    src: url('../assets/fonts/FOT-Rodin\ Pro\ B.otf') format('opentype');
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: 'Hylia';
-    src: url('../fonts/HyliaSerifBeta-Regular.otf') format('opentype');
+    src: url('../assets/fonts/HyliaSerifBeta-Regular.otf') format('opentype');
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: 'Calamity-Bold';
-    src: url('../fonts/Calamity-Bold.otf') format('opentype');
+    src: url('../assets/fonts/Calamity-Bold.otf') format('opentype');
     font-weight: 600;
     font-style: normal;
 }
 @font-face {
     font-family: 'Calamity-Regular';
-    src: url('../fonts/Calamity-Regular.otf') format('opentype');
+    src: url('../assets/fonts/Calamity-Regular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
 }

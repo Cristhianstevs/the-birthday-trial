@@ -26,9 +26,9 @@
 #finalScreen.show {
     opacity: 1;
 }
-.final_screen::after {  
+.final_screen::after {
     content: '';
-    background-image: url("../public/background28_zelda.jpg");
+    background-image: url("../assets/image/background28_zelda.jpg");
     background-size: cover;
     background-position: left top;
     filter: opacity(.2);

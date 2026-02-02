@@ -33,7 +33,7 @@ Tudo acontece de maneira intencionalmente controlada, utilizando timing, pausas 
 
 ## 🚀 Como executar
 
-<a href="https://cristhianstevs.github.io/the_birthday_trial" target="_blank">start</a>
+<a href="https://the-birthday-trial.vercel.app/" target="_blank">start</a>
 
 ## 👀 Observações
 

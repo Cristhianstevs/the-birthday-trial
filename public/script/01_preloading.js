@@ -50,6 +50,7 @@ async function preloadEverything() {
 
     try {
         await preloadImages([
+           // Evitar preload disnecessário, mude conforme o background usado no inventário
             "../assets/image/credit_img01.jpeg",
             "../assets/image/credit_img02.jpeg",
             "../assets/image/credit_img03.jpeg",
@@ -71,7 +72,6 @@ async function preloadEverything() {
             "../assets/image/credit_img19.jpeg",
             "../assets/image/credit_img20.jpeg",
 
-            // Evitar preload disnecessário, mude conforme o background usado no inventário
 
             // "../assets/image/background01_zelda.jpg",
             // "../assets/image/background02_zelda.jpg",
